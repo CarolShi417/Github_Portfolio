@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiyi Qing Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-nav" aria-label="Primary navigation">
+      <a href="#projects">PROJECT</a>
+      <span></span>
+      <a href="#top">ABOUT</a>
+      <span></span>
+      <a href="#top">CONTACT</a>
+    </header>
+
+    <main id="top" class="home">
+      <section class="mushroom-scroll" aria-label="3D ink cap portfolio homepage">
+        <div class="camera">
+          <canvas id="mushroom-canvas" aria-label="3D ink cap mushroom"></canvas>
+          <div class="scene-light light-one"></div>
+          <div class="scene-light light-two"></div>
+
+          <div class="identity">
+            <p class="kicker">TO FADE, TO GROW</p>
+            <h1>SHIYI<br />QING</h1>
+            <p>Creative Producer for Games, Campaigns &amp; Interactive Experiences</p>
+          </div>
+
+          <section class="project-drops" id="projects" aria-label="Featured projects">
+            <article class="project-drop" data-focus="0.42" data-x="2.4" data-y="1.5" data-z="0.7">
+              <span>01</span>
+              <h2>WATCHVERSE</h2>
+              <p>Social media content operation and data analysis.</p>
+            </article>
+            <article class="project-drop" data-focus="0.54" data-x="-2.0" data-y="0.25" data-z="-0.5">
+              <span>02</span>
+              <h2>SINKING</h2>
+              <p>Idle game production across PM, programming, design and promotion.</p>
+            </article>
+            <article class="project-drop" data-focus="0.66" data-x="2.1" data-y="-1.15" data-z="-0.2">
+              <span>03</span>
+              <h2>TO FADE, TO GROW</h2>
+              <p>VR installation following the one-day life cycle of the ink cap.</p>
+            </article>
+            <article class="project-drop" data-focus="0.78" data-x="-1.85" data-y="-2.4" data-z="0.8">
+              <span>04</span>
+              <h2>CALM CAST</h2>
+              <p>BCI game and exhibition experience blending play and attention.</p>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
