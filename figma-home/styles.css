@@ -299,7 +299,7 @@ h1 {
 }
 
 .case-page .site-header {
-  position: absolute;
+  position: fixed;
 }
 
 .case-intro {
@@ -314,12 +314,11 @@ h1 {
 
 .case-intro::before {
   position: absolute;
-  inset: -18px;
+  inset: 0;
   z-index: 0;
-  background: url("assets/social-media-hero.png") center / cover no-repeat;
+  background: url("assets/social-media-hero-clean.png") center / cover no-repeat;
   content: "";
-  filter: blur(7px) saturate(0.94) brightness(1.04);
-  transform: scale(1.035);
+  filter: saturate(0.98) brightness(1.02);
 }
 
 .case-intro::after {
@@ -343,9 +342,12 @@ h1 {
   top: 50%;
   display: block;
   width: clamp(220px, 20vw, 365px);
+  aspect-ratio: 1;
+  overflow: hidden;
   padding: 0;
   border: 0;
-  background: transparent;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
   cursor: pointer;
   filter: drop-shadow(0 24px 34px rgba(39, 76, 45, 0.16));
   transform: translate(-50%, -50%) scale(0.7);
@@ -358,21 +360,21 @@ h1 {
 .hero-logo img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
 }
 
 .logo-flowly {
-  left: 21%;
+  left: 79%;
 }
 
 .logo-hooroo {
   left: 50%;
-  width: clamp(238px, 21.2vw, 390px);
 }
 
 .logo-watchverse {
-  left: 79%;
+  left: 21%;
 }
 
 .hero-logo:hover,
@@ -414,6 +416,7 @@ h1 {
 
 .case-block {
   margin-bottom: clamp(86px, 11vw, 180px);
+  scroll-margin-top: 92px;
 }
 
 .case-copy {
@@ -725,10 +728,6 @@ h1 {
     width: clamp(118px, 31vw, 220px);
   }
 
-  .logo-hooroo {
-    width: clamp(128px, 34vw, 238px);
-  }
-
   .metric-grid,
   .demographic-grid,
   .post-strip {
@@ -753,7 +752,7 @@ h1 {
 
 @media (max-width: 560px) {
   .site-header {
-    position: absolute;
+    position: fixed;
   }
 
   .nav-link {
