@@ -468,7 +468,7 @@ h1 {
 .case-copy h1,
 .case-copy h2 {
   width: auto;
-  margin: 0 0 28px;
+  margin: 0 0 8px;
   color: var(--ink);
   font-size: var(--type-display);
   font-weight: 400;
@@ -478,7 +478,7 @@ h1 {
 
 .case-kicker {
   max-width: 760px;
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   color: rgba(5, 5, 5, 0.58);
   font-size: var(--type-body);
   font-weight: 700;
@@ -487,9 +487,9 @@ h1 {
 
 .case-copy p {
   max-width: 1280px;
-  margin: 0 0 20px;
+  margin: 0;
   font-size: var(--type-body);
-  line-height: 1.45;
+  line-height: 1.25;
 }
 
 .case-copy .case-meta {
@@ -771,24 +771,6 @@ h1 {
 .recent-posts {
   width: min(980px, 100%);
   margin: clamp(24px, 4vw, 66px) auto 0;
-}
-
-.simple-recent-posts {
-  width: min(100%, var(--max));
-  padding: 0 clamp(34px, 5vw, 80px);
-}
-
-.simple-post-note {
-  display: grid;
-  min-height: 180px;
-  place-items: center;
-  border: 1px solid rgba(5, 5, 5, 0.06);
-  border-radius: 22px;
-  background: rgba(251, 251, 250, 0.76);
-  box-shadow: 0 18px 42px rgba(25, 35, 43, 0.08);
-  color: rgba(5, 5, 5, 0.58);
-  font-size: var(--type-body);
-  font-weight: 700;
 }
 
 .post-strip {

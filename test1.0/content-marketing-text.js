@@ -31,10 +31,26 @@ const platformContent = {
       note: "Age range can be presented as a slide interaction later.",
     },
     posts: [
-      ["Shorts 01", "https://www.youtube.com/shorts/qNmMLKXsSjY"],
-      ["Shorts 02", "https://www.youtube.com/shorts/tkYAhfu1bLI"],
-      ["Shorts 03", "https://www.youtube.com/shorts/3faPcmJfNgs"],
-      ["Shorts 04", "https://www.youtube.com/shorts/eNHrQ3JyZ3k"],
+      {
+        href: "https://www.youtube.com/shorts/qNmMLKXsSjY",
+        image: "assets/social-media/20260701_Youtube_POV_ Apple Watch Beginners Miss This.jpg",
+        alt: "POV: Apple Watch Beginners Miss This",
+      },
+      {
+        href: "https://www.youtube.com/shorts/tkYAhfu1bLI",
+        image: "assets/social-media/20260702_Youtube_Why Your Apple Watch Isn_t Tracking Sleep.jpg",
+        alt: "Why Your Apple Watch Isn't Tracking Sleep",
+      },
+      {
+        href: "https://www.youtube.com/shorts/3faPcmJfNgs",
+        image: "assets/social-media/20260629_Youtube_This 10-Sec Apple Watch Habit Changes Your Body.jpg",
+        alt: "This 10-Sec Apple Watch Habit Changes Your Body",
+      },
+      {
+        href: "https://www.youtube.com/shorts/eNHrQ3JyZ3k",
+        image: "assets/social-media/20260601_Youtube_Apple WATCH BATTERY SAVING HACKS YOU MUST HAVE.jpg",
+        alt: "Apple Watch battery saving hacks",
+      },
     ],
   },
   tiktok: {
@@ -112,29 +128,74 @@ const platformContent = {
 const metricMarkup = (items) =>
   items.map(([label, value]) => `<div class="metric-card"><small>${label}</small><strong>${value}</strong></div>`).join("");
 
-const barMarkup = (items) =>
+const percentNumber = (value) => {
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const flagForCountry = (country) =>
+  ({
+    India: "IN",
+    Indonesia: "ID",
+    Iraq: "IQ",
+    Italy: "IT",
+    Mexico: "MX",
+    Russia: "RU",
+    "United Kingdom": "UK",
+    "United States": "US",
+    Uzbekistan: "UZ",
+  })[country] || "";
+
+const barMarkup = (items, options = {}) =>
   items
     .map(([label, value]) => {
       const width = value.endsWith("%") ? value : "0%";
-      return `<p><span style="--bar-width: ${width}"></span>${label} · ${value}</p>`;
+      const prefix = options.flags ? `<span class="country-flag">${flagForCountry(label)}</span>` : "";
+      return `
+        <div class="audience-row">
+          <span class="audience-label">${prefix}${label}</span>
+          <span class="audience-track"><span style="--bar-width: ${width}"></span></span>
+          <strong>${value}</strong>
+        </div>
+      `;
     })
     .join("");
 
-const audienceMarkup = (audience) => `
-  <div class="demo-card pie-card">
-    <span></span>
-    <p>${audience.gender.join("<br />")}</p>
-  </div>
-  <div class="demo-card bar-card">${barMarkup(audience.age)}</div>
-  <div class="demo-card bar-card">${barMarkup(audience.countries)}</div>
-  <div class="demo-card empty-card">${audience.note}</div>
-`;
+const audienceMarkup = (audience) => {
+  const male = percentNumber(audience.gender[0]);
+  const female = percentNumber(audience.gender[1]);
+
+  return `
+    <div class="demo-card gender-card">
+      <small>Gender</small>
+      <span class="gender-donut" style="--male: ${male}%"></span>
+      <div class="gender-legend">
+        <p><span></span><strong>${male || "-"}%</strong><em>Male</em></p>
+        <p><span></span><strong>${female || "-"}%</strong><em>Female</em></p>
+      </div>
+    </div>
+    <div class="audience-stack">
+      <div class="demo-card audience-bars">
+        <small>Age Distribution</small>
+        ${barMarkup(audience.age)}
+      </div>
+      <div class="demo-card audience-bars">
+        <small>Top Countries</small>
+        ${barMarkup(audience.countries, { flags: true })}
+      </div>
+    </div>
+  `;
+};
 
 const postMarkup = (posts) =>
   posts
-    .map(([label, href]) => {
+    .map((post) => {
+      const [label, href] = Array.isArray(post) ? post : ["", post.href];
       const external = href !== "#";
       const target = external ? ' target="_blank" rel="noreferrer"' : "";
+      if (!Array.isArray(post) && post.image) {
+        return `<a href="${href}"${target}><img src="${post.image}" alt="${post.alt || ""}" /></a>`;
+      }
       return `<a href="${href}"${target}>${label}</a>`;
     })
     .join("");
@@ -166,4 +227,22 @@ if (platformDashboard) {
 
     setPlatform(button.dataset.platform);
   });
+
+  setPlatform("youtube");
 }
+
+const siteHeader = document.querySelector(".site-header");
+const caseIntro = document.querySelector(".case-intro");
+
+const updateHeaderBackdrop = () => {
+  if (!siteHeader || !caseIntro) {
+    return;
+  }
+
+  const threshold = caseIntro.offsetHeight - siteHeader.offsetHeight;
+  siteHeader.classList.toggle("has-backdrop", window.scrollY > threshold);
+};
+
+updateHeaderBackdrop();
+window.addEventListener("scroll", updateHeaderBackdrop, { passive: true });
+window.addEventListener("resize", updateHeaderBackdrop);

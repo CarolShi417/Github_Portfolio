@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Marketing Page Copy</title>
+    <style>
+      :root {
+        --page: #fbfbfa;
+        --ink: #111;
+        --muted: #666;
+        --line: #dededb;
+        --panel: #f1f1ee;
+        --accent: #dcf7d7;
+        --h1: 48px;
+        --h2: 30px;
+        --h3: 20px;
+        --body: 16px;
+        --small: 13px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--page);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: var(--body);
+        line-height: 1.55;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 56px 28px 96px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        font-size: var(--h1);
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        font-size: var(--h2);
+        margin-top: 42px;
+        margin-bottom: 16px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+
+      h3 {
+        font-size: var(--h3);
+        margin-top: 28px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      ul {
+        margin: 0 0 18px;
+        padding-left: 22px;
+      }
+
+      li {
+        margin: 5px 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .note,
+      .label {
+        color: var(--muted);
+        font-size: var(--small);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .hero-note,
+      .dashboard {
+        padding: 18px 20px;
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 10px 0 18px;
+      }
+
+      .tab {
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: var(--accent);
+        font-size: var(--small);
+        font-weight: 800;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 10px;
+        margin: 12px 0 20px;
+      }
+
+      .metric {
+        min-height: 78px;
+        padding: 14px;
+        background: #fff;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .section-copy {
+        margin-bottom: 22px;
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --h1: 34px;
+          --h2: 25px;
+          --h3: 18px;
+          --body: 15px;
+        }
+
+        main {
+          padding: 36px 18px 72px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Content Marketing Page Copy</h1>
+
+      <h2>Intro</h2>
+      <div class="hero-note">
+        <p>Hero area uses three featured social media account logos:</p>
+        <ul>
+          <li>Flowly</li>
+          <li>Hooroo Game</li>
+          <li>Watchverse</li>
+        </ul>
+        <p>Interaction note:</p>
+        <ul>
+          <li>The logos sit above a blurred social media background.</li>
+          <li>On hover, each logo pauses visually, scales up, and uses a small shake animation.</li>
+          <li>For static design drafts, show the logos in their default centered positions.</li>
+        </ul>
+      </div>
+
+      <h2>WATCHVERSE</h2>
+      <section class="section-copy">
+        <p class="label">Kicker</p>
+        <p>Content Strategy · AI-assisted Production · Performance Analysis</p>
+        <p class="label">Overview</p>
+        <p>A content brand showcasing practical Apple Watch apps and hacks, helping users improve health, fitness, and productivity.</p>
+        <p class="label">Featured Products</p>
+        <p>Featured apps for iPhone and Apple Watch, including Flowly, Hooroo Game, and other productivity and fitness applications.</p>
+      </section>
+
+      <h3>Dashboard Interaction</h3>
+      <p>The dashboard has three interactive platform tabs:</p>
+      <div class="tabs">
+        <span class="tab">Youtube</span>
+        <span class="tab">Tiktok</span>
+        <span class="tab">Instagram</span>
+      </div>
+      <p>Clicking a tab updates the platform title, handle, sync status, summary metrics, audience demographics, and recent posts.</p>
+
+      <h3>Youtube Dashboard</h3>
+      <section class="dashboard">
+        <p><strong>Title:</strong> Youtube</p>
+        <p><strong>Handle:</strong> @WATCHVERSE</p>
+        <p><strong>Sync status:</strong> Synced with Youtube on Jul 7</p>
+        <div class="metric-grid">
+          <div class="metric"><span class="label">Posting Period</span><strong>1 month</strong></div>
+          <div class="metric"><span class="label">Total Shorts</span><strong>28</strong></div>
+          <div class="metric"><span class="label">Total Views</span><strong>8.4k</strong></div>
+          <div class="metric"><span class="label">Avg Views</span><strong>350</strong></div>
+          <div class="metric"><span class="label">Average View Retention</span><strong>64.7%</strong></div>
+          <div class="metric"><span class="label">Best Performing Short</span><strong>1.3k Views</strong></div>
+        </div>
+        <p class="label">Audience Demographics</p>
+        <ul>
+          <li>Male: 63.4%</li>
+          <li>Female: 36.6%</li>
+          <li>13-17: 16.6%</li>
+          <li>18-24: 0%</li>
+          <li>25-34: 45.9%</li>
+          <li>35-44: 30.0%</li>
+          <li>United States: 34%</li>
+          <li>India: 3.4%</li>
+          <li>United Kingdom: 0.9%</li>
+          <li>Uzbekistan: 0.9%</li>
+          <li>Iraq: 0.8%</li>
+        </ul>
+        <p class="label">Recent Posts</p>
+        <ul>
+          <li><a href="https://www.youtube.com/shorts/qNmMLKXsSjY">Shorts 01</a></li>
+          <li><a href="https://www.youtube.com/shorts/tkYAhfu1bLI">Shorts 02</a></li>
+          <li><a href="https://www.youtube.com/shorts/3faPcmJfNgs">Shorts 03</a></li>
+          <li><a href="https://www.youtube.com/shorts/eNHrQ3JyZ3k">Shorts 04</a></li>
+        </ul>
+      </section>
+
+      <h3>Tiktok Dashboard</h3>
+      <section class="dashboard">
+        <p><strong>Title:</strong> Tiktok</p>
+        <p><strong>Handle:</strong> @WATCHVERSE</p>
+        <p><strong>Sync status:</strong> Synced with Tiktok on Jul 7</p>
+        <div class="metric-grid">
+          <div class="metric"><span class="label">Posting Period</span>2 months<strong>-</strong></div>
+          <div class="metric"><span class="label">Total Videos</span><strong>28</strong></div>
+          <div class="metric"><span class="label">Total Views</span><strong>15.3k</strong></div>
+          <div class="metric"><span class="label">Avg Views</span><strong>546</strong></div>
+          <div class="metric"><span class="label">Best Performing Shorts</span><strong>5.8k</strong></div>
+        </div>
+        <p class="label">Audience Demographics</p>
+        <ul>
+          <li>Male: 57%</li>
+          <li>Female: 41%</li>
+          <li>18-24: 27.8%</li>
+          <li>25-34: 38.3%</li>
+          <li>35-44: 18.7%</li>
+          <li>45-54: 7.3%</li>
+          <li>55+: 7.9%</li>
+          <li>Indonesia: 37.7%</li>
+          <li>United States: 27.5%</li>
+          <li>Russia: 4.1%</li>
+          <li>Mexico: 1.9%</li>
+          <li>Italy: 1.8%</li>
+        </ul>
+        <p class="label">Recent Posts</p>
+        <ul>
+          <li><a href="https://www.tiktok.com/@watchverse.io/video/7649693742089243935">Shorts 01</a></li>
+          <li><a href="https://www.tiktok.com/@watchverse.io/photo/7649198887634291999?image_index=2">Shorts 02</a></li>
+          <li><a href="https://www.tiktok.com/@watchverse.io/video/7639556523630284063">Shorts 03</a></li>
+          <li><a href="https://www.tiktok.com/@watchverse.io/video/7637696243677875486">Shorts 04</a></li>
+        </ul>
+      </section>
+
+      <h3>Instagram Dashboard</h3>
+      <section class="dashboard">
+        <p><strong>Title:</strong> Instagram</p>
+        <p><strong>Handle:</strong> @watchverse</p>
+        <p><strong>Sync status:</strong> Metrics pending</p>
+        <div class="metric-grid">
+          <div class="metric"><span class="label">Posting Period</span><strong>-</strong></div>
+          <div class="metric"><span class="label">Total Reels</span><strong>-</strong></div>
+          <div class="metric"><span class="label">Total Views</span><strong>-</strong></div>
+          <div class="metric"><span class="label">Avg Views</span><strong>-</strong></div>
+          <div class="metric"><span class="label">Average Engagement</span><strong>-</strong></div>
+          <div class="metric"><span class="label">Best Performing Reel</span><strong>-</strong></div>
+        </div>
+        <p>Instagram audience data pending.</p>
+      </section>
+
+      <h2>CozyFit</h2>
+      <p class="label">账号定位</p>
+      <p>Lifestyle content account for cozy outfits, soft product moments and short-form platform testing.</p>
+      <p class="label">产品名称</p>
+      <p>CozyFit social launch pack and monthly content review.</p>
+      <div class="metric-grid">
+        <div class="metric"><span class="label">Followers</span><strong>1.1k</strong></div>
+        <div class="metric"><span class="label">Engagement</span><strong>-</strong></div>
+        <div class="metric"><span class="label">Follower Engagement</span><strong>-</strong></div>
+        <div class="metric"><span class="label">Total Posts</span><strong>756</strong></div>
+        <div class="metric"><span class="label">Total Impressions</span><strong>0</strong></div>
+        <div class="metric"><span class="label">Total Engagements</span><strong>0</strong></div>
+      </div>
+
+      <h2>lunarybio</h2>
+      <p class="label">账号定位</p>
+      <p>Experimental content operation for a bio-inspired product voice, balancing editorial atmosphere and account growth.</p>
+      <p class="label">产品名称</p>
+      <p>Lunarybio content calendar and platform analytics snapshot.</p>
+      <div class="metric-grid">
+        <div class="metric"><span class="label">Followers</span><strong>1.1k</strong></div>
+        <div class="metric"><span class="label">Engagement</span><strong>-</strong></div>
+        <div class="metric"><span class="label">Follower Engagement</span><strong>-</strong></div>
+        <div class="metric"><span class="label">Total Posts</span><strong>756</strong></div>
+        <div class="metric"><span class="label">Total Impressions</span><strong>0</strong></div>
+        <div class="metric"><span class="label">Total Engagements</span><strong>0</strong></div>
+      </div>
+    </main>
+  </body>
+</html>
