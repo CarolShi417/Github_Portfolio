@@ -119,16 +119,18 @@ const platformContent = {
     posts: [
       {
         href: "#",
-        image: "assets/social-media/20260626_IG_3 Apple Watch hacks.jpg",
-        alt: "3 Apple Watch hacks",
+        image: "assets/social-media/20260708_IG_Lost your iphone at home.jpg",
+        alt: "Lost your iphone at home?",
       },
       {
         href: "#",
-        alt: "Lost your iPhone at home",
+        image: "assets/social-media/20260709_IG_apple watch users never.jpg",
+        alt: "apple watch users never",
       },
       {
         href: "#",
-        alt: "Why your Apple Watch isn't tracking",
+        image: "assets/social-media/20260710_IG_apple watch users miss this boredom.jpg",
+        alt: "apple watch users miss this boredom",
       },
     ],
   },
@@ -138,8 +140,13 @@ const metricMarkup = (items) =>
   items.map(([label, value]) => `<div class="metric-card"><small>${label}</small><strong>${value}</strong></div>`).join("");
 
 const percentNumber = (value) => {
-  const parsed = Number.parseFloat(value);
+  const parsed = Number.parseFloat(String(value).match(/-?\d+(\.\d+)?/)?.[0]);
   return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const percentText = (value) => {
+  const match = String(value).match(/-?\d+(\.\d+)?/);
+  return match ? `${match[0]}%` : "-";
 };
 
 const flagForCountry = (country) =>
@@ -175,15 +182,16 @@ const audienceMarkup = (audience) => {
   const male = percentNumber(audience.gender[0]);
   const female = percentNumber(audience.gender[1]);
   const genderTotal = male + female;
-  const maleSlice = genderTotal ? (male / genderTotal) * 100 : 0;
+  const maleAngle = genderTotal ? (male / genderTotal) * 360 : 0;
+  const femaleAngle = genderTotal ? 360 : 0;
 
   return `
     <div class="demo-card gender-card">
       <small>Gender</small>
-      <span class="gender-donut" style="--male: ${maleSlice}%"></span>
+      <span class="gender-donut" style="--male-angle: ${maleAngle}deg; --female-angle: ${femaleAngle}deg"></span>
       <div class="gender-legend">
-        <p><span></span><strong>${male || "-"}%</strong><em>Male</em></p>
-        <p><span></span><strong>${female || "-"}%</strong><em>Female</em></p>
+        <p><span></span><strong>${percentText(audience.gender[0])}</strong><em>Male</em></p>
+        <p><span></span><strong>${percentText(audience.gender[1])}</strong><em>Female</em></p>
       </div>
     </div>
     <div class="audience-stack">
