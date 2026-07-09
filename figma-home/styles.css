@@ -56,11 +56,11 @@ a {
 
 .site-header::before {
   position: absolute;
-  top: 14px;
-  right: var(--edge);
-  left: var(--edge);
+  top: 6px;
+  right: 10px;
+  left: 10px;
   z-index: -1;
-  height: 40px;
+  height: 44px;
   border: none;
   border-radius: 5px;
   background: rgba(251, 251, 250, 0.8);
@@ -93,10 +93,16 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: rgba(0, 0, 0, 0.74);
+  font: inherit;
   font-size: var(--type-nav);
   font-weight: 800;
   line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
   transition:
     color 160ms ease,
     transform 160ms ease;
@@ -557,6 +563,10 @@ h1 {
   margin-bottom: 28px;
 }
 
+.dashboard-profile {
+  display: block;
+}
+
 .dashboard-heading strong {
   display: block;
   font-size: var(--type-section);
@@ -805,6 +815,7 @@ h1 {
   overflow: hidden;
   place-items: center;
   padding: 0;
+  border-radius: 12px;
   background: var(--tile);
   color: rgba(0, 0, 0, 0.62);
   font-size: var(--type-section);
@@ -832,6 +843,10 @@ h1 {
 
 .compact-case .dashboard-panel {
   min-height: 520px;
+}
+
+.compact-case .post-strip {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 900px) {

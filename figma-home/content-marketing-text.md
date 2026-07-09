@@ -172,57 +172,62 @@ Recent Posts:
 
 ## CozyFit
 
-账号定位:
+**CozyFit turns home fitness into a fun, comfortable, and aesthetic movement experience, using cozy cardio and playful workout content to introduce Hooroo Game. It presents interactive fitness as an easier, more entertaining way to move at home.**
 
-Lifestyle content account for cozy outfits, soft product moments and short-form platform testing.
+### Dashboard Interaction
 
-产品名称:
+The dashboard has one interactive platform tabs:
 
-CozyFit social launch pack and monthly content review.
+- Tiktok
 
-### Dashboard Labels
+### Tiktok Dashboard
 
-- Instagram
-- Douyin
-- YouTube
-- Synced with Instagram on Jun 24
-- @cozyfit
+Platform:
 
-### Summary Metrics
+- Title: Tiktok
+- Handle: @CozyFit
+- Sync status: Synced on Jul 7
 
-- Followers: 1.1k
-- Engagement: -
-- Follower Engagement: -
-- Total Posts: 756
-- Total Impressions: 0
-- Total Engagements: 0
+Summary Metrics:
 
+- Total Shorts: 8
+- Best Performing Short: 9.1k Views
+- Account State: Cold Start
+
+Recent Posts:
+
+- Post 01: #
+- Post 02: #
+- Post 03: #
 ## lunarybio
 
-账号定位:
+**lunary.bio blends lunar-inspired aesthetics with biology-backed wellness insights, using soft, elegant content to introduce Flowly as a smarter way to understand women’s body rhythms. It presents AI-powered health guidance through a calm, approachable lens.**
 
-Experimental content operation for a bio-inspired product voice, balancing editorial atmosphere and account growth.
+Dashboard Interaction
 
-产品名称:
-
-Lunarybio content calendar and platform analytics snapshot.
-
-### Dashboard Labels
+The dashboard has one interactive platform tabs:
 
 - Instagram
-- Douyin
-- YouTube
-- Synced with Instagram on Jun 24
-- @lunarybio
 
-### Summary Metrics
+### Instagram Dashboard
 
-- Followers: 1.1k
-- Engagement: -
-- Follower Engagement: -
-- Total Posts: 756
-- Total Impressions: 0
-- Total Engagements: 0
+Platform:
+
+- Title: Instagram
+- Handle: @lunary.bio
+- Sync status: Synced on Jul 7
+
+Summary Metrics:
+
+- Total Shorts: 10
+- Best Performing Short: 9196 Views
+- Account State: Cold Start
+
+Recent Posts:
+
+- Post 01: #
+- Post 02: #
+- Post 03: #
 
 ## Current Interaction Notes
 

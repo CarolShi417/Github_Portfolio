@@ -4,6 +4,7 @@ const platformContent = {
   youtube: {
     title: "Youtube",
     handle: "@WATCHVERSE",
+    profileUrl: "https://www.youtube.com/@WATCHVERSE-u2t/shorts",
     sync: "Synced with Youtube on Jul 7",
     metrics: [
       ["Posting Period", "1 month"],
@@ -56,6 +57,7 @@ const platformContent = {
   tiktok: {
     title: "Tiktok",
     handle: "@WATCHVERSE",
+    profileUrl: "https://www.tiktok.com/@watchverse.io",
     sync: "Synced with Tiktok on Jul 7",
     metrics: [
       ["Posting Period", "2 months"],
@@ -108,6 +110,7 @@ const platformContent = {
   instagram: {
     title: "Instagram",
     handle: "@watchverse",
+    profileUrl: "https://www.instagram.com/WATCHVERSE/",
     sync: "Metrics pending",
     metrics: [
       ["Posting Period", "1 month"],
@@ -228,6 +231,7 @@ const setPlatform = (platform) => {
 
   platformDashboard.querySelector("[data-platform-title]").textContent = content.title;
   platformDashboard.querySelector("[data-platform-handle]").textContent = content.handle;
+  platformDashboard.querySelector("[data-platform-profile]").href = content.profileUrl;
   platformDashboard.querySelector("[data-platform-sync]").textContent = content.sync;
   platformDashboard.querySelector("[data-platform-metrics]").innerHTML = metricMarkup(content.metrics);
   const audienceSection = platformDashboard.querySelector(".audience-section");
