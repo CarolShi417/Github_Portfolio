@@ -42,7 +42,11 @@ id: hero
 
 type: hero-media
 
-**hero-media link**: <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?si=Fp0MchXPrRqn_iYt&rel=0&modestbranding=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin-when-cross-origin" allowfullscreen></iframe>
+**hero-media cover**: ../project%20content/Unspoken%20Ties/cover.jpg
+
+**hero-media cover alt**: A father and son walking through a dreamlike workshop
+
+**hero-media link**: https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?autoplay=1&rel=0&modestbranding=1&playsinline=1
 
 **hero-media fallback**: https://www.youtube.com/watch?v=gcyLLGpRshQ
 
