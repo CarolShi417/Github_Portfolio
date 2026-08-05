@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>aaaaaa</title>
+    <style>
+      :root {
+        --paper: #f9f8f6;
+        --ink: #232222;
+        --green: #d9f0d4;
+        --green-deep: #c7e9c1;
+        --line: rgb(35 34 34 / 18%);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+      }
+      body.menu-open { overflow: hidden; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+
+      .site-bar {
+        position: fixed;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 76px;
+        padding: 17px;
+        color: var(--paper);
+        mix-blend-mode: difference;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+      .site-bar.is-scrolled { mix-blend-mode: normal; background: rgb(35 34 34 / 92%); }
+      .wordmark { font-size: 13px; letter-spacing: .02em; }
+      .menu-toggle {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        place-items: center;
+        border: 0;
+        background: transparent;
+        color: currentColor;
+        cursor: pointer;
+      }
+      .menu-toggle::before,
+      .menu-toggle::after {
+        position: absolute;
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+        transition: transform 220ms ease;
+      }
+      .menu-toggle::before { transform: rotate(45deg); }
+      .menu-toggle::after { transform: rotate(-45deg); }
+      .menu-toggle[aria-expanded="false"]::before { transform: translateY(-5px); }
+      .menu-toggle[aria-expanded="false"]::after { transform: translateY(5px); }
+
+      .menu {
+        position: fixed;
+        z-index: 15;
+        inset: 0;
+        display: grid;
+        padding: 96px 30px 30px;
+        background: var(--green);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 220ms ease;
+      }
+      .menu.is-open { opacity: 1; pointer-events: auto; }
+      .menu nav { display: grid; align-content: space-between; }
+      .menu a { width: max-content; font-size: clamp(42px, 7vw, 92px); line-height: .9; }
+      .menu a:hover { text-decoration: underline; text-underline-offset: .12em; }
+
+      .hero {
+        /* 原站首屏约为当前视口高度减去 140px，而非固定比例或固定最大值。 */
+        height: calc(100svh - 140px);
+        min-height: 580px;
+        background: var(--green);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+      .basics { min-height: 568px; padding-top: 0; }
+      .title { grid-column: 1 / 10; margin: 0 0 51px; font-size: clamp(90px, 5.2vw, 106px); font-weight: 400; line-height: 1; letter-spacing: -.055em; }
+      .lead { grid-column: 1 / 10; margin: 0 0 121px; font-size: 30px; line-height: 34px; letter-spacing: -.035em; }
+      .metadata {
+        grid-column: 5 / -1;
+        display: flex;
+        align-self: start;
+        margin: 0 0 60px;
+        padding: 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .metadata div { min-width: 0; flex: 1 1 0; }
+      .metadata dt { display: block; height: 26px; border-bottom: 1px solid var(--ink); font-weight: 400; }
+      .metadata dd { margin: 10px 0 0; text-align: left; text-transform: uppercase; }
+
+      .copy { margin-bottom: 45px; }
+      .copy__body { grid-column: 8 / -1; }
+      .copy p { margin: 0 0 22px; font-size: 17px; line-height: 22px; }
+      .copy p:last-child { margin-bottom: 0; }
+      .copy .button-link {
+        display: inline-block;
+        margin-top: 8px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid currentColor;
+        font-size: 12px;
+        letter-spacing: .025em;
+      }
+
+      .media {
+        position: relative;
+        margin-top: 90px;
+        min-height: 531px;
+      }
+      .media__block {
+        grid-column: 5 / -1;
+        min-height: 531px;
+        background: var(--green);
+      }
+      .media__block--short { min-height: 406px; }
+      .media__block--tall { min-height: 797px; }
+      .media__label {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        font-size: 11px;
+        line-height: 1.25;
+        letter-spacing: .04em;
+      }
+      .media__caption {
+        position: absolute;
+        right: 14px;
+        bottom: 13px;
+        left: 14px;
+        font-size: 11px;
+        line-height: 1.25;
+      }
+      .media--double { min-height: 594px; }
+      .media--double .media__block {
+        grid-column: 5 / 9;
+        min-height: 594px;
+      }
+      .media--double .media__block + .media__block { grid-column: 9 / -1; background: var(--green-deep); }
+
+      .statement { margin-top: 88px; margin-bottom: 0; }
+      .statement .copy__body { grid-column: 5 / -1; }
+      .statement h2 { margin: 0 0 34px; font-size: 12px; font-weight: 400; line-height: 22px; letter-spacing: .025em; text-transform: uppercase; }
+      .statement p { max-width: 49rem; }
+      .credits { margin-top: 94px; }
+      .credits .copy__body { grid-column: 5 / -1; }
+      .credits p { margin-bottom: 16px; font-size: 12px; line-height: 17px; }
+
+      .project-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 220px;
+        padding: 0 30px;
+      }
+      .project-nav a { position: relative; display: block; min-height: 164px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
+      .project-nav a:last-child { color: rgb(35 34 34 / 45%); text-align: right; }
+      .project-nav strong { display: block; margin-top: 25px; font-size: 16px; font-weight: 400; }
+      .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; height: 104px; background: var(--green); }
+      .project-nav a:last-child .project-nav__thumb { left: 0; right: auto; background: var(--green-deep); }
+      footer { display: flex; justify-content: space-between; gap: 20px; padding: 0 30px 20px; font-size: 12px; line-height: 20px; }
+
+      .reveal { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
+      .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+      @media (max-width: 767px) {
+        .site-bar { height: 70px; padding: 10px; }
+        .menu { padding: 82px 10px 20px; }
+        .hero { height: calc(100svh - 140px); min-height: 0; }
+        .grid { grid-template-columns: repeat(18, minmax(0, 1fr)); column-gap: 10px; padding: 0 10px; }
+        .basics { min-height: 397px; }
+        .title { grid-column: 1 / -1; margin-bottom: 21px; font-size: 40px; line-height: 40px; letter-spacing: -.045em; }
+        .lead { grid-column: 1 / -1; margin-bottom: 35px; font-size: 15px; line-height: 18px; letter-spacing: -.02em; }
+        .metadata { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px 10px; margin: 0 0 25px; font-size: 10px; line-height: 13px; }
+        .metadata dt { height: 19px; }
+        .metadata dd { margin-top: 7px; }
+        .copy { margin-bottom: 35px; }
+        .copy__body { grid-column: 7 / -1; }
+        .copy p { margin-bottom: 15px; font-size: 12px; line-height: 15px; }
+        .media { min-height: 237px; margin-top: 55px; }
+        .media__block, .media__block--short, .media__block--tall { grid-column: 1 / -1; min-height: 237px; }
+        .media--double { min-height: 259px; }
+        .media--double .media__block { grid-column: 1 / 10; min-height: 259px; }
+        .media--double .media__block + .media__block { grid-column: 10 / -1; }
+        .statement { margin-top: 62px; }
+        .statement .copy__body, .credits .copy__body { grid-column: 1 / -1; }
+        .project-nav { gap: 10px; margin-top: 100px; padding: 0 10px; }
+        .project-nav a { min-height: 112px; padding-top: 10px; font-size: 10px; }
+        .project-nav strong { font-size: 12px; }
+        .project-nav__thumb { top: 27px; width: 42%; height: 72px; }
+        footer { flex-direction: column; padding: 0 10px 14px; font-size: 10px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-bar" id="site-bar">
+      <a class="wordmark" href="#top">aaaaaa</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="aaaaaa" aria-controls="site-menu" aria-expanded="false"></button>
+    </header>
+
+    <aside class="menu" id="site-menu" aria-hidden="true">
+      <nav aria-label="aaaaaa">
+        <a href="#top">aaaaaa</a>
+        <a href="#statement">aaaaaa</a>
+        <a href="#credits">aaaaaa</a>
+      </nav>
+    </aside>
+
+    <main id="top">
+      <section class="hero" aria-label="aaaaaa"></section>
+
+      <section class="grid basics" data-area="project-intro">
+        <h1 class="title" data-slot="project-title" data-count="10">aaaaaa</h1>
+        <p class="lead" data-slot="project-introduction" data-count="274">aaaaaa</p>
+        <dl class="metadata">
+          <div><dt data-slot="fact-1-label" data-count="12">aaaaaa</dt><dd data-slot="fact-1-value" data-count="4">aaaaaa</dd></div>
+          <div><dt data-slot="fact-2-label" data-count="4">aaaaaa</dt><dd data-slot="fact-2-value" data-count="27">aaaaaa</dd></div>
+          <div><dt data-slot="fact-3-label" data-count="14">aaaaaa</dt><dd data-slot="fact-3-value" data-count="47">aaaaaa</dd></div>
+          <div><dt data-slot="fact-4-label" data-count="12">aaaaaa</dt><dd data-slot="fact-4-value" data-count="25">aaaaaa</dd></div>
+        </dl>
+      </section>
+
+      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="349">aaaaaa</p><p data-slot="narrative-01-p2" data-count="309">aaaaaa</p><p data-slot="narrative-01-p3" data-count="267">aaaaaa</p><p data-slot="narrative-01-p4" data-count="163">aaaaaa</p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37">aaaaaa</a></div></section>
+      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">aaaaaa</span><span class="media__caption" data-slot="media-001-caption" data-count="31">aaaaaa</span></div></section>
+      <section class="grid copy reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="374">aaaaaa</p></div></section>
+      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="35">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-003"><div class="media__block"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="116">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-004"><div class="media__block"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="63">aaaaaa</span></div></section>
+      <section class="grid copy reveal" data-area="narrative-03"><div class="copy__body"><p data-slot="narrative-03-p1" data-count="315">aaaaaa</p><p data-slot="narrative-03-p2" data-count="423">aaaaaa</p></div></section>
+      <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-count="18">aaaaaa</span></div><div class="media__block"></div></section>
+      <section class="grid copy reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544">aaaaaa</p><a class="button-link" href="#statement" data-slot="narrative-04-link" data-count="22">aaaaaa</a></div></section>
+      <section class="grid media media--double reveal" data-area="media-007-008"><div class="media__block"><span class="media__label" data-count="18">aaaaaa</span></div><div class="media__block"><span class="media__caption" data-count="31">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-009"><div class="media__block media__block--short"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="52">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-010"><div class="media__block media__block--short"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="52">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-011"><div class="media__block media__block--short"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="52">aaaaaa</span></div></section>
+      <section class="grid copy reveal" data-area="narrative-05"><div class="copy__body"><p data-slot="narrative-05-p1" data-count="389">aaaaaa</p><p data-slot="narrative-05-p2" data-count="134">aaaaaa</p><p data-slot="narrative-05-p3" data-count="36">aaaaaa</p><a class="button-link" href="#statement" data-slot="narrative-05-link" data-count="6">aaaaaa</a></div></section>
+      <section class="grid media reveal" data-area="media-012"><div class="media__block media__block--tall"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="27">aaaaaa</span></div></section>
+      <section class="grid media media--double reveal" data-area="media-013-014"><div class="media__block"><span class="media__label" data-count="18">aaaaaa</span></div><div class="media__block"><span class="media__caption" data-count="27">aaaaaa</span></div></section>
+      <section class="grid media reveal" data-area="media-015"><div class="media__block media__block--short"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="34">aaaaaa</span></div></section>
+
+      <section class="grid copy statement reveal" id="statement">
+        <div class="copy__body"><h2 data-slot="statement-heading" data-count="16">aaaaaa</h2><p data-slot="statement-p1" data-count="43">aaaaaa</p><p data-slot="statement-p2" data-count="44">aaaaaa</p><p data-slot="statement-p3" data-count="219">aaaaaa</p><p data-slot="statement-p4" data-count="404">aaaaaa</p><p data-slot="statement-p5" data-count="556">aaaaaa</p><p data-slot="statement-p6" data-count="331">aaaaaa</p><p data-slot="statement-p7" data-count="501">aaaaaa</p><p data-slot="statement-credit" data-count="29">aaaaaa</p></div>
+      </section>
+      <section class="grid media reveal" data-area="media-016"><div class="media__block"><span class="media__label" data-count="14">aaaaaa</span><span class="media__caption" data-count="31">aaaaaa</span></div></section>
+      <section class="grid media media--double reveal" data-area="media-017-018"><div class="media__block"><span class="media__label" data-count="18">aaaaaa</span></div><div class="media__block"><span class="media__caption" data-count="32">aaaaaa</span></div></section>
+
+      <section class="grid copy credits reveal" id="credits" data-area="credits"><div class="copy__body"><p data-slot="credits-title" data-count="16">aaaaaa</p><p data-slot="credits-intro" data-count="86">aaaaaa</p><p data-slot="credits-commission" data-count="43">aaaaaa</p><p data-slot="credits-list-1" data-count="812">aaaaaa</p><p data-slot="credits-list-2" data-count="96">aaaaaa</p><p data-slot="credits-list-3" data-count="238">aaaaaa</p></div></section>
+    </main>
+
+    <nav class="project-nav" aria-label="aaaaaa">
+      <a href="#top" data-area="previous-project"><span data-slot="previous-label" data-count="17">aaaaaa</span><strong data-slot="previous-title" data-count="9">aaaaaa</strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
+      <a href="#top" data-area="next-project"><span data-slot="next-label" data-count="14">aaaaaa</span><strong data-slot="next-title" data-count="10">aaaaaa</strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
+    </nav>
+    <footer><span data-slot="footer-left" data-count="34">aaaaaa</span><span data-slot="footer-right" data-count="40">aaaaaa</span></footer>
+    <script src="./of-the-oak.js"></script>
+  </body>
+</html>

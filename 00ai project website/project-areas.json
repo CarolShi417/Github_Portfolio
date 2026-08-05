@@ -1,0 +1,176 @@
+﻿{
+  "page": {
+    "html": "of-the-oak.html",
+    "script": "of-the-oak.js",
+    "instruction": "Use data-slot names to replace text and colour blocks. Character counts are for placeholder generation.",
+    "instructionZh": "本文件是批量替换清单：通过区域 id 定位模块，通过 textSlots 替换文字，通过 imageSlots 替换图片。textCharCounts 是原页面对应文字的标准化字符数量。"
+  },
+  "nav": {
+    "highlight": "HIGHLIGHT",
+    "campaigns": "CAMPAIGNS",
+    "games": "GAMES",
+    "interactive": "INTERACTIVE",
+    "creations": "CREATIONS",
+    "about": "ABOUT"
+  },
+  "areas": [
+    {
+      "id": "site-header",
+      "nameZh": "顶部导航",
+      "noteZh": "与 figma-home/index.html 顶部 nav 保持一致：左侧 HIGHLIGHT，右侧 ABOUT，中间四个栏目。",
+      "type": "top-navigation",
+      "textSlots": ["highlight", "about"]
+    },
+    {
+      "id": "site-menu",
+      "nameZh": "顶部导航主菜单",
+      "noteZh": "与 figma-home/index.html 顶部 nav 保持一致。",
+      "type": "top-navigation-links",
+      "textSlots": ["campaigns", "games", "interactive", "creations"]
+    },
+    {
+      "id": "hero",
+      "nameZh": "首屏媒体",
+      "noteZh": "首屏全宽媒体区域；当前使用浅绿色纯色块。",
+      "type": "hero-media",
+      "imageSlots": ["hero-media"]
+    },
+    {
+      "id": "project-intro",
+      "nameZh": "项目标题与简介",
+      "noteZh": "左侧大标题及项目导语。",
+      "type": "title-and-introduction",
+      "textSlots": ["project-title", "project-introduction"]
+    },
+    {
+      "id": "project-facts",
+      "nameZh": "项目四项信息",
+      "noteZh": "右侧四列信息表：标签在线上方，内容在线下方。",
+      "type": "four-column-metadata",
+      "textSlots": ["fact-1-label", "fact-1-value", "fact-2-label", "fact-2-value", "fact-3-label", "fact-3-value", "fact-4-label", "fact-4-value"]
+    },
+    {
+      "id": "narrative-01",
+      "nameZh": "正文说明一",
+      "noteZh": "右侧文字栏，包含四段文字与一个链接。",
+      "type": "right-column-text",
+      "textSlots": ["narrative-01-p1", "narrative-01-p2", "narrative-01-p3", "narrative-01-p4", "narrative-01-link"]
+    },
+    {
+      "id": "media-001",
+      "nameZh": "媒体图一",
+      "noteZh": "右对齐的单张横向媒体及编号、说明。",
+      "type": "single-media",
+      "imageSlots": ["media-001-image"],
+      "textSlots": ["media-001-index", "media-001-caption"]
+    },
+    {
+      "id": "narrative-02",
+      "nameZh": "正文说明二",
+      "noteZh": "右侧单段说明文字。",
+      "type": "right-column-text",
+      "textSlots": ["narrative-02-p1"]
+    },
+    {
+      "id": "media-002",
+      "nameZh": "媒体图二",
+      "noteZh": "右对齐单张媒体。",
+      "type": "single-media",
+      "imageSlots": ["media-002-image"],
+      "textSlots": ["media-002-index", "media-002-caption"]
+    },
+    {
+      "id": "media-005-006",
+      "nameZh": "并排媒体图五至六",
+      "noteZh": "两张等宽的并排媒体。",
+      "type": "double-media",
+      "imageSlots": ["media-005-image", "media-006-image"],
+      "textSlots": ["media-005-006-index"]
+    },
+    {
+      "id": "narrative-04",
+      "nameZh": "正文说明四",
+      "noteZh": "右侧说明文字及链接。",
+      "type": "right-column-text",
+      "textSlots": ["narrative-04-p1", "narrative-04-link"]
+    },
+    {
+      "id": "project-navigation",
+      "nameZh": "前后项目导航",
+      "noteZh": "页面末尾的上一个项目和下一个项目卡片。",
+      "type": "previous-next-cards",
+      "imageSlots": ["previous-project-image", "next-project-image"],
+      "textSlots": ["previous-label", "previous-title", "next-label", "next-title"]
+    },
+    {
+      "id": "site-footer",
+      "nameZh": "页脚",
+      "noteZh": "最底部版权与辅助信息。",
+      "type": "footer",
+      "textSlots": ["footer-left", "footer-right"]
+    }
+  ],
+  "textCharCounts": {
+    "highlight": 9,
+    "campaigns": 9,
+    "games": 5,
+    "interactive": 11,
+    "creations": 9,
+    "about": 5,
+    "project-title": 10,
+    "project-introduction": 274,
+    "fact-1-label": 12,
+    "fact-1-value": 4,
+    "fact-2-label": 4,
+    "fact-2-value": 27,
+    "fact-3-label": 14,
+    "fact-3-value": 47,
+    "fact-4-label": 12,
+    "fact-4-value": 25,
+    "narrative-01-p1": 349,
+    "narrative-01-p2": 309,
+    "narrative-01-p3": 267,
+    "narrative-01-p4": 163,
+    "narrative-01-link": 37,
+    "narrative-02-p1": 374,
+    "narrative-04-p1": 544,
+    "narrative-04-link": 22,
+    "narrative-05-p1": 389,
+    "narrative-05-p2": 134,
+    "narrative-05-p3": 36,
+    "narrative-05-link": 6,
+    "statement-heading": 16,
+    "statement-p1": 43,
+    "statement-p2": 44,
+    "statement-p3": 219,
+    "statement-p4": 404,
+    "statement-p5": 556,
+    "statement-p6": 331,
+    "statement-p7": 501,
+    "statement-credit": 29,
+    "credits-title": 16,
+    "credits-intro": 86,
+    "credits-commission": 43,
+    "credits-list-1": 812,
+    "credits-list-2": 96,
+    "credits-list-3": 238,
+    "previous-label": 17,
+    "previous-title": 9,
+    "next-label": 14,
+    "next-title": 10
+  },
+  "mediaCaptionCharCounts": {
+    "media-001": [14, 31],
+    "media-002": [14, 35],
+    "media-005-006": [18],
+    "media-007-008": [18, 31],
+    "media-009": [14, 52],
+    "media-010": [14, 52],
+    "media-011": [14, 52],
+    "media-012": [14, 27],
+    "media-013-014": [18, 27],
+    "media-015": [14, 34],
+    "media-016": [14, 31],
+    "media-017-018": [18, 32]
+  }
+}
