@@ -24,9 +24,45 @@ Kicker:
 
 Content Strategy · AI-assisted Production · Performance Analysis
 
-A content brand dedicated to Apple Watch hacks, hidden features, app recommendations, and the latest Apple Watch updates. We help users get more out of their Apple Watch through practical tips, real-world use cases, and AI-powered content.
+I built and managed these social media accounts **from the ground up**.
 
-Our featured apps—including **Flowly**, **Hooroo Game**, and other fitness, health, and productivity experiences.
+I **handled every stage independently**, including account positioning, topic research, content planning, filming, copywriting, publishing and performance analysis.
+
+I **tailored each account’s content** to its **brand and audience**. I tested different topics and formats, then adjusted the strategy based on **performance data**.
+
+### Overview
+
+WATCHVERSE brings together a range of products within the Apple Watch ecosystem, including games, health tools, lifestyle apps, and motion-controlled experiences.
+
+The main audience is Apple Watch users in Europe and North America who are interested in fitness, health, and productivity. They are also open to trying new apps that can improve their daily lives. Rather than promoting only one product, the goal was to build WATCHVERSE into a trusted destination for Apple Watch apps, tips, and useful discoveries.
+
+### The Challenge
+
+- Promoting several products with different functions, including games, utilities, and motion-based apps, through one account
+- Building the account positioning, content style, and publishing workflow from scratch
+- Gaining user trust without strong existing brand awareness
+- Introducing products naturally while keeping the content from feeling like an advertisement
+- Creating clear download interest without making the promotion too direct
+- Finding content formats that could consistently reach Apple Watch users
+
+### My Approach
+
+- Shared practical Apple Watch hacks and real use cases to provide value before introducing the products
+- Used strong, audience-specific hooks to reach Apple Watch users within the first few seconds
+- Demonstrated apps on real devices to make the content feel more trustworthy and less like an advertisement
+- Followed highly relevant trends such as WWDC and quickly created timely content using first-hand information
+- Reviewed successful Shorts frame by frame and compared their hooks, pacing, structure, and storytelling
+- Grouped strong-performing patterns into repeatable content formats and tested them across different topics
+
+### Results
+
+Through targeted research and continuous testing on YouTube Shorts, I found that Apple Watch hacks, surprising feature explanations, and twist-based storytelling delivered the most stable results.
+
+After the strategy was refined, average views per video **increased from around 200 to approximately 1,200**, showing that clearer positioning, authentic demonstrations, and audience-focused topics improved organic performance.
+
+### Performance Visualized
+
+### Top-Performing Content
 
 ### Dashboard Interaction
 

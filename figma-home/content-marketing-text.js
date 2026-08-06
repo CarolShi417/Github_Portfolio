@@ -210,19 +210,6 @@ const audienceMarkup = (audience) => {
   `;
 };
 
-const postMarkup = (posts) =>
-  posts
-    .map((post) => {
-      const [label, href] = Array.isArray(post) ? post : ["", post.href];
-      const external = href !== "#";
-      const target = external ? ' target="_blank" rel="noreferrer"' : "";
-      if (!Array.isArray(post) && post.image) {
-        return `<a href="${href}"${target}><img src="${post.image}" alt="${post.alt || ""}" /></a>`;
-      }
-      return `<a href="${href}"${target}>${label}</a>`;
-    })
-    .join("");
-
 const setPlatform = (platform) => {
   const content = platformContent[platform];
   if (!content || !platformDashboard) {
@@ -242,8 +229,6 @@ const setPlatform = (platform) => {
     audienceSection.hidden = true;
     platformDashboard.querySelector("[data-platform-audience]").innerHTML = "";
   }
-  platformDashboard.querySelector("[data-platform-posts]").innerHTML = postMarkup(content.posts);
-
   platformDashboard.querySelectorAll("[data-platform]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.platform === platform);
   });
