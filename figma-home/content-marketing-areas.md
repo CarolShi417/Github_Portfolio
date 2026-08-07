@@ -1,4 +1,4 @@
-# Content Marketing Page Copy
+# Content Marketing Areas
 
 ## Intro
 
@@ -16,9 +16,11 @@ Interaction note:
 - Hooroo Game links to `#cozyfit`.
 - Watchverse links to `#watchverse`.
 
-## WATCHVERSE
+## WATCHVERSE Areas
 
-### Main Copy
+### Intro Above the Project Title
+
+This area appears before the WATCHVERSE title.
 
 Kicker:
 
@@ -30,7 +32,13 @@ I **handled every stage independently**, including account positioning, topic re
 
 I **tailored each account’s content** to its **brand and audience**. I tested different topics and formats, then adjusted the strategy based on **performance data**.
 
-### Overview
+### Project Title and Overview Module
+
+Project title:
+
+WATCHVERSE
+
+The WATCHVERSE title and the overview content belong to the same module. There is no separate Overview label.
 
 WATCHVERSE brings together a range of products within the Apple Watch ecosystem, including games, health tools, lifestyle apps, and motion-controlled experiences.
 
@@ -62,7 +70,11 @@ After the strategy was refined, average views per video **increased from around 
 
 ### Performance Visualized
 
+The interactive WATCHVERSE dashboard belongs inside this module, directly below the title. It contains the platform tabs, account summary, metrics, and audience demographics.
+
 ### Top-Performing Content
+
+This module currently keeps only its title and editorial-space layout. Add top-performing content here later.
 
 ### Dashboard Interaction
 
@@ -284,5 +296,5 @@ For font-size editing, better options are:
 
 Recommended workflow for this portfolio:
 
-- Keep `content-marketing-text.md` as the human-readable copy reference.
+- Keep `content-marketing-areas.md` as the human-readable area and copy reference.
 - Use `content-marketing.html`, `content-marketing.js`, and `styles.css` for final visual layout and behavior.

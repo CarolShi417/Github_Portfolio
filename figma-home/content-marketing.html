@@ -14,6 +14,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Marketing | Shiyi Qing</title>
     <link rel="stylesheet" href="styles.css?v=20260806-1" />
+    <style>
+      /* Editorial case-study treatment: scoped to this page only. */
+      .case-page .case-narrative {
+        display: block;
+        margin-top: 64px;
+        padding: 0;
+        color: var(--ink);
+        background: transparent;
+      }
+
+      /* WATCHVERSE typography: five size roles, three font roles. */
+      .case-page #watchverse {
+        --watch-font-display: "Helvetica Neue", Arial, sans-serif;
+        --watch-font-text: Arial, Helvetica, sans-serif;
+        --watch-font-data: "Courier New", Courier, monospace;
+        --watch-size-display: clamp(64px, 7.2vw, 112px);
+        --watch-size-section: clamp(32px, 3.2vw, 48px);
+        --watch-size-body: clamp(17px, 1.25vw, 20px);
+        --watch-size-small: 13px;
+        --watch-size-data: clamp(24px, 2vw, 32px);
+        --type-display: var(--watch-size-display);
+        --type-section: var(--watch-size-section);
+        --type-body: var(--watch-size-body);
+        --type-small: var(--watch-size-small);
+        --type-metric: var(--watch-size-data);
+        font-family: var(--watch-font-text);
+        font-weight: 400;
+      }
+
+      /* 首屏图片滚出视口后，固定索引保留背景内容的可见度。 */
+      .case-page .site-header.has-backdrop::before {
+        background: rgba(251, 251, 250, 0.5);
+      }
+
+      .case-page .case-narrative .case-panel {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .case-page .overview-panel {
+        min-height: 520px;
+        padding: clamp(78px, 10vw, 160px) clamp(34px, 5vw, 80px) clamp(72px, 9vw, 142px) !important;
+        border-top: 1px solid rgba(5, 5, 5, 0.2) !important;
+      }
+
+      .case-page .overview-project-title {
+        margin: 0 0 clamp(68px, 8vw, 128px);
+        color: var(--ink);
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-display);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+        line-height: 0.9;
+      }
+
+      .case-page .case-narrative .section-label {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-section);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        line-height: 1;
+        text-transform: none;
+      }
+
+      .case-page .overview-panel > p:not(.section-label) {
+        max-width: 650px;
+        margin: clamp(70px, 9vw, 140px) 0 0;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.55;
+      }
+
+      .case-page .overview-panel > p:not(.section-label) + p {
+        margin-top: 28px;
+      }
+
+      .case-page .case-split--editorial {
+        display: block;
+        padding: 0 clamp(34px, 5vw, 80px);
+        border-top: 1px solid rgba(5, 5, 5, 0.2);
+      }
+
+      .case-page .case-split--editorial .case-panel {
+        min-height: 510px;
+        padding: clamp(72px, 9vw, 142px) 0;
+      }
+
+      .case-page .case-split--editorial .case-panel + .case-panel {
+        border-top: 1px solid rgba(5, 5, 5, 0.2);
+      }
+
+      .case-page .case-split--editorial .case-panel ul {
+        display: grid;
+        max-width: 760px;
+        gap: 26px;
+        margin: clamp(70px, 8vw, 126px) 0 0;
+        padding-left: 1.05em;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.42;
+      }
+
+      .case-page .case-split--editorial-copy .case-panel > p:not(.section-label) {
+        max-width: 760px;
+        margin: clamp(70px, 8vw, 126px) 0 0;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.42;
+      }
+
+      .case-page .case-split--editorial-copy .case-panel > p:not(.section-label) + p {
+        margin-top: 26px;
+      }
+
+      .case-page .case-split--editorial .case-panel li::marker {
+        color: var(--ink);
+      }
+
+      .case-page #watchverse .case-copy .case-kicker {
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-section);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+      }
+
+      .case-page #watchverse .case-copy p {
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel,
+      .case-page #watchverse .dashboard-panel button,
+      .case-page #watchverse .dashboard-panel small,
+      .case-page #watchverse .dashboard-panel p {
+        font-family: var(--watch-font-text);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .case-split--editorial .dashboard-panel {
+        margin-top: clamp(54px, 7vw, 108px);
+      }
+
+      .case-page #watchverse .dashboard-panel h2 {
+        font-family: var(--watch-font-display);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel strong {
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel .country-flag {
+        font-size: var(--watch-size-small);
+      }
+
+      .case-page #watchverse .metric-card strong,
+      .case-page #watchverse .dashboard-heading strong {
+        font-family: var(--watch-font-data);
+        font-weight: 400;
+      }
+
+      @media (max-width: 700px) {
+        .case-page .case-narrative { margin-top: 42px; }
+        .case-page .overview-panel { min-height: 0; padding-top: 76px !important; padding-bottom: 90px !important; }
+        .case-page .overview-project-title { margin-bottom: 64px; }
+        .case-page .case-split--editorial .case-panel { min-height: 0; padding: 76px 0 90px; }
+        .case-page .overview-panel > p:not(.section-label),
+        .case-page .case-split--editorial-copy .case-panel > p:not(.section-label),
+        .case-page .case-split--editorial .case-panel ul { margin-top: 54px; }
+        .case-page .case-split--editorial .case-panel ul { gap: 22px; }
+      }
+    </style>
   </head>
   <body class="case-page">
     <header class="site-header" aria-label="Primary navigation">
@@ -45,7 +225,6 @@
       <article class="case-study">
         <section class="case-block" id="watchverse">
           <div class="case-copy">
-            <h1>WATCHVERSE</h1>
             <p class="case-kicker">Content Strategy | AI-assisted Production | Performance Analysis</p>
             <p>
               I built and managed these social media accounts from the ground up.
@@ -64,7 +243,7 @@
 
           <div class="case-narrative">
             <section class="case-panel overview-panel" aria-label="Watchverse overview">
-              <p class="section-label">Overview</p>
+              <h1 class="overview-project-title">WATCHVERSE</h1>
               <p>
                 WATCHVERSE brings together a range of products within the Apple
                 Watch ecosystem, including games, health tools, lifestyle apps,
@@ -79,7 +258,7 @@
               </p>
             </section>
 
-            <div class="case-split">
+            <div class="case-split case-split--editorial">
               <section class="case-panel" aria-label="The challenge">
                 <p class="section-label">The Challenge</p>
                 <ul>
@@ -105,8 +284,8 @@
               </section>
             </div>
 
-            <section class="case-panel results-panel" aria-label="Watchverse results">
-              <div>
+            <div class="case-split case-split--editorial case-split--editorial-copy">
+              <section class="case-panel" aria-label="Watchverse results">
                 <p class="section-label">Results</p>
                 <p>
                   Through targeted research and continuous testing on YouTube
@@ -116,90 +295,58 @@
                 </p>
                 <p>
                   After the strategy was refined, average views per video
-                  increased from around 200 to approximately 1,200.
+                  <strong>increased from around 200 to approximately 1,200</strong>,
+                  showing that clearer positioning, authentic demonstrations,
+                  and audience-focused topics improved organic performance.
                 </p>
-              </div>
-              <div class="result-highlight">
-                <span>Average Views</span>
-                <strong>200 -> 1,200</strong>
-                <em>after strategy refinement</em>
-              </div>
-            </section>
+              </section>
 
-            <div class="case-split case-module-row">
               <section class="case-panel" aria-label="Performance visualized">
                 <p class="section-label">Performance Visualized</p>
-                <div class="performance-bars" aria-label="Average views comparison">
-                  <div>
-                    <span>Before</span>
-                    <strong>200</strong>
-                    <em style="--bar-width: 16%"></em>
+                <div class="dashboard-panel platform-dashboard" id="watchverse-dashboard" aria-label="Watchverse platform dashboard">
+                  <div class="dashboard-tabs" aria-label="Platform selector">
+                    <button class="is-active" type="button" data-platform="youtube">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.4V8.6l6 3.4-6 3.4Z" /></svg>
+                      Youtube
+                    </button>
+                    <button type="button" data-platform="tiktok">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.4 3 2.1 4.8 5.1 5v4.1a8.7 8.7 0 0 1-5.1-1.7v5.8c0 3.8-2.5 6.3-6.1 6.3-3.2 0-5.8-2.2-5.8-5.4 0-3.6 3.1-5.9 6.9-5.2v4.2c-1.5-.5-2.8.2-2.8 1.4 0 1 .8 1.6 1.8 1.6 1.2 0 1.9-.7 1.9-2.2V3h4.1Z" /></svg>
+                      Tiktok
+                    </button>
+                    <button type="button" data-platform="instagram">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 3A2.8 2.8 0 0 0 5 7.8v8.4A2.8 2.8 0 0 0 7.8 19h8.4a2.8 2.8 0 0 0 2.8-2.8V7.8A2.8 2.8 0 0 0 16.2 5H7.8Zm4.2 3.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm4.2-3.4a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" /></svg>
+                      Instagram
+                    </button>
                   </div>
-                  <div>
-                    <span>After</span>
-                    <strong>1,200</strong>
-                    <em style="--bar-width: 100%"></em>
+                  <div class="dashboard-heading">
+                    <a class="dashboard-profile" href="https://www.youtube.com/@WATCHVERSE-u2t/shorts" target="_blank" rel="noreferrer" data-platform-profile>
+                      <strong data-platform-title>Youtube</strong>
+                      <small data-platform-handle>@WATCHVERSE</small>
+                    </a>
+                    <small data-platform-sync>Synced with Youtube on Jul 7</small>
                   </div>
+                  <div class="metric-grid" data-platform-metrics>
+                    <div class="metric-card"><small>Posting Period</small><strong>1 month</strong></div>
+                    <div class="metric-card"><small>Total Shorts</small><strong>28</strong></div>
+                    <div class="metric-card"><small>Total Views</small><strong>8.4k</strong></div>
+                    <div class="metric-card"><small>Avg Views</small><strong>350</strong></div>
+                    <div class="metric-card"><small>Average View Retention</small><strong>64.7%</strong></div>
+                    <div class="metric-card"><small>Best Performing Short</small><strong>1.3k Views</strong></div>
+                  </div>
+                  <section class="audience-section" aria-label="Audience demographics">
+                    <h2>Audience Demographics</h2>
+                    <p class="audience-lede">An overview of the people who engage with this content.</p>
+                    <div class="demographic-grid" data-platform-audience></div>
+                  </section>
                 </div>
               </section>
 
               <section class="case-panel" aria-label="Top-performing content">
                 <p class="section-label">Top-Performing Content</p>
-                <div class="content-patterns">
-                  <span>Apple Watch hacks</span>
-                  <span>Hidden feature explanations</span>
-                  <span>Twist-based storytelling</span>
-                </div>
               </section>
             </div>
           </div>
 
-          <div class="dashboard-panel platform-dashboard" id="watchverse-dashboard" aria-label="Watchverse platform dashboard">
-            <div class="dashboard-tabs" aria-label="Platform selector">
-              <button class="is-active" type="button" data-platform="youtube">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.4V8.6l6 3.4-6 3.4Z" />
-                </svg>
-                Youtube
-              </button>
-              <button type="button" data-platform="tiktok">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M15.5 3c.4 3 2.1 4.8 5.1 5v4.1a8.7 8.7 0 0 1-5.1-1.7v5.8c0 3.8-2.5 6.3-6.1 6.3-3.2 0-5.8-2.2-5.8-5.4 0-3.6 3.1-5.9 6.9-5.2v4.2c-1.5-.5-2.8.2-2.8 1.4 0 1 .8 1.6 1.8 1.6 1.2 0 1.9-.7 1.9-2.2V3h4.1Z" />
-                </svg>
-                Tiktok
-              </button>
-              <button type="button" data-platform="instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 3A2.8 2.8 0 0 0 5 7.8v8.4A2.8 2.8 0 0 0 7.8 19h8.4a2.8 2.8 0 0 0 2.8-2.8V7.8A2.8 2.8 0 0 0 16.2 5H7.8Zm4.2 3.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm4.2-3.4a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" />
-                </svg>
-                Instagram
-              </button>
-            </div>
-
-            <div class="dashboard-heading">
-              <a class="dashboard-profile" href="https://www.youtube.com/@WATCHVERSE-u2t/shorts" target="_blank" rel="noreferrer" data-platform-profile>
-                <strong data-platform-title>Youtube</strong>
-                <small data-platform-handle>@WATCHVERSE</small>
-              </a>
-              <small data-platform-sync>Synced with Youtube on Jul 7</small>
-            </div>
-
-            <div class="metric-grid" data-platform-metrics>
-              <div class="metric-card"><small>Posting Period</small><strong>1 month</strong></div>
-              <div class="metric-card"><small>Total Shorts</small><strong>28</strong></div>
-              <div class="metric-card"><small>Total Views</small><strong>8.4k</strong></div>
-              <div class="metric-card"><small>Avg Views</small><strong>350</strong></div>
-              <div class="metric-card"><small>Average View Retention</small><strong>64.7%</strong></div>
-              <div class="metric-card"><small>Best Performing Short</small><strong>1.3k Views</strong></div>
-            </div>
-
-            <section class="audience-section" aria-label="Audience demographics">
-              <h2>Audience Demographics</h2>
-              <p class="audience-lede">An overview of the people who engage with this content.</p>
-              <div class="demographic-grid" data-platform-audience></div>
-            </section>
-
-          </div>
         </section>
 
         <section class="case-block compact-case" id="cozyfit">

@@ -5,6 +5,49 @@
     "instruction": "Use data-slot names to replace text and colour blocks. Character counts are for placeholder generation.",
     "instructionZh": "本文件是批量替换清单：通过区域 id 定位模块，通过 textSlots 替换文字，通过 imageSlots 替换图片。textCharCounts 是原页面对应文字的标准化字符数量。"
   },
+  "contentMarketing": {
+    "page": "../figma-home/content-marketing.html",
+    "areaReference": "../figma-home/content-marketing-areas.md",
+    "instructionZh": "Content Marketing 页面区域清单。先替换 watchverse-intro 的简介文字；WATCHVERSE 标题与概览正文都位于 watchverse-overview 模块；Dashboard 位于 watchverse-performance-visualized 模块内。",
+    "areas": [
+      {
+        "id": "watchverse-intro",
+        "nameZh": "WATCHVERSE 标题上方简介",
+        "type": "intro-copy",
+        "textSlots": ["watchverse-kicker", "watchverse-intro-p1", "watchverse-intro-p2", "watchverse-intro-p3"]
+      },
+      {
+        "id": "watchverse-overview",
+        "nameZh": "WATCHVERSE 标题与概览正文",
+        "type": "project-title-and-overview",
+        "textSlots": ["watchverse-title", "overview-p1", "overview-p2"]
+      },
+      {
+        "id": "watchverse-challenge",
+        "nameZh": "The Challenge",
+        "type": "editorial-list",
+        "textSlots": ["challenge-label", "challenge-items"]
+      },
+      {
+        "id": "watchverse-approach",
+        "nameZh": "My Approach",
+        "type": "editorial-list",
+        "textSlots": ["approach-label", "approach-items"]
+      },
+      {
+        "id": "watchverse-results",
+        "nameZh": "Results",
+        "type": "results-copy",
+        "textSlots": ["results-label", "results-p1", "results-p2"]
+      },
+      {
+        "id": "watchverse-performance-visualized",
+        "nameZh": "Performance Visualized 与 Dashboard",
+        "type": "interactive-data-module",
+        "textSlots": ["performance-visualized-label", "dashboard-platform-data"]
+      }
+    ]
+  },
   "nav": {
     "highlight": "HIGHLIGHT",
     "campaigns": "CAMPAIGNS",
