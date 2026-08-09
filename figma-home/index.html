@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <script>
+      /* 兼容旧链接：保持 /figma-home/ 地址不变。 */
+      (async () => {
+        const target = new URL("../01%20home/highlight-home.html", window.location.href);
+        target.search = window.location.search;
+
+        try {
+          const response = await fetch(target.href, { cache: "no-store" });
+          if (!response.ok) throw new Error(`Unable to load portfolio home: ${response.status}`);
+
+          const page = await response.text();
+          const pageWithBase = page.replace(
+            /<head(\s[^>]*)?>/i,
+            "$&<base href=\"../01%20home/\" />"
+          );
+
+          document.open();
+          document.write(pageWithBase);
+          document.close();
+        } catch (error) {
+          document.body.innerHTML = "<p style=\"padding:24px\">Portfolio home could not be loaded. Please refresh the page.</p>";
+          console.error(error);
+        }
+      })();
+    </script>
+  </body>
+</html>
