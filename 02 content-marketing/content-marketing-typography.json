@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "styleReference": "content-marketing.html and styles.css",
+    "note": "Search the content or contentExamples fields to find the typography for visible page copy. Keep the related CSS in sync when changing a value here."
+  },
+  "breakpoints": {
+    "mobile": "max-width: 767px"
+  },
+  "typeTokens": {
+    "watchFontDisplay": "Helvetica Neue, Arial, sans-serif",
+    "watchFontText": "Arial, Helvetica, sans-serif",
+    "watchFontData": "Courier New, Courier, monospace",
+    "watchSizeDisplay": "clamp(64px, 7.2vw, 112px)",
+    "watchSizeSection": "clamp(32px, 3.2vw, 48px)",
+    "watchSizeBody": "clamp(17px, 1.25vw, 20px)",
+    "watchSizeSmall": "13px",
+    "watchSizeData": "clamp(24px, 2vw, 32px)"
+  },
+  "dashboardAudienceTypography": {
+    "scope": "#watchverse-dashboard",
+    "note": "The dashboard and Audience Demographics area uses only these two font families and four size roles.",
+    "fontFamilies": {
+      "interface": "Arial, Helvetica, sans-serif",
+      "data": "Courier New, Courier, monospace"
+    },
+    "fontSizes": {
+      "xl": "clamp(38px, 3.2vw, 48px)",
+      "lg": "clamp(24px, 2.2vw, 30px)",
+      "md": "clamp(24px, 2vw, 32px)",
+      "sm": "14px"
+    }
+  },
+  "areas": {
+    "siteHeader": {
+      "selector": ".nav-link",
+      "contentExamples": ["HIGHLIGHT", "CAMPAIGNS", "GAMES", "INTERACTIVE", "CREATIONS", "ABOUT"],
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "var(--type-nav)",
+      "fontWeight": 800,
+      "lineHeight": "1"
+    },
+    "projectIntro": {
+      "title": {
+        "selector": ".project-top-title",
+        "content": "Content \u00b7 AI \u00b7 Growth",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(81px, 4.68vw, 95.4px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.055em",
+        "lineHeight": "1",
+        "mobile": { "fontSize": "36px", "lineHeight": "36px", "letterSpacing": "-0.045em" }
+      },
+      "description": {
+        "selector": ".project-top-lead p",
+        "contentExample": "I built and managed these social media accounts from the ground up.",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(17px, 1.25vw, 20px)",
+        "fontWeight": 400,
+        "letterSpacing": "normal",
+        "lineHeight": "1.55"
+      }
+    },
+    "watchverseOverview": {
+      "title": {
+        "selector": ".overview-project-title",
+        "content": "WATCHVERSE",
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(64px, 7.2vw, 112px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.055em",
+        "lineHeight": "0.9"
+      },
+      "body": {
+        "selector": ".overview-copy p",
+        "contentExample": "WATCHVERSE brings together a range of products within the Apple Watch ecosystem, including games, health tools, lifestyle apps, and motion-controlled experiences.",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(17px, 1.25vw, 20px)",
+        "fontWeight": 400,
+        "lineHeight": "1.55",
+        "paragraphGap": "28px"
+      }
+    },
+    "watchverseTrendCards": {
+      "title": {
+        "selector": ".performance-trend-card__title",
+        "contentExamples": ["YOUTUBE VIEWS", "YOUTUBE LIKES"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": 800,
+        "letterSpacing": "0.04em",
+        "lineHeight": "1"
+      },
+      "axis": {
+        "selector": ".performance-trend-chart text",
+        "contentExamples": ["0", "10k", "30k", "50", "200"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": 400
+      }
+    },
+    "cozyFitCase": {
+      "title": {
+        "selector": "#cozyfit .overview-project-title",
+        "content": "CozyFit",
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(64px, 7.2vw, 112px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.055em",
+        "lineHeight": "0.9"
+      },
+      "sectionLabels": {
+        "selector": "#cozyfit .section-label",
+        "contentExamples": ["The Challenge", "My Approach", "Results", "Performance Visualized", "Top-Performing Content"],
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(32px, 3.2vw, 48px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.035em",
+        "lineHeight": "1"
+      },
+      "viewsChartTitle": {
+        "selector": ".cozyfit-views-card__title",
+        "contentExamples": ["YOUTUBE VIEWS", "INSTAGRAM VIEWS"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "13px",
+        "fontWeight": 800,
+        "letterSpacing": "0.04em",
+        "lineHeight": "1"
+      },
+      "viewsChartAxis": {
+        "selector": ".cozyfit-views-chart text",
+        "contentExamples": ["0", "5k", "7/12", "8/2"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "10px",
+        "fontWeight": 400
+      }
+    },
+    "sectionText": {
+      "sectionLabel": {
+        "selector": ".case-narrative .section-label, .case-copy .case-kicker",
+        "contentExamples": ["The Challenge", "My Approach", "Results", "Performance Visualized", "Top-Performing Content", "Challenges & Learnings"],
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(32px, 3.2vw, 48px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.035em",
+        "lineHeight": "1"
+      },
+      "body": {
+        "selector": ".case-panel p, .case-panel ul, .case-copy p",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(17px, 1.25vw, 20px)",
+        "fontWeight": 400,
+        "lineHeight": "1.42 to 1.55"
+      }
+    },
+    "approachCards": {
+      "title": {
+        "selector": ".approach-metric__title",
+        "watchverseContentExamples": ["Audience-Specific Hooks", "Useful Before Promotional", "Test, Learn and Adapt"],
+        "cozyFitContentExamples": ["Audience-Led Product Insight", "Real-Life Gameplay", "Content-to-Product Feedback"],
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(20px, 1.7vw, 28px)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.04em",
+        "lineHeight": "1.05"
+      }
+    },
+    "overviewMetricCards": {
+      "period": {
+        "selector": ".overview-metric__period",
+        "contentExample": "Jun-Jul 2026",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "11px",
+        "fontWeight": 400,
+        "lineHeight": "1.2"
+      },
+      "value": {
+        "selector": ".overview-metric__value",
+        "contentExamples": ["+300%", "+200%", "+60%"],
+        "fontFamily": "Helvetica Neue, Arial, sans-serif",
+        "fontSize": "clamp(42px, 4vw, 68px)",
+        "fontWeight": 400,
+        "lineHeight": "0.9"
+      },
+      "label": {
+        "selector": ".overview-metric__label",
+        "contentExample": "Increase in YouTube Shorts average views",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "14px",
+        "fontWeight": 400,
+        "lineHeight": "1.25"
+      }
+    },
+    "dashboard": {
+      "tab": {
+        "selector": ".dashboard-tabs span, .dashboard-tabs a, .dashboard-tabs button",
+        "contentExamples": ["Youtube", "Tiktok", "Instagram"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "14px (sm)",
+        "fontWeight": 400,
+        "lineHeight": "normal"
+      },
+      "platformTitle": {
+        "selector": ".dashboard-heading strong",
+        "content": "Youtube",
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "clamp(38px, 3.2vw, 48px) (xl)",
+        "fontWeight": 400,
+        "lineHeight": "1"
+      },
+      "handle": {
+        "selector": ".dashboard-heading small",
+        "contentExample": "@WATCHVERSE",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "14px (sm)",
+        "fontWeight": 400
+      }
+    },
+    "audienceAndPosts": {
+      "audienceDemographicsTitle": {
+        "selector": ".audience-section h2",
+        "content": "Audience Demographics",
+        "note": "This is the Audience Demographics heading.",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(24px, 2.2vw, 30px) (lg)",
+        "fontWeight": 400,
+        "lineHeight": "1"
+      },
+      "recentPostsTitle": {
+        "selector": ".recent-posts h2",
+        "content": "Recent Posts",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "clamp(32px, 3.2vw, 48px)",
+        "fontWeight": 400
+      },
+      "bodyAndValues": {
+        "selector": ".audience-row, .audience-row strong",
+        "contentExamples": ["13-17", "25-34", "United States", "34%"],
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "14px (sm)",
+        "fontWeight": 400,
+        "lineHeight": "1.1"
+      },
+      "smallLabel": {
+        "selector": ".demo-card small, .country-flag",
+        "fontFamily": "Arial, Helvetica, sans-serif",
+        "fontSize": "13px / 10px",
+        "fontWeight": 400
+      },
+      "genderValues": {
+        "selector": ".gender-legend strong",
+        "contentExamples": ["63.4%", "36.6%"],
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "clamp(24px, 2vw, 32px) (md)",
+        "fontWeight": 400,
+        "lineHeight": "1"
+      }
+    },
+    "footer": {
+      "selector": ".email-link, .social-link",
+      "contentExamples": ["Email", "LinkedIn", "GitHub"],
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": 400,
+      "lineHeight": "1",
+      "mobile": { "fontSize": "13px" }
+    }
+  }
+}

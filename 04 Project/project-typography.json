@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "areasFile": "project-areas.json",
+    "styleReference": "project.html",
+    "noteZh": "按 project-areas.json 的 area id 管理字体规范。所有尺寸以 CSS 值保存，desktop 为默认值，mobile 在 max-width: 767px 时覆盖。"
+  },
+  "global": {
+    "fontFamily": "Arial, Helvetica, sans-serif",
+    "fontWeight": 400,
+    "defaultLineHeight": "normal",
+    "defaultParagraphGap": "0"
+  },
+  "breakpoints": {
+    "mobile": "max-width: 767px"
+  },
+  "areas": {
+    "site-header": {
+      "nameZh": "顶部导航",
+      "textStyle": {
+        "fontFamily": "inherit",
+        "fontSize": "12px",
+        "fontWeight": 800,
+        "lineHeight": "1",
+        "paragraphGap": "0",
+        "letterSpacing": "normal"
+      },
+      "mobile": { "fontSize": "12px", "lineHeight": "1", "paragraphGap": "0" }
+    },
+    "site-menu": {
+      "nameZh": "顶部导航主菜单",
+      "textStyle": {
+        "fontFamily": "inherit",
+        "fontSize": "12px",
+        "fontWeight": 800,
+        "lineHeight": "1",
+        "paragraphGap": "0",
+        "itemGap": "18px"
+      },
+      "mobile": { "fontSize": "12px", "lineHeight": "1", "itemGap": "13px" }
+    },
+    "hero": {
+      "nameZh": "首屏媒体",
+      "textStyle": null,
+      "noteZh": "此区域没有常驻文字内容；播放按钮如存在，使用 22px / line-height 1。",
+      "mobile": null
+    },
+    "project-intro": {
+      "nameZh": "项目标题与简介",
+      "slots": {
+        "project-title": {
+          "fontFamily": "inherit",
+          "fontSize": "clamp(90px, 5.2vw, 106px)",
+          "fontWeight": 400,
+          "lineHeight": "1",
+          "paragraphGap": "51px",
+          "letterSpacing": "-0.055em"
+        },
+        "project-introduction": {
+          "fontFamily": "inherit",
+          "fontSize": "30px",
+          "fontWeight": 400,
+          "lineHeight": "34px",
+          "paragraphGap": "121px",
+          "letterSpacing": "-0.035em"
+        }
+      },
+      "mobile": {
+        "project-title": { "fontSize": "40px", "lineHeight": "40px", "paragraphGap": "21px", "letterSpacing": "-0.045em" },
+        "project-introduction": { "fontSize": "15px", "lineHeight": "18px", "paragraphGap": "35px", "letterSpacing": "-0.02em" }
+      }
+    },
+    "project-facts": {
+      "nameZh": "项目四项信息",
+      "textStyle": {
+        "fontFamily": "inherit",
+        "fontSize": "14px",
+        "fontWeight": 400,
+        "lineHeight": "20px",
+        "paragraphGap": "0",
+        "labelToValueGap": "10px",
+        "labelLineHeight": "26px"
+      },
+      "mobile": { "fontSize": "10px", "lineHeight": "13px", "labelToValueGap": "7px", "labelLineHeight": "19px" }
+    },
+    "narrative-01": {
+      "nameZh": "正文说明一",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "17px", "fontWeight": 400, "lineHeight": "22px", "paragraphGap": "22px" },
+      "linkStyle": { "fontSize": "12px", "lineHeight": "inherit", "paragraphGap": "8px", "letterSpacing": "0.025em" },
+      "mobile": { "fontSize": "12px", "lineHeight": "15px", "paragraphGap": "15px" }
+    },
+    "media-001": {
+      "nameZh": "媒体图一",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "11px", "fontWeight": 400, "lineHeight": "1.25", "paragraphGap": "0", "letterSpacing": "0.04em" },
+      "mobile": { "fontSize": "11px", "lineHeight": "1.25", "paragraphGap": "0" }
+    },
+    "narrative-02": {
+      "nameZh": "正文说明二",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "17px", "fontWeight": 400, "lineHeight": "22px", "paragraphGap": "22px" },
+      "mobile": { "fontSize": "12px", "lineHeight": "15px", "paragraphGap": "15px" }
+    },
+    "media-002": {
+      "nameZh": "媒体图二",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "11px", "fontWeight": 400, "lineHeight": "1.25", "paragraphGap": "0", "letterSpacing": "0.04em" },
+      "mobile": { "fontSize": "11px", "lineHeight": "1.25", "paragraphGap": "0" }
+    },
+    "media-005-006": {
+      "nameZh": "并排媒体图五至六",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "11px", "fontWeight": 400, "lineHeight": "1.25", "paragraphGap": "0", "letterSpacing": "0.04em" },
+      "mobile": { "fontSize": "11px", "lineHeight": "1.25", "paragraphGap": "0" }
+    },
+    "narrative-04": {
+      "nameZh": "正文说明四",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "17px", "fontWeight": 400, "lineHeight": "22px", "paragraphGap": "22px" },
+      "linkStyle": { "fontSize": "12px", "lineHeight": "inherit", "paragraphGap": "8px", "letterSpacing": "0.025em" },
+      "mobile": { "fontSize": "12px", "lineHeight": "15px", "paragraphGap": "15px" }
+    },
+    "project-navigation": {
+      "nameZh": "前后项目导航",
+      "labelStyle": { "fontFamily": "inherit", "fontSize": "12px", "fontWeight": 400, "lineHeight": "normal", "paragraphGap": "25px" },
+      "titleStyle": { "fontFamily": "inherit", "fontSize": "16px", "fontWeight": 400, "lineHeight": "normal", "paragraphGap": "0" },
+      "mobile": { "labelStyle": { "fontSize": "10px", "paragraphGap": "17px" }, "titleStyle": { "fontSize": "12px" } }
+    },
+    "site-footer": {
+      "nameZh": "页脚",
+      "textStyle": { "fontFamily": "inherit", "fontSize": "12px", "fontWeight": 400, "lineHeight": "20px", "paragraphGap": "0" },
+      "mobile": { "fontSize": "10px", "lineHeight": "20px", "paragraphGap": "0" }
+    }
+  }
+}

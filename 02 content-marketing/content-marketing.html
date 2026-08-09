@@ -1,0 +1,1135 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4JXWKFK2M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N4JXWKFK2M');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Marketing | Shiyi Qing</title>
+    <link rel="stylesheet" href="styles.css?v=20260809-1" />
+    <style>
+      /* Editorial case-study treatment: scoped to this page only. */
+      .case-page .case-narrative {
+        display: block;
+        margin-top: 64px;
+        padding: 0;
+        color: var(--ink);
+        background: transparent;
+      }
+
+      /* WATCHVERSE typography: five size roles, three font roles. */
+      .case-page #watchverse,
+      .case-page #cozyfit,
+      .case-page #lunarybio {
+        --watch-font-display: "Helvetica Neue", Arial, sans-serif;
+        --watch-font-text: Arial, Helvetica, sans-serif;
+        --watch-font-data: "Courier New", Courier, monospace;
+        --watch-size-display: clamp(64px, 7.2vw, 112px);
+        --watch-size-section: clamp(32px, 3.2vw, 48px);
+        --watch-size-body: clamp(17px, 1.25vw, 20px);
+        --watch-size-small: 13px;
+        --watch-size-data: clamp(24px, 2vw, 32px);
+        --type-display: var(--watch-size-display);
+        --type-section: var(--watch-size-section);
+        --type-body: var(--watch-size-body);
+        --type-small: var(--watch-size-small);
+        --type-metric: var(--watch-size-data);
+        font-family: var(--watch-font-text);
+        font-weight: 400;
+      }
+
+      /* 首屏图片滚出视口后，固定索引保留背景内容的可见度。 */
+      .case-page .site-header.has-backdrop::before {
+        background: rgba(251, 251, 250, 0.5);
+      }
+
+      .case-page .case-narrative .case-panel {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .case-page .overview-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.72fr);
+        column-gap: clamp(52px, 7vw, 128px);
+        align-items: start;
+        min-height: 0;
+        padding: clamp(78px, 10vw, 160px) clamp(34px, 5vw, 80px) clamp(72px, 9vw, 142px) !important;
+        border-top: 1px solid rgba(5, 5, 5, 0.2) !important;
+      }
+
+      .case-page .overview-project-title {
+        margin: 0 0 clamp(68px, 8vw, 128px);
+        color: var(--ink);
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-display);
+        font-weight: 400;
+        letter-spacing: -0.055em;
+        line-height: 0.9;
+      }
+
+      .case-page .case-narrative .section-label {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-section);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        line-height: 1;
+        text-transform: none;
+      }
+
+      .case-page .overview-copy {
+        min-width: 0;
+      }
+
+      .case-page .overview-copy p {
+        max-width: 650px;
+        margin: 0;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.55;
+      }
+
+      .case-page .overview-copy p + p {
+        margin-top: 28px;
+      }
+
+      .case-page .overview-metrics {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        display: grid;
+        gap: 18px;
+      }
+
+      .case-page .overview-metric {
+        display: flex;
+        min-height: 142px;
+        flex-direction: column;
+        padding: 18px 22px 20px;
+        border: 0;
+        border-radius: 22px;
+        background: #d7ede0;
+        box-shadow: none;
+        color: #143a12;
+      }
+
+      .case-page .overview-metric__period {
+        margin: 0;
+        color: rgba(20, 58, 18, 0.68);
+        font-family: var(--watch-font-text);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.2;
+        text-align: right;
+      }
+
+      .case-page .overview-metric__value {
+        margin: auto 0 6px;
+        color: #143a12;
+        font-family: var(--watch-font-display);
+        font-size: clamp(42px, 4vw, 68px);
+        font-weight: 400;
+        letter-spacing: -0.065em;
+        line-height: 0.9;
+      }
+
+      .case-page .overview-project-title.project-title--with-links {
+        margin-bottom: 20px;
+      }
+
+      /* Overview 左侧：标题、账号入口与说明文字必须在同一连续流中。 */
+      .case-page .overview-main {
+        grid-column: 1;
+        min-width: 0;
+      }
+
+      .case-page .overview-main .overview-project-title {
+        margin-bottom: 20px;
+      }
+
+      .case-page .project-social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 0 0 24px;
+      }
+
+      .case-page .project-social-link {
+        display: inline-flex;
+        min-height: 54px;
+        align-items: center;
+        gap: 11px;
+        padding: 0 24px;
+        border: 1px solid rgba(5, 5, 5, 0.1);
+        border-radius: 999px;
+        background: rgba(251, 251, 250, 0.8);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        text-decoration: none;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .case-page .project-social-link svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      .case-page .project-social-link:hover,
+      .case-page .project-social-link:focus-visible {
+        background: #d7ede0;
+        box-shadow: 0 10px 24px rgba(25, 35, 43, 0.12);
+        transform: translateY(-2px);
+        outline: none;
+      }
+
+      .case-page .overview-metric__label {
+        max-width: 28ch;
+        margin: 0;
+        color: #143a12;
+        font-family: var(--watch-font-text);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.25;
+      }
+
+      .case-page .case-split--editorial {
+        display: block;
+        padding: 0 clamp(34px, 5vw, 80px);
+        border-top: 1px solid rgba(5, 5, 5, 0.2);
+      }
+
+      .case-page .case-split--editorial .case-panel {
+        min-height: 510px;
+        padding: clamp(72px, 9vw, 142px) 0;
+      }
+
+      .case-page .case-split--editorial .case-panel + .case-panel {
+        border-top: 1px solid rgba(5, 5, 5, 0.2);
+      }
+
+      .case-page .case-split--editorial .case-panel ul {
+        display: grid;
+        max-width: 760px;
+        gap: 26px;
+        margin: clamp(70px, 8vw, 126px) 0 0;
+        padding-left: 1.05em;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.42;
+      }
+
+      .case-page .case-split--editorial-copy .case-panel > p:not(.section-label) {
+        max-width: 760px;
+        margin: clamp(70px, 8vw, 126px) 0 0;
+        color: var(--ink);
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+        line-height: 1.42;
+      }
+
+      .case-page .case-split--editorial-copy .case-panel > p:not(.section-label) + p {
+        margin-top: 26px;
+      }
+
+      .case-page .case-split--editorial .case-panel li::marker {
+        color: var(--ink);
+      }
+
+      .case-page #watchverse .case-copy .case-kicker {
+        font-family: var(--watch-font-display);
+        font-size: var(--watch-size-section);
+        font-weight: 400;
+        letter-spacing: -0.035em;
+      }
+
+      .case-page #watchverse .case-copy p {
+        font-size: var(--watch-size-body);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel,
+      .case-page #watchverse .dashboard-panel button,
+      .case-page #watchverse .dashboard-panel small,
+      .case-page #watchverse .dashboard-panel p {
+        font-family: var(--watch-font-text);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .case-split--editorial .dashboard-panel {
+        margin-top: clamp(54px, 7vw, 108px);
+      }
+
+      .case-page #watchverse .dashboard-panel h2 {
+        font-family: var(--watch-font-display);
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel strong {
+        font-weight: 400;
+      }
+
+      .case-page #watchverse .dashboard-panel .country-flag {
+        font-size: var(--watch-size-small);
+      }
+
+      .case-page #watchverse .metric-card strong,
+      .case-page #watchverse .dashboard-heading strong {
+        font-family: var(--watch-font-data);
+        font-weight: 400;
+      }
+
+      @media (max-width: 700px) {
+        .case-page .case-narrative { margin-top: 42px; }
+        .case-page .overview-panel { display: block; min-height: 0; padding-top: 76px !important; padding-bottom: 90px !important; }
+        .case-page .overview-project-title { margin-bottom: 64px; }
+        .case-page .overview-main .overview-project-title { margin-bottom: 20px; }
+        .case-page .overview-metrics { display: grid; margin-top: 54px; }
+        .case-page .overview-metric { min-height: 132px; }
+        .case-page .overview-metric__value { font-size: 46px; }
+        .case-page .case-split--editorial .case-panel { min-height: 0; padding: 76px 0 90px; }
+        .case-page .overview-copy p { margin-top: 0; }
+        .case-page .case-split--editorial-copy .case-panel > p:not(.section-label),
+        .case-page .case-split--editorial .case-panel ul { margin-top: 54px; }
+        .case-page .case-split--editorial .case-panel ul { gap: 22px; }
+      }
+    </style>
+    <link rel="stylesheet" href="../00%20assets/project-top-layout.css?v=20260809-1" />
+    <style>
+      /* Content Marketing top section adjustments. */
+      .case-page .project-top-basics {
+        min-height: 0;
+        padding-top: 40.8px;
+        padding-bottom: 40.8px;
+      }
+
+      .case-page .project-top-lead {
+        margin-bottom: 0;
+      }
+
+      .case-page .project-top-title {
+        font-size: clamp(81px, 4.68vw, 95.4px);
+      }
+
+      .case-page .project-top-lead p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(17px, 1.25vw, 20px);
+        font-weight: 400;
+        letter-spacing: normal;
+        line-height: 1.55;
+      }
+
+      .case-page .case-panel--with-metrics {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.72fr);
+        column-gap: clamp(52px, 7vw, 128px);
+        align-items: start;
+      }
+
+      .case-page .case-panel--with-metrics .section-label,
+      .case-page .case-panel--with-metrics > ul,
+      .case-page .case-panel--with-metrics > p:not(.section-label) {
+        grid-column: 1;
+      }
+
+      .case-page .case-panel--with-metrics .overview-metrics {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+
+      .case-page .case-panel--results {
+        grid-template-columns: minmax(0, 760px) minmax(280px, 1fr);
+      }
+
+      .case-page .case-panel--results .overview-metrics {
+        grid-row: 1 / span 3;
+      }
+
+      .case-page .approach-metric__title {
+        margin: auto 0;
+        color: #143a12;
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: clamp(20px, 1.7vw, 28px);
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+      }
+
+      .case-page .audience-section h2 {
+        margin-bottom: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(22px, 2.2vw, 30px);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .case-page .demographic-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .case-page .demographic-grid .audience-stack {
+        display: contents;
+      }
+
+      .case-page .demographic-grid .demo-card {
+        height: 248px;
+        min-height: 0;
+        padding: 20px;
+      }
+
+      .case-page .demographic-grid .demo-card small {
+        margin-bottom: 12px;
+      }
+
+      .case-page .demographic-grid .gender-card {
+        display: grid;
+        align-content: start;
+      }
+
+      .case-page .demographic-grid .gender-donut {
+        width: min(44%, 112px);
+        min-width: 88px;
+        margin: 6px auto 10px;
+      }
+
+      .case-page .demographic-grid .gender-legend {
+        gap: 12px;
+      }
+
+      .case-page .demographic-grid .gender-legend strong {
+        font-size: clamp(18px, 1.8vw, 24px);
+      }
+
+      .case-page .demographic-grid .audience-bars {
+        gap: 10px;
+      }
+
+      .case-page .demographic-grid .audience-row {
+        grid-template-columns: minmax(74px, 1fr) minmax(0, 1.2fr) auto;
+        gap: 8px;
+        font-size: 14px;
+        line-height: 1.1;
+      }
+
+      .case-page .demographic-grid .audience-row strong {
+        font-size: 14px;
+      }
+
+      .case-page .demographic-grid .country-flag {
+        min-width: 20px;
+        min-height: 16px;
+        font-size: 9px;
+      }
+
+      .case-page .demographic-grid .audience-track {
+        height: 7px;
+      }
+
+      /* Dashboard and audience typography: two fonts, four size roles. */
+      .case-page #watchverse-dashboard {
+        --dashboard-font-interface: Arial, Helvetica, sans-serif;
+        --dashboard-font-data: "Courier New", Courier, monospace;
+        --dashboard-size-xl: clamp(38px, 3.2vw, 48px);
+        --dashboard-size-lg: clamp(24px, 2.2vw, 30px);
+        --dashboard-size-md: clamp(24px, 2vw, 32px);
+        --dashboard-size-sm: 14px;
+      }
+
+      .case-page #watchverse-dashboard,
+      .case-page #watchverse-dashboard button,
+      .case-page #watchverse-dashboard small,
+      .case-page #watchverse-dashboard p,
+      .case-page #watchverse-dashboard h2,
+      .case-page #watchverse-dashboard span,
+      .case-page #watchverse-dashboard em {
+        font-family: var(--dashboard-font-interface);
+      }
+
+      .case-page #watchverse-dashboard .dashboard-heading strong {
+        font-family: var(--dashboard-font-data);
+        font-size: var(--dashboard-size-xl);
+        line-height: 1;
+      }
+
+      .case-page #watchverse-dashboard .metric-card strong,
+      .case-page #watchverse-dashboard .gender-legend strong {
+        font-family: var(--dashboard-font-data);
+        font-size: var(--dashboard-size-md);
+        line-height: 1;
+      }
+
+      .case-page #watchverse-dashboard .audience-section h2 {
+        font-family: var(--dashboard-font-interface);
+        font-size: var(--dashboard-size-lg);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .case-page #watchverse-dashboard .dashboard-tabs span,
+      .case-page #watchverse-dashboard .dashboard-tabs a,
+      .case-page #watchverse-dashboard .dashboard-tabs button,
+      .case-page #watchverse-dashboard .dashboard-heading small,
+      .case-page #watchverse-dashboard .metric-card small,
+      .case-page #watchverse-dashboard .demo-card small,
+      .case-page #watchverse-dashboard .gender-legend em,
+      .case-page #watchverse-dashboard .audience-row,
+      .case-page #watchverse-dashboard .country-flag {
+        font-family: var(--dashboard-font-interface);
+        font-size: var(--dashboard-size-sm);
+      }
+
+      .case-page #watchverse-dashboard .audience-row strong {
+        font-family: var(--dashboard-font-data);
+        font-size: var(--dashboard-size-sm);
+      }
+
+      /* Top-Performing Content：自动滚动的六张内容卡。 */
+      .case-page .top-performing-carousel {
+        width: 100%;
+        margin-top: clamp(54px, 7vw, 108px);
+        overflow: hidden;
+      }
+
+      .case-page .top-performing-track {
+        display: flex;
+        width: max-content;
+        gap: 24px;
+        animation: top-performing-scroll 30s linear infinite;
+        will-change: transform;
+      }
+
+      .case-page .top-performing-card {
+        display: block;
+        flex: 0 0 clamp(180px, 22.2vw, 272px);
+        aspect-ratio: 3 / 4;
+        border-radius: 22px;
+        background: #d7ede0;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .case-page .top-performing-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* WATCHVERSE 与 CozyFit 频道趋势折线图。 */
+      .case-page .cozyfit-views-grid,
+      .case-page .performance-trend-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: clamp(54px, 7vw, 108px);
+      }
+
+      .case-page .cozyfit-views-card,
+      .case-page .performance-trend-card {
+        min-width: 0;
+        padding: clamp(20px, 2.4vw, 32px);
+        border: 1px solid rgba(20, 58, 18, 0.08);
+        border-radius: 22px;
+        background: #fbfbfa;
+        color: #143a12;
+      }
+
+      .case-page .cozyfit-views-card__title,
+      .case-page .performance-trend-card__title {
+        margin: 0 0 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: var(--watch-size-small);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        line-height: 1;
+      }
+
+      .case-page .cozyfit-views-chart,
+      .case-page .performance-trend-chart {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+
+      .case-page .cozyfit-views-chart text,
+      .case-page .performance-trend-chart text {
+        fill: rgba(20, 58, 18, 0.72);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+      }
+
+      .case-page .cozyfit-views-chart .chart-grid,
+      .case-page .performance-trend-chart .chart-grid {
+        stroke: rgba(20, 58, 18, 0.2);
+        stroke-width: 1;
+      }
+
+      .case-page .cozyfit-views-chart .chart-axis,
+      .case-page .performance-trend-chart .chart-axis {
+        stroke: rgba(20, 58, 18, 0.45);
+        stroke-width: 1;
+      }
+
+      .case-page .cozyfit-views-chart .chart-area,
+      .case-page .performance-trend-chart .chart-area {
+        fill: rgba(85, 154, 69, 0.12);
+      }
+
+      .case-page .cozyfit-views-chart .chart-line,
+      .case-page .performance-trend-chart .chart-line {
+        fill: none;
+        stroke: #559a45;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+      }
+
+      @media (max-width: 767px) {
+        .case-page .cozyfit-views-grid,
+        .case-page .performance-trend-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .case-page .top-performing-card:hover,
+      .case-page .top-performing-card:focus-visible {
+        box-shadow: 0 12px 30px rgba(25, 35, 43, 0.16);
+        transform: translateY(-4px);
+        outline: none;
+      }
+
+      .case-page .top-performing-carousel:hover .top-performing-track,
+      .case-page .top-performing-carousel:focus-within .top-performing-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes top-performing-scroll {
+        to {
+          transform: translateX(calc(-50% - 12px));
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .case-page .top-performing-track {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .case-page .project-top-basics {
+          padding-top: 16.8px;
+        }
+
+        .case-page .project-top-title {
+          font-size: 36px;
+          line-height: 36px;
+        }
+
+        .case-page .project-social-links {
+          gap: 10px;
+          margin: 0 0 24px;
+        }
+
+        .case-page .project-social-link {
+          min-height: 46px;
+          padding: 0 18px;
+          font-size: 14px;
+        }
+
+        .case-page .case-panel--with-metrics {
+          display: block;
+        }
+
+        .case-page .case-panel--with-metrics .overview-metrics {
+          margin-top: 54px;
+        }
+
+        .case-page .demographic-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body class="case-page">
+    <!-- 顶部固定导航模块 -->
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="nav-link nav-highlight" href="https://carolshi417.github.io/Github_Portfolio/figma-home/">HIGHLIGHT</a>
+      <nav class="nav-primary" aria-label="Portfolio sections">
+        <button class="nav-link is-active" type="button">CAMPAIGNS</button>
+        <button class="nav-link" type="button">GAMES</button>
+        <button class="nav-link" type="button">INTERACTIVE</button>
+        <button class="nav-link" type="button">CREATIONS</button>
+      </nav>
+      <button class="nav-link nav-about" type="button">ABOUT</button>
+    </header>
+
+    <main>
+      <!-- 首屏：三枚可交互账号入口 -->
+      <section class="case-intro project-top-hero" aria-label="Interaction note">
+        <div class="logo-stage" aria-label="Featured social media account logos">
+          <a class="hero-logo logo-flowly" href="#lunarybio" aria-label="Flowly logo">
+            <img src="assets/social-media/logo-flowly.png" alt="" />
+          </a>
+          <a class="hero-logo logo-hooroo" href="#cozyfit" aria-label="CozyFit logo">
+            <img src="../00%20assets/social-media/logo-cozyfit.png" alt="" />
+          </a>
+          <a class="hero-logo logo-watchverse" href="#watchverse" aria-label="Watchverse logo">
+            <img src="assets/social-media/logo-watchverse.png" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <!-- 项目标题与简介 -->
+      <section class="project-top-basics" aria-labelledby="content-marketing-title">
+        <h1 class="project-top-title" id="content-marketing-title">Content · AI · Growth</h1>
+        <div class="project-top-lead">
+            <p>
+              I built and managed these social media accounts from the ground up.
+            </p>
+            <p>
+              I handled every stage independently, including account positioning,
+              topic research, content planning, filming, copywriting, publishing
+              and performance analysis.
+            </p>
+            <p>
+              I tailored each account's content to its brand and audience. I
+              tested different topics and formats, then adjusted the strategy
+              based on performance data.
+            </p>
+        </div>
+      </section>
+
+      <!-- 案例研究主体 -->
+      <article class="case-study">
+        <!-- WATCHVERSE 案例模块 -->
+        <section class="case-block" id="watchverse">
+
+          <div class="case-narrative">
+            <!-- WATCHVERSE 项目概述与增长数据卡 -->
+            <section class="case-panel overview-panel" aria-label="Watchverse overview">
+              <div class="overview-main">
+                <h1 class="overview-project-title project-title--with-links">WATCHVERSE</h1>
+                <nav class="project-social-links" aria-label="WATCHVERSE social channels">
+                <a class="project-social-link" href="https://www.youtube.com/@WATCHVERSE-u2t/shorts" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.4V8.6l6 3.4-6 3.4Z" /></svg>Youtube</a>
+                <a class="project-social-link" href="https://www.tiktok.com/@watchverse.io" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.4 3 2.1 4.8 5.1 5v4.1a8.7 8.7 0 0 1-5.1-1.7v5.8c0 3.8-2.5 6.3-6.1 6.3-3.2 0-5.8-2.2-5.8-5.4 0-3.6 3.1-5.9 6.9-5.2v4.2c-1.5-.5-2.8.2-2.8 1.4 0 1 .8 1.6 1.8 1.6 1.2 0 1.9-.7 1.9-2.2V3h4.1Z" /></svg>Tiktok</a>
+                <a class="project-social-link" href="https://www.instagram.com/watchverselab/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 3A2.8 2.8 0 0 0 5 7.8v8.4A2.8 2.8 0 0 0 7.8 19h8.4a2.8 2.8 0 0 0 2.8-2.8V7.8A2.8 2.8 0 0 0 16.2 5H7.8Zm4.2 3.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm4.2-3.4a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" /></svg>Instagram</a>
+                </nav>
+                <div class="overview-copy">
+                <p>
+                  WATCHVERSE brings together a range of products within the Apple
+                  Watch ecosystem, including games, health tools, lifestyle apps,
+                  and motion-controlled experiences.
+                </p>
+                <p>
+                  The main audience is Apple Watch users in Europe and North
+                  America who are interested in fitness, health, and productivity.
+                  Rather than promoting only one product, the goal was to build
+                  WATCHVERSE into a trusted destination for Apple Watch apps, tips,
+                  and useful discoveries.
+                </p>
+                </div>
+              </div>
+              <aside class="overview-metrics" aria-label="Watchverse performance growth from June to July 2026">
+                <article class="overview-metric">
+                  <p class="overview-metric__period">Jun–Jul 2026</p>
+                  <p class="overview-metric__value">+300%</p>
+                  <p class="overview-metric__label">Increase in YouTube Shorts average views</p>
+                </article>
+                <article class="overview-metric">
+                  <p class="overview-metric__period">Jun–Jul 2026</p>
+                  <p class="overview-metric__value">+200%</p>
+                  <p class="overview-metric__label">Increase in YouTube Likes Growth</p>
+                </article>
+                <article class="overview-metric">
+                  <p class="overview-metric__period">Jun–Jul 2026</p>
+                  <p class="overview-metric__value">+60%</p>
+                  <p class="overview-metric__label">Increase in TikTok average engagement rate</p>
+                </article>
+              </aside>
+            </section>
+
+            <!-- 挑战与方法模块 -->
+            <div class="case-split case-split--editorial">
+              <!-- 项目挑战 -->
+              <section class="case-panel" aria-label="The challenge">
+                <p class="section-label">The Challenge</p>
+                <ul>
+                  <li>Promote several products with different functions through one account.</li>
+                  <li>Build positioning, content style, and publishing workflow from scratch.</li>
+                  <li>Gain trust without strong existing brand awareness.</li>
+                  <li>Introduce products naturally without making the content feel like ads.</li>
+                  <li>Create clear download interest without direct hard-selling.</li>
+                  <li>Find formats that could consistently reach Apple Watch users.</li>
+                </ul>
+              </section>
+
+              <!-- 我的方法与右侧策略卡片 -->
+              <section class="case-panel case-panel--with-metrics" aria-label="My approach">
+                <p class="section-label">My Approach</p>
+                <ul>
+                  <li>Shared practical Apple Watch hacks and real use cases before introducing products.</li>
+                  <li>Used audience-specific hooks to reach users within the first few seconds.</li>
+                  <li>Demonstrated apps on real devices to make content feel trustworthy.</li>
+                  <li>Created timely WWDC-related content using first-hand information.</li>
+                  <li>Reviewed successful Shorts frame by frame for hook, pacing, and structure.</li>
+                  <li>Turned strong-performing patterns into repeatable formats for testing.</li>
+                </ul>
+                <aside class="overview-metrics approach-metrics" aria-label="My approach principles">
+                  <article class="overview-metric">
+                    <p class="approach-metric__title">Audience-Specific Hooks</p>
+                  </article>
+                  <article class="overview-metric">
+                    <p class="approach-metric__title">Useful Before Promotional</p>
+                  </article>
+                  <article class="overview-metric">
+                    <p class="approach-metric__title">Test, Learn and Adapt</p>
+                  </article>
+                </aside>
+              </section>
+            </div>
+
+            <!-- 结果、平台数据与内容展示模块 -->
+            <div class="case-split case-split--editorial case-split--editorial-copy">
+              <!-- 结果说明与右侧增长数据卡 -->
+              <section class="case-panel case-panel--with-metrics case-panel--results" aria-label="Watchverse results">
+                <p class="section-label">Results</p>
+                <p>
+                  Through targeted research and continuous testing on YouTube
+                  Shorts, I found that Apple Watch hacks, surprising feature
+                  explanations, and twist-based storytelling delivered the most
+                  stable results.
+                </p>
+                <p>
+                  After the strategy was refined, average views per video
+                  <strong>increased from around 200 to approximately 1,200</strong>,
+                  showing that clearer positioning, authentic demonstrations,
+                  and audience-focused topics improved organic performance.
+                </p>
+                <aside class="overview-metrics" aria-label="Watchverse performance growth from June to July 2026">
+                  <article class="overview-metric">
+                    <p class="overview-metric__period">Jun–Jul 2026</p>
+                    <p class="overview-metric__value">+300%</p>
+                    <p class="overview-metric__label">Increase in YouTube Shorts average views</p>
+                  </article>
+                  <article class="overview-metric">
+                    <p class="overview-metric__period">Jun–Jul 2026</p>
+                    <p class="overview-metric__value">+200%</p>
+                    <p class="overview-metric__label">Increase in YouTube Likes Growth</p>
+                  </article>
+                  <article class="overview-metric">
+                    <p class="overview-metric__period">Jun–Jul 2026</p>
+                    <p class="overview-metric__value">+60%</p>
+                    <p class="overview-metric__label">Increase in TikTok average engagement rate</p>
+                  </article>
+                </aside>
+              </section>
+
+              <!-- 可切换平台的数据仪表盘 -->
+              <section class="case-panel" aria-label="Performance visualized">
+                <p class="section-label">Performance Visualized</p>
+                <!-- WATCHVERSE YouTube 播放量与点赞量趋势卡 -->
+                <div class="performance-trend-grid" aria-label="WATCHVERSE YouTube performance trends">
+                  <article class="performance-trend-card card-youtube-views" aria-labelledby="watchverse-youtube-views-title">
+                    <p class="performance-trend-card__title" id="watchverse-youtube-views-title">YOUTUBE VIEWS</p>
+                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="YouTube views trend rising from zero to about 26,000 views">
+                      <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
+                      <line class="chart-grid" x1="42" y1="78" x2="404" y2="78" />
+                      <line class="chart-grid" x1="42" y1="125" x2="404" y2="125" />
+                      <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
+                      <path class="chart-area" d="M42 171 L56 170 L70 170 L84 170 L98 170 L112 164 L126 157 L140 152 L154 151 L168 151 L182 151 L196 151 L210 151 L224 150 L238 148 L252 134 L266 134 L280 133 L294 110 L308 106 L322 82 L336 67 L350 60 L364 55 L378 50 L392 50 L404 49 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42 171 L56 170 L70 170 L84 170 L98 170 L112 164 L126 157 L140 152 L154 151 L168 151 L182 151 L196 151 L210 151 L224 150 L238 148 L252 134 L266 134 L280 133 L294 110 L308 106 L322 82 L336 67 L350 60 L364 55 L378 50 L392 50 L404 49" />
+                      <text x="8" y="175">0</text><text x="0" y="128">10k</text><text x="0" y="81">20k</text><text x="0" y="35">30k</text>
+                    </svg>
+                  </article>
+                  <article class="performance-trend-card card-youtube-likes" aria-labelledby="watchverse-youtube-likes-title">
+                    <p class="performance-trend-card__title" id="watchverse-youtube-likes-title">YOUTUBE LIKES</p>
+                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="YouTube likes trend rising from zero to about 163 likes">
+                      <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
+                      <line class="chart-grid" x1="42" y1="67" x2="404" y2="67" />
+                      <line class="chart-grid" x1="42" y1="102" x2="404" y2="102" />
+                      <line class="chart-grid" x1="42" y1="137" x2="404" y2="137" />
+                      <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
+                      <path class="chart-area" d="M42 172 L56 169 L70 169 L84 169 L98 165 L112 158 L126 156 L140 151 L154 151 L168 151 L182 151 L196 151 L210 151 L224 151 L238 151 L252 143 L266 133 L280 133 L294 113 L308 112 L322 101 L336 86 L350 82 L364 75 L378 68 L392 60 L404 58 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42 172 L56 169 L70 169 L84 169 L98 165 L112 158 L126 156 L140 151 L154 151 L168 151 L182 151 L196 151 L210 151 L224 151 L238 151 L252 143 L266 133 L280 133 L294 113 L308 112 L322 101 L336 86 L350 82 L364 75 L378 68 L392 60 L404 58" />
+                      <text x="8" y="175">0</text><text x="4" y="140">50</text><text x="0" y="105">100</text><text x="0" y="70">150</text><text x="0" y="35">200</text>
+                    </svg>
+                  </article>
+                </div>
+                <div class="dashboard-panel platform-dashboard" id="watchverse-dashboard" aria-label="Watchverse platform dashboard">
+                  <div class="dashboard-tabs" aria-label="Platform selector">
+                    <button class="is-active" type="button" data-platform="youtube">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.4V8.6l6 3.4-6 3.4Z" /></svg>
+                      Youtube
+                    </button>
+                    <button type="button" data-platform="tiktok">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.4 3 2.1 4.8 5.1 5v4.1a8.7 8.7 0 0 1-5.1-1.7v5.8c0 3.8-2.5 6.3-6.1 6.3-3.2 0-5.8-2.2-5.8-5.4 0-3.6 3.1-5.9 6.9-5.2v4.2c-1.5-.5-2.8.2-2.8 1.4 0 1 .8 1.6 1.8 1.6 1.2 0 1.9-.7 1.9-2.2V3h4.1Z" /></svg>
+                      Tiktok
+                    </button>
+                    <button type="button" data-platform="instagram">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 3A2.8 2.8 0 0 0 5 7.8v8.4A2.8 2.8 0 0 0 7.8 19h8.4a2.8 2.8 0 0 0 2.8-2.8V7.8A2.8 2.8 0 0 0 16.2 5H7.8Zm4.2 3.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm4.2-3.4a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" /></svg>
+                      Instagram
+                    </button>
+                  </div>
+                  <div class="dashboard-heading">
+                    <a class="dashboard-profile" href="https://www.youtube.com/@WATCHVERSE-u2t/shorts" target="_blank" rel="noreferrer" data-platform-profile>
+                      <strong data-platform-title>Youtube</strong>
+                      <small data-platform-handle>@WATCHVERSE</small>
+                    </a>
+                    <small data-platform-sync>Synced with Youtube on Jul 7</small>
+                  </div>
+                  <div class="metric-grid" data-platform-metrics>
+                    <div class="metric-card"><small>Posting Period</small><strong>1 month</strong></div>
+                    <div class="metric-card"><small>Total Shorts</small><strong>28</strong></div>
+                    <div class="metric-card"><small>Total Views</small><strong>8.4k</strong></div>
+                    <div class="metric-card"><small>Avg Views</small><strong>350</strong></div>
+                    <div class="metric-card"><small>Average View Retention</small><strong>64.7%</strong></div>
+                    <div class="metric-card"><small>Best Performing Short</small><strong>1.3k Views</strong></div>
+                  </div>
+                  <!-- 受众画像：性别、年龄与国家分布 -->
+                  <section class="audience-section" aria-label="Audience demographics">
+                    <h2>Audience Demographics</h2>
+                    <div class="demographic-grid" data-platform-audience></div>
+                  </section>
+                </div>
+              </section>
+
+              <!-- 高表现内容模块 -->
+              <section class="case-panel" aria-label="Top-performing content">
+                <p class="section-label">Top-Performing Content</p>
+                <!-- 六张浅绿色占位卡；后六张用于无缝循环滚动。 -->
+                <div class="top-performing-carousel" aria-label="Top-performing content carousel">
+                  <div class="top-performing-track">
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7649693742089243935" target="_blank" rel="noreferrer" aria-label="Open Fresh From WWDC on Tiktok"><img src="../00%20assets/social-media/watchverse/1_20260611_Tiktok_Fresh%20From%20WWDC.jpg" alt="Fresh From WWDC" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/photo/7649198887634291999?lang=zh-Hans" target="_blank" rel="noreferrer" aria-label="Open Watch the World Cup on Tiktok"><img src="../00%20assets/social-media/watchverse/2_20260609_Tiktok_Watch%20the%20World%20Cup_cover.jpg" alt="Watch the World Cup" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7657861357273943327?lang=zh-Hans" target="_blank" rel="noreferrer" aria-label="Open Why Your Apple Watch Isnt Tracking Sleep on Tiktok"><img src="../00%20assets/social-media/watchverse/3_20260703_Tiktok_Why%20Your%20Apple%20Watch%20Isn_t%20Tracking%20Sleep.jpg" alt="Why Your Apple Watch Isn't Tracking Sleep" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=Y3N7PCvkpNw" target="_blank" rel="noreferrer" aria-label="Open Apple Watch users miss this boredom on YouTube"><img src="../00%20assets/social-media/watchverse/4_20260710_You_apple%20watch%20users%20miss%20this%20boredom.jpg" alt="Apple Watch users miss this boredom" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=YsHdFliU3js" target="_blank" rel="noreferrer" aria-label="Open Lost your iPhone at home on YouTube"><img src="../00%20assets/social-media/watchverse/5_20260708_You_Lost%20your%20iphone%20at%20home.jpg" alt="Lost your iPhone at home" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7639556523630284063" target="_blank" rel="noreferrer" aria-label="Open Simple as that on Tiktok"><img src="../00%20assets/social-media/watchverse/6_20260514_Tiktok_Simple%20as%20that_cover.jpg" alt="Simple as that" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7649693742089243935" target="_blank" rel="noreferrer" aria-label="Open Fresh From WWDC on Tiktok"><img src="../00%20assets/social-media/watchverse/1_20260611_Tiktok_Fresh%20From%20WWDC.jpg" alt="Fresh From WWDC" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/photo/7649198887634291999?lang=zh-Hans" target="_blank" rel="noreferrer" aria-label="Open Watch the World Cup on Tiktok"><img src="../00%20assets/social-media/watchverse/2_20260609_Tiktok_Watch%20the%20World%20Cup_cover.jpg" alt="Watch the World Cup" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7657861357273943327?lang=zh-Hans" target="_blank" rel="noreferrer" aria-label="Open Why Your Apple Watch Isnt Tracking Sleep on Tiktok"><img src="../00%20assets/social-media/watchverse/3_20260703_Tiktok_Why%20Your%20Apple%20Watch%20Isn_t%20Tracking%20Sleep.jpg" alt="Why Your Apple Watch Isn't Tracking Sleep" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=Y3N7PCvkpNw" target="_blank" rel="noreferrer" aria-label="Open Apple Watch users miss this boredom on YouTube"><img src="../00%20assets/social-media/watchverse/4_20260710_You_apple%20watch%20users%20miss%20this%20boredom.jpg" alt="Apple Watch users miss this boredom" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=YsHdFliU3js" target="_blank" rel="noreferrer" aria-label="Open Lost your iPhone at home on YouTube"><img src="../00%20assets/social-media/watchverse/5_20260708_You_Lost%20your%20iphone%20at%20home.jpg" alt="Lost your iPhone at home" /></a>
+                    <a class="top-performing-card" href="https://www.tiktok.com/@watchverse.io/video/7639556523630284063" target="_blank" rel="noreferrer" aria-label="Open Simple as that on Tiktok"><img src="../00%20assets/social-media/watchverse/6_20260514_Tiktok_Simple%20as%20that_cover.jpg" alt="Simple as that" /></a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- CozyFit 案例模块：沿用 WATCHVERSE 的完整模块排版，内容待补充。 -->
+        <section class="case-block" id="cozyfit">
+          <div class="case-narrative">
+            <!-- Overview：品牌名称、概述和增长数据卡 -->
+            <section class="case-panel overview-panel" aria-label="CozyFit overview">
+              <div class="overview-main">
+                <h2 class="overview-project-title project-title--with-links">CozyFit</h2>
+                <nav class="project-social-links" aria-label="CozyFit social channels">
+                <a class="project-social-link" href="https://www.youtube.com/@CozyFit-lab" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.4V8.6l6 3.4-6 3.4Z" /></svg>Youtube</a>
+                <a class="project-social-link" href="https://www.tiktok.com/@cozyfit.lab" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.4 3 2.1 4.8 5.1 5v4.1a8.7 8.7 0 0 1-5.1-1.7v5.8c0 3.8-2.5 6.3-6.1 6.3-3.2 0-5.8-2.2-5.8-5.4 0-3.6 3.1-5.9 6.9-5.2v4.2c-1.5-.5-2.8.2-2.8 1.4 0 1 .8 1.6 1.8 1.6 1.2 0 1.9-.7 1.9-2.2V3h4.1Z" /></svg>Tiktok</a>
+                <a class="project-social-link" href="https://www.instagram.com/cozyfitnesslab/?hl=en" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 3A2.8 2.8 0 0 0 5 7.8v8.4A2.8 2.8 0 0 0 7.8 19h8.4a2.8 2.8 0 0 0 2.8-2.8V7.8A2.8 2.8 0 0 0 16.2 5H7.8Zm4.2 3.2a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6Zm0 2.7a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2Zm4.2-3.4a1 1 0 1 1 0 2.1 1 1 0 0 1 0-2.1Z" /></svg>Instagram</a>
+                </nav>
+                <div class="overview-copy">
+                <p>CozyFit is a social media content project created to promote Hooroo Game, a motion-gaming platform with hundreds of game experiences. Its overseas version currently includes dozens of Apple Watch-controlled games and three camera-based motion games.</p>
+                <p>CozyFit was created to support Hooroo Game's overseas launch through content testing and audience research. The project aimed to introduce the app while identifying promising user groups, game types, and content formats for Western markets.</p>
+                </div>
+              </div>
+              <aside class="overview-metrics" aria-label="CozyFit overview metrics">
+                <article class="overview-metric"><p class="overview-metric__period">vs. Previous Account</p><a class="overview-metric__label" href="https://www.tiktok.com/@lunaryfitness" target="_blank" rel="noreferrer">@lunaryfitness</a></article>
+                <article class="overview-metric"><p class="overview-metric__period">vs. Previous Account</p><a class="overview-metric__label" href="https://www.tiktok.com/@lunaryfitness" target="_blank" rel="noreferrer">@lunaryfitness</a></article>
+                <article class="overview-metric"><p class="overview-metric__period">vs. Previous Account</p><a class="overview-metric__label" href="https://www.tiktok.com/@lunaryfitness" target="_blank" rel="noreferrer">@lunaryfitness</a></article>
+              </aside>
+            </section>
+
+            <!-- The Challenge 与 My Approach 模块 -->
+            <div class="case-split case-split--editorial">
+              <section class="case-panel" aria-label="CozyFit challenge">
+                <p class="section-label">The Challenge</p>
+                <ul>
+                  <li>Building awareness for a new app in overseas markets.</li>
+                  <li>Working in a niche with few proven viral content examples.</li>
+                  <li>Identifying the most promising users and use cases.</li>
+                  <li>Understanding which motion activities appealed most to Western audiences.</li>
+                  <li>Creating entertaining content without making it feel like an advertisement.</li>
+                  <li>Using social media insights to support product development decisions.</li>
+                </ul>
+              </section>
+
+              <section class="case-panel case-panel--with-metrics" aria-label="CozyFit approach">
+                <p class="section-label">My Approach</p>
+                <ul>
+                  <li>Studied high-performing dance, fitness, and motion-gaming content across platforms.</li>
+                  <li>Analysed organic viral videos and audience comments to identify user interests.</li>
+                  <li>Turned audience insights into product recommendations, including prioritising dance content.</li>
+                  <li>Used fully filmed videos to show real gameplay and movement.</li>
+                  <li>Adopted a simple, lifestyle-focused editing style for Western audiences.</li>
+                  <li>Reached out to relevant creators and KOLs for potential collaborations.</li>
+                </ul>
+                <aside class="overview-metrics" aria-label="CozyFit approach cards">
+                  <article class="overview-metric"><p class="approach-metric__title">Audience-Led Product Insight</p></article>
+                  <article class="overview-metric"><p class="approach-metric__title">Real-Life Gameplay</p></article>
+                  <article class="overview-metric"><p class="approach-metric__title">Content-to-Product Feedback</p></article>
+                </aside>
+              </section>
+            </div>
+
+            <!-- Results、Performance Visualized 与 Top-Performing Content 模块 -->
+            <div class="case-split case-split--editorial case-split--editorial-copy">
+              <section class="case-panel case-panel--with-metrics case-panel--results" aria-label="CozyFit results">
+                <p class="section-label">Results</p>
+                <p>CozyFit launched in July and passed the initial cold-start stage within its first month. Despite publishing only a limited number of videos, the account achieved stable organic performance through focused content testing and consistent visual positioning.</p>
+                <p>YouTube Shorts reached an average of more than 1,000 views per video, with the top-performing video reaching 2,100 views. Instagram also showed promising early results, with its strongest video reaching approximately 1,700 views.</p>
+                <aside class="overview-metrics" aria-label="CozyFit result metrics">
+                  <article class="overview-metric"></article>
+                  <article class="overview-metric"></article>
+                  <article class="overview-metric"></article>
+                </aside>
+              </section>
+
+              <section class="case-panel" aria-label="CozyFit performance visualized">
+                <p class="section-label">Performance Visualized</p>
+                <!-- YouTube 与 Instagram 播放量趋势卡 -->
+                <div class="cozyfit-views-grid" aria-label="CozyFit channel view trends">
+                  <article class="cozyfit-views-card card-youtube-views" aria-labelledby="cozyfit-youtube-views-title">
+                    <p class="cozyfit-views-card__title" id="cozyfit-youtube-views-title">YOUTUBE VIEWS</p>
+                    <svg class="cozyfit-views-chart" viewBox="0 0 420 210" role="img" aria-label="YouTube views trend growing from about 1,000 to 17,000 views">
+                      <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
+                      <line class="chart-grid" x1="42" y1="72" x2="404" y2="72" />
+                      <line class="chart-grid" x1="42" y1="112" x2="404" y2="112" />
+                      <line class="chart-grid" x1="42" y1="152" x2="404" y2="152" />
+                      <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
+                      <path class="chart-area" d="M42 160 L59 160 L76 145 L93 137 L110 138 L127 138 L144 138 L161 138 L178 138 L195 126 L212 126 L229 127 L246 112 L263 113 L280 98 L297 82 L314 82 L331 79 L348 77 L365 64 L382 45 L404 25 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42 160 L59 160 L76 145 L93 137 L110 138 L127 138 L144 138 L161 138 L178 138 L195 126 L212 126 L229 127 L246 112 L263 113 L280 98 L297 82 L314 82 L331 79 L348 77 L365 64 L382 45 L404 25" />
+                      <text x="8" y="175">0</text><text x="2" y="155">5k</text><text x="0" y="115">10k</text><text x="0" y="75">15k</text><text x="0" y="35">20k</text>
+                      <text x="64" y="195">7/12</text><text x="170" y="195">7/19</text><text x="274" y="195">7/26</text><text x="361" y="195">8/2</text>
+                    </svg>
+                  </article>
+                  <article class="cozyfit-views-card card-instagram-views" aria-labelledby="cozyfit-instagram-views-title">
+                    <p class="cozyfit-views-card__title" id="cozyfit-instagram-views-title">INSTAGRAM VIEWS</p>
+                    <svg class="cozyfit-views-chart" viewBox="0 0 420 210" role="img" aria-label="Instagram views trend growing from zero to about 5,400 views">
+                      <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
+                      <line class="chart-grid" x1="42" y1="78" x2="404" y2="78" />
+                      <line class="chart-grid" x1="42" y1="125" x2="404" y2="125" />
+                      <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
+                      <path class="chart-area" d="M42 169 L59 169 L76 167 L93 160 L110 119 L127 112 L144 112 L161 112 L178 105 L195 104 L212 105 L229 101 L246 48 L263 53 L280 50 L297 47 L314 41 L331 38 L348 37 L365 28 L382 18 L404 3 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42 169 L59 169 L76 167 L93 160 L110 119 L127 112 L144 112 L161 112 L178 105 L195 104 L212 105 L229 101 L246 48 L263 53 L280 50 L297 47 L314 41 L331 38 L348 37 L365 28 L382 18 L404 3" />
+                      <text x="8" y="175">0</text><text x="0" y="128">2k</text><text x="0" y="81">4k</text><text x="0" y="35">6k</text>
+                      <text x="64" y="195">7/12</text><text x="170" y="195">7/19</text><text x="274" y="195">7/26</text><text x="361" y="195">8/2</text>
+                    </svg>
+                  </article>
+                </div>
+                <div class="dashboard-panel" aria-label="CozyFit performance dashboard">
+                  <!-- CozyFit 原有的 Tiktok 播放数据看板 -->
+                  <div class="dashboard-heading">
+                    <div>
+                      <strong>Tiktok</strong>
+                      <small>@CozyFit</small>
+                    </div>
+                    <small>Synced on Jul 7</small>
+                  </div>
+                  <div class="metric-grid" aria-label="CozyFit performance metrics">
+                    <div class="metric-card"><small>Total Shorts</small><strong>8</strong></div>
+                    <div class="metric-card"><small>Best Performing Short</small><strong>9.1k Views</strong></div>
+                    <div class="metric-card"><small>Account State</small><strong>Cold Start</strong></div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-panel" aria-label="CozyFit top-performing content">
+                <p class="section-label">Top-Performing Content</p>
+                <div class="top-performing-carousel" aria-label="CozyFit top-performing content carousel">
+                  <!-- 前六张为真实内容；后六张用于无缝循环滚动。 -->
+                  <div class="top-performing-track">
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=AS6eEqKAurk" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube post from August 5"><img src="../00%20assets/social-media/cozyfit/cover0805_youtube.png" alt="CozyFit YouTube post from August 5" /></a>
+                    <a class="top-performing-card" href="https://www.instagram.com/reel/DbKDof-NcqA/" target="_blank" rel="noreferrer" aria-label="Open CozyFit Instagram reel from July 24"><img src="../00%20assets/social-media/cozyfit/cover0724_instagram.png" alt="CozyFit Instagram reel from July 24" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=Me9MB6wZYQI" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube post from July 30"><img src="../00%20assets/social-media/cozyfit/cover0730_youtube.png" alt="CozyFit YouTube post from July 30" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/1xPZHu18pYc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 11"><img src="../00%20assets/social-media/cozyfit/cover0711_youtube.png" alt="CozyFit YouTube short from July 11" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/lIcDRRO44Xc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 9"><img src="../00%20assets/social-media/cozyfit/cover0709_youtube.png" alt="CozyFit YouTube short from July 9" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/1xPZHu18pYc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 14"><img src="../00%20assets/social-media/cozyfit/cover0714_youtube.png" alt="CozyFit YouTube short from July 14" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=AS6eEqKAurk" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube post from August 5"><img src="../00%20assets/social-media/cozyfit/cover0805_youtube.png" alt="CozyFit YouTube post from August 5" /></a>
+                    <a class="top-performing-card" href="https://www.instagram.com/reel/DbKDof-NcqA/" target="_blank" rel="noreferrer" aria-label="Open CozyFit Instagram reel from July 24"><img src="../00%20assets/social-media/cozyfit/cover0724_instagram.png" alt="CozyFit Instagram reel from July 24" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/watch?v=Me9MB6wZYQI" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube post from July 30"><img src="../00%20assets/social-media/cozyfit/cover0730_youtube.png" alt="CozyFit YouTube post from July 30" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/1xPZHu18pYc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 11"><img src="../00%20assets/social-media/cozyfit/cover0711_youtube.png" alt="CozyFit YouTube short from July 11" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/lIcDRRO44Xc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 9"><img src="../00%20assets/social-media/cozyfit/cover0709_youtube.png" alt="CozyFit YouTube short from July 9" /></a>
+                    <a class="top-performing-card" href="https://www.youtube.com/shorts/1xPZHu18pYc" target="_blank" rel="noreferrer" aria-label="Open CozyFit YouTube short from July 14"><img src="../00%20assets/social-media/cozyfit/cover0714_youtube.png" alt="CozyFit YouTube short from July 14" /></a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lunarybio 案例模块 -->
+        <section class="case-block compact-case" id="lunarybio">
+          <div class="case-copy">
+            <h2>lunarybio</h2>
+            <p>
+              This was my first attempt at building a social media account from
+              scratch for Flowly, an AI-powered period analysis app targeting
+              women aged 18 to 45. I positioned the account around women's
+              health, wellness, and fitness education, aiming to translate
+              complex health topics into accessible and visually engaging social
+              content.
+            </p>
+            <p class="case-kicker">Challenges &amp; Learnings</p>
+            <p>This was where I learned that <strong>good-looking content does not necessarily mean good-performing content</strong>.</p>
+            <p><strong>Format mismatch:</strong> Instagram increasingly favored Reels and video content, while most of my early content was static.</p>
+            <p><strong>Content sensitivity:</strong> Medical and health-related terminology could sometimes limit content distribution and reach.</p>
+            <p>This experience changed how I approached social media. Instead of designing content based mainly on aesthetics, I began paying more attention to <strong>platform behavior, audience preferences, and content performance</strong>.</p>
+          </div>
+          <!-- lunarybio 数据表现与高表现内容模块 -->
+          <div class="case-narrative">
+            <div class="case-split case-split--editorial case-split--editorial-copy">
+              <section class="case-panel" aria-label="lunarybio performance visualized">
+                <p class="section-label">Performance Visualized</p>
+              </section>
+
+              <section class="case-panel" aria-label="lunarybio top-performing content">
+                <p class="section-label">Top-Performing Content</p>
+                <!-- 六张空白卡；后六张用于无缝循环滚动。 -->
+                <div class="top-performing-carousel" aria-label="lunarybio top-performing content carousel">
+                  <div class="top-performing-track" aria-hidden="true">
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                    <div class="top-performing-card"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script src="content-marketing-text.js?v=20260806-1"></script>
+  </body>
+</html>
