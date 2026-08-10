@@ -74,7 +74,7 @@ The Overview, My Approach, and Results cards share the same pale-green card trea
 Right-side cards:
 
 - Audience-Specific Hooks
-- Useful Before Promotional
+- Value Before Promotion
 - Test, Learn and Adapt
 
 ### Results
@@ -97,8 +97,19 @@ These are the same three growth cards displayed in the Overview module.
 
 Two YouTube trend cards appear directly below the module title, before the interactive WATCHVERSE dashboard. They follow the CozyFit line-chart card styling and sit side by side on desktop:
 
-- YouTube Views: the supplied chart trend rises from 0 to approximately 26,000 views, with a 0–30,000 axis.
-- YouTube Likes: the supplied chart trend rises from 0 to approximately 163 likes, with a 0–200 axis.
+- YouTube Views: cumulative daily data from the WATCHVERSE sheet (columns A and D) from 18 May to 7 August 2026, rising to 26,148 views, with a 0–30,000 axis.
+- YouTube Likes: cumulative daily data from the WATCHVERSE sheet (columns A and E) from 18 May to 7 August 2026, rising to 163 likes, with a 0–200 axis.
+
+Both charts show the monthly reference dates **Jun 1**, **Jul 1**, and **Aug 1** on the horizontal axis.
+
+#### Milestones
+
+Milestones are interactive points placed directly on a chart curve. Their label appears above the point on hover or keyboard focus. Add future milestones here first, then add a matching `chart-milestone` SVG group in `content-marketing.html`.
+
+| Chart | Date | Curve coordinates | Label |
+| --- | --- | --- | --- |
+| YouTube Views | Jul 1, 2026 | `x: 238.6, y: 140.3` | Content Optimization: AI to Live-Action |
+| YouTube Likes | Jul 1, 2026 | `x: 238.6, y: 137.0` | Content Optimization: AI to Live-Action |
 
 The interactive WATCHVERSE dashboard follows these cards. Its tabs update the platform title, account link, handle, sync status, summary metrics, and audience section.
 
@@ -106,23 +117,42 @@ The interactive WATCHVERSE dashboard follows these cards. Its tabs update the pl
 
 - Title: Youtube
 - Handle: @WATCHVERSE
-- Sync: Synced with Youtube on Jul 7
-- Metrics: Posting Period 1 month; Total Shorts 28; Total Views 8.4k; Avg Views 350; Average View Retention 64.7%; Best Performing Short 1.3k Views.
-- Audience: Male 63.4%; Female 36.6%; ages 13-17 16.6%, 18-24 0%, 25-34 45.9%, and 35-44 30.0%; countries United States 34%, India 3.4%, United Kingdom 0.9%, Uzbekistan 0.9%, and Iraq 0.8%.
+- Sync: Synced with Youtube on Aug 8
+  - Metrics: Posting Period 3 month; 
+  - *Total Shorts 28;* 
+  - Total Views 26.2k; 
+  - *Avg Views 350;* 
+  - *Average View Retention 64.7%;* 
+  - Best Performing Short 1.5k Views.
+
+- Audience Demographics
+  - Audience: Male 65.4%; Female 34.6%; 
+  - ages 13-17 24.6%, 18-24 3.9%, 25-34 33.3%, and 35-44 28.4%; 
+  - countries United States 43.7%, India 5.1%, United Kingdom 2.9%, Uzbekistan 0.9%
+
 
 #### TikTok
 
 - Title: Tiktok
 - Handle: @WATCHVERSE
-- Sync: Synced with Tiktok on Jul 7
-- Metrics: Posting Period 2 months; Total Videos 28; Total Views 15.3k; Avg Views 546; Best Performing Shorts 5.8k.
-- Audience: Male 57%; Female 41%; ages 18-24 27.8%, 25-34 38.3%, 35-44 18.7%, 45-54 7.3%, and 55+ 7.9%; countries Indonesia 37.7%, United States 27.5%, Russia 4.1%, Mexico 1.9%, and Italy 1.8%.
+- Sync: Synced with Tiktok on Aug 8
+  - Metrics: Posting Period 2 months; 
+  - *Total Videos 28;* 
+  - Total Views 24.5k; 
+  - *Avg Views 546;* 
+  - Best Performing Shorts 5.8k.
+
+- Audience Demographics
+  - Audience: Male 55%; Female 43%; 
+  - ages 18-24 28%, 25-34 40.2%, 35-44 18.7%, 45+ 13.6%; 
+  - countries United States 31.1%, Indonesia 26.8%, Russia 2.8%, Saudi Arabia 2.4%.
+
 
 #### Instagram
 
 - Title: Instagram
-- Handle: @watchverse
-- Sync: Metrics pending
+- Handle: @WATCHVERSE
+- Sync: Synced with Tiktok on Aug 8
 - Metrics: Posting Period 1 month; Total Reels 15; Total Views 1.4k; Avg Views 93.
 - Audience Demographics is hidden because no Instagram audience data is currently available.
 

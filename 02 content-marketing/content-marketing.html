@@ -13,7 +13,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Marketing | Shiyi Qing</title>
-    <link rel="stylesheet" href="styles.css?v=20260809-2" />
+    <link rel="stylesheet" href="styles.css?v=20260810-1" />
     <style>
       /* Editorial case-study treatment: scoped to this page only. */
       .case-page .case-narrative {
@@ -363,13 +363,18 @@
       }
 
       .case-page .approach-metric__title {
-        margin: auto 0;
+        margin: 0;
         color: #143a12;
         font-family: "Helvetica Neue", Arial, sans-serif;
         font-size: clamp(20px, 1.7vw, 28px);
         font-weight: 400;
         letter-spacing: -0.04em;
         line-height: 1.05;
+      }
+
+      /* WATCHVERSE My Approach：三张策略卡的文字保持在卡片垂直中线。 */
+      .case-page .approach-metrics .overview-metric {
+        justify-content: center;
       }
 
       .case-page .audience-section h2 {
@@ -603,6 +608,36 @@
         stroke-width: 3;
       }
 
+      .case-page .performance-trend-chart .chart-milestone {
+        cursor: default;
+      }
+
+      .case-page .performance-trend-chart .chart-milestone-point {
+        fill: #559a45;
+        stroke: none;
+        transition: r 160ms ease, fill 160ms ease;
+      }
+
+      .case-page .performance-trend-chart .chart-milestone-label {
+        fill: #143a12;
+        font-size: 9px;
+        font-weight: 800;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 160ms ease;
+      }
+
+      .case-page .performance-trend-chart .chart-milestone:hover .chart-milestone-point,
+      .case-page .performance-trend-chart .chart-milestone:focus .chart-milestone-point {
+        fill: #143a12;
+        r: 6.6;
+      }
+
+      .case-page .performance-trend-chart .chart-milestone:hover .chart-milestone-label,
+      .case-page .performance-trend-chart .chart-milestone:focus .chart-milestone-label {
+        opacity: 1;
+      }
+
       @media (max-width: 767px) {
         .case-page .cozyfit-views-grid,
         .case-page .performance-trend-grid {
@@ -798,7 +833,7 @@
                     <p class="approach-metric__title">Audience-Specific Hooks</p>
                   </article>
                   <article class="overview-metric">
-                    <p class="approach-metric__title">Useful Before Promotional</p>
+                    <p class="approach-metric__title">Value Before Promotion</p>
                   </article>
                   <article class="overview-metric">
                     <p class="approach-metric__title">Test, Learn and Adapt</p>
@@ -850,27 +885,38 @@
                 <div class="performance-trend-grid" aria-label="WATCHVERSE YouTube performance trends">
                   <article class="performance-trend-card card-youtube-views" aria-labelledby="watchverse-youtube-views-title">
                     <p class="performance-trend-card__title" id="watchverse-youtube-views-title">YOUTUBE VIEWS</p>
-                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="YouTube views trend rising from zero to about 26,000 views">
+                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="Cumulative YouTube views from May 18 to August 7, 2026, rising to 26,148 views">
                       <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
                       <line class="chart-grid" x1="42" y1="78" x2="404" y2="78" />
                       <line class="chart-grid" x1="42" y1="125" x2="404" y2="125" />
                       <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
-                      <path class="chart-area" d="M42 171 L56 170 L70 170 L84 170 L98 170 L112 164 L126 157 L140 152 L154 151 L168 151 L182 151 L196 151 L210 151 L224 150 L238 148 L252 134 L266 134 L280 133 L294 110 L308 106 L322 82 L336 67 L350 60 L364 55 L378 50 L392 50 L404 49 L404 172 L42 172 Z" />
-                      <path class="chart-line" d="M42 171 L56 170 L70 170 L84 170 L98 170 L112 164 L126 157 L140 152 L154 151 L168 151 L182 151 L196 151 L210 151 L224 150 L238 148 L252 134 L266 134 L280 133 L294 110 L308 106 L322 82 L336 67 L350 60 L364 55 L378 50 L392 50 L404 49" />
+                      <path class="chart-area" d="M42.0 171.8 L46.5 170.3 L50.9 170.2 L55.4 170.1 L59.9 169.9 L64.3 169.8 L68.8 169.8 L73.3 169.8 L77.8 169.8 L82.2 169.8 L86.7 169.8 L91.2 169.8 L95.6 169.8 L100.1 168.5 L104.6 167.2 L109.0 164.2 L113.5 161.9 L118.0 160.7 L122.4 159.6 L126.9 158.4 L131.4 158.3 L135.9 154.9 L140.3 152.7 L144.8 151.5 L149.3 151.3 L153.7 151.2 L158.2 151.0 L162.7 151.0 L167.1 151.0 L171.6 150.9 L176.1 150.9 L180.5 150.9 L185.0 150.9 L189.5 150.9 L194.0 150.9 L198.4 150.9 L202.9 150.8 L207.4 150.8 L211.8 150.3 L216.3 150.2 L220.8 150.2 L225.2 150.2 L229.7 145.9 L234.2 145.2 L238.6 140.3 L243.1 134.0 L247.6 132.7 L252.0 132.6 L256.5 132.6 L261.0 132.3 L265.5 131.5 L269.9 122.3 L274.4 115.8 L278.9 109.8 L283.3 108.5 L287.8 107.6 L292.3 107.2 L296.7 106.1 L301.2 100.9 L305.7 95.5 L310.1 89.6 L314.6 84.4 L319.1 83.7 L323.6 79.0 L328.0 75.3 L332.5 75.2 L337.0 70.5 L341.4 69.9 L345.9 68.5 L350.4 68.3 L354.8 63.2 L359.3 62.2 L363.8 62.1 L368.2 57.4 L372.7 56.6 L377.2 56.4 L381.7 56.3 L386.1 56.3 L390.6 51.6 L395.1 50.8 L399.5 50.1 L404.0 50.0 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42.0 171.8 L46.5 170.3 L50.9 170.2 L55.4 170.1 L59.9 169.9 L64.3 169.8 L68.8 169.8 L73.3 169.8 L77.8 169.8 L82.2 169.8 L86.7 169.8 L91.2 169.8 L95.6 169.8 L100.1 168.5 L104.6 167.2 L109.0 164.2 L113.5 161.9 L118.0 160.7 L122.4 159.6 L126.9 158.4 L131.4 158.3 L135.9 154.9 L140.3 152.7 L144.8 151.5 L149.3 151.3 L153.7 151.2 L158.2 151.0 L162.7 151.0 L167.1 151.0 L171.6 150.9 L176.1 150.9 L180.5 150.9 L185.0 150.9 L189.5 150.9 L194.0 150.9 L198.4 150.9 L202.9 150.8 L207.4 150.8 L211.8 150.3 L216.3 150.2 L220.8 150.2 L225.2 150.2 L229.7 145.9 L234.2 145.2 L238.6 140.3 L243.1 134.0 L247.6 132.7 L252.0 132.6 L256.5 132.6 L261.0 132.3 L265.5 131.5 L269.9 122.3 L274.4 115.8 L278.9 109.8 L283.3 108.5 L287.8 107.6 L292.3 107.2 L296.7 106.1 L301.2 100.9 L305.7 95.5 L310.1 89.6 L314.6 84.4 L319.1 83.7 L323.6 79.0 L328.0 75.3 L332.5 75.2 L337.0 70.5 L341.4 69.9 L345.9 68.5 L350.4 68.3 L354.8 63.2 L359.3 62.2 L363.8 62.1 L368.2 57.4 L372.7 56.6 L377.2 56.4 L381.7 56.3 L386.1 56.3 L390.6 51.6 L395.1 50.8 L399.5 50.1 L404.0 50.0" />
+                      <!-- Milestones: add another chart-milestone group with its date coordinates and label. -->
+                      <g class="chart-milestone" tabindex="0" role="img" aria-label="Jul 1 milestone: Content Optimization: AI to Live-Action">
+                        <circle class="chart-milestone-point" cx="238.6" cy="140.3" r="4.8" />
+                        <text class="chart-milestone-label" x="238.6" y="122" text-anchor="middle">Content Optimization: AI to Live-Action</text>
+                      </g>
                       <text x="8" y="175">0</text><text x="0" y="128">10k</text><text x="0" y="81">20k</text><text x="0" y="35">30k</text>
+                      <text x="104.6" y="195" text-anchor="middle">Jun 1</text><text x="238.6" y="195" text-anchor="middle">Jul 1</text><text x="377.2" y="195" text-anchor="middle">Aug 1</text>
                     </svg>
                   </article>
                   <article class="performance-trend-card card-youtube-likes" aria-labelledby="watchverse-youtube-likes-title">
                     <p class="performance-trend-card__title" id="watchverse-youtube-likes-title">YOUTUBE LIKES</p>
-                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="YouTube likes trend rising from zero to about 163 likes">
+                    <svg class="performance-trend-chart" viewBox="0 0 420 210" role="img" aria-label="Cumulative YouTube likes from May 18 to August 7, 2026, rising to 163 likes">
                       <line class="chart-grid" x1="42" y1="32" x2="404" y2="32" />
                       <line class="chart-grid" x1="42" y1="67" x2="404" y2="67" />
                       <line class="chart-grid" x1="42" y1="102" x2="404" y2="102" />
                       <line class="chart-grid" x1="42" y1="137" x2="404" y2="137" />
                       <line class="chart-axis" x1="42" y1="172" x2="404" y2="172" />
-                      <path class="chart-area" d="M42 172 L56 169 L70 169 L84 169 L98 165 L112 158 L126 156 L140 151 L154 151 L168 151 L182 151 L196 151 L210 151 L224 151 L238 151 L252 143 L266 133 L280 133 L294 113 L308 112 L322 101 L336 86 L350 82 L364 75 L378 68 L392 60 L404 58 L404 172 L42 172 Z" />
-                      <path class="chart-line" d="M42 172 L56 169 L70 169 L84 169 L98 165 L112 158 L126 156 L140 151 L154 151 L168 151 L182 151 L196 151 L210 151 L224 151 L238 151 L252 143 L266 133 L280 133 L294 113 L308 112 L322 101 L336 86 L350 82 L364 75 L378 68 L392 60 L404 58" />
+                      <path class="chart-area" d="M42.0 172.0 L46.5 169.2 L50.9 169.2 L55.4 169.2 L59.9 169.2 L64.3 169.2 L68.8 169.2 L73.3 169.2 L77.8 169.2 L82.2 169.2 L86.7 169.2 L91.2 169.2 L95.6 169.2 L100.1 166.4 L104.6 165.7 L109.0 161.5 L113.5 159.4 L118.0 159.4 L122.4 159.4 L126.9 158.7 L131.4 158.0 L135.9 155.2 L140.3 153.8 L144.8 152.4 L149.3 153.1 L153.7 153.1 L158.2 153.1 L162.7 153.1 L167.1 153.1 L171.6 153.1 L176.1 153.1 L180.5 153.1 L185.0 153.1 L189.5 153.1 L194.0 153.1 L198.4 153.1 L202.9 153.1 L207.4 153.1 L211.8 153.1 L216.3 153.1 L220.8 153.1 L225.2 153.1 L229.7 148.2 L234.2 146.8 L238.6 137.0 L243.1 132.8 L247.6 132.8 L252.0 132.8 L256.5 132.8 L261.0 132.8 L265.5 132.1 L269.9 121.6 L274.4 116.7 L278.9 111.1 L283.3 111.1 L287.8 111.1 L292.3 111.1 L296.7 110.4 L301.2 102.0 L305.7 99.2 L310.1 92.2 L314.6 88.7 L319.1 88.7 L323.6 83.1 L328.0 83.1 L332.5 83.1 L337.0 76.8 L341.4 76.1 L345.9 74.7 L350.4 74.7 L354.8 67.0 L359.3 64.2 L363.8 64.2 L368.2 61.4 L372.7 61.4 L377.2 61.4 L381.7 61.4 L386.1 61.4 L390.6 57.9 L395.1 57.9 L399.5 57.9 L404.0 57.9 L404 172 L42 172 Z" />
+                      <path class="chart-line" d="M42.0 172.0 L46.5 169.2 L50.9 169.2 L55.4 169.2 L59.9 169.2 L64.3 169.2 L68.8 169.2 L73.3 169.2 L77.8 169.2 L82.2 169.2 L86.7 169.2 L91.2 169.2 L95.6 169.2 L100.1 166.4 L104.6 165.7 L109.0 161.5 L113.5 159.4 L118.0 159.4 L122.4 159.4 L126.9 158.7 L131.4 158.0 L135.9 155.2 L140.3 153.8 L144.8 152.4 L149.3 153.1 L153.7 153.1 L158.2 153.1 L162.7 153.1 L167.1 153.1 L171.6 153.1 L176.1 153.1 L180.5 153.1 L185.0 153.1 L189.5 153.1 L194.0 153.1 L198.4 153.1 L202.9 153.1 L207.4 153.1 L211.8 153.1 L216.3 153.1 L220.8 153.1 L225.2 153.1 L229.7 148.2 L234.2 146.8 L238.6 137.0 L243.1 132.8 L247.6 132.8 L252.0 132.8 L256.5 132.8 L261.0 132.8 L265.5 132.1 L269.9 121.6 L274.4 116.7 L278.9 111.1 L283.3 111.1 L287.8 111.1 L292.3 111.1 L296.7 110.4 L301.2 102.0 L305.7 99.2 L310.1 92.2 L314.6 88.7 L319.1 88.7 L323.6 83.1 L328.0 83.1 L332.5 83.1 L337.0 76.8 L341.4 76.1 L345.9 74.7 L350.4 74.7 L354.8 67.0 L359.3 64.2 L363.8 64.2 L368.2 61.4 L372.7 61.4 L377.2 61.4 L381.7 61.4 L386.1 61.4 L390.6 57.9 L395.1 57.9 L399.5 57.9 L404.0 57.9" />
+                      <g class="chart-milestone" tabindex="0" role="img" aria-label="Jul 1 milestone: Content Optimization: AI to Live-Action">
+                        <circle class="chart-milestone-point" cx="238.6" cy="137" r="4.8" />
+                        <text class="chart-milestone-label" x="238.6" y="118.7" text-anchor="middle">Content Optimization: AI to Live-Action</text>
+                      </g>
                       <text x="8" y="175">0</text><text x="4" y="140">50</text><text x="0" y="105">100</text><text x="0" y="70">150</text><text x="0" y="35">200</text>
+                      <text x="104.6" y="195" text-anchor="middle">Jun 1</text><text x="238.6" y="195" text-anchor="middle">Jul 1</text><text x="377.2" y="195" text-anchor="middle">Aug 1</text>
                     </svg>
                   </article>
                 </div>
@@ -894,15 +940,15 @@
                       <strong data-platform-title>Youtube</strong>
                       <small data-platform-handle>@WATCHVERSE</small>
                     </a>
-                    <small data-platform-sync>Synced with Youtube on Jul 7</small>
+                    <small data-platform-sync>Synced with Youtube on Aug 8</small>
                   </div>
                   <div class="metric-grid" data-platform-metrics>
-                    <div class="metric-card"><small>Posting Period</small><strong>1 month</strong></div>
+                    <div class="metric-card"><small>Posting Period</small><strong>3 months</strong></div>
                     <div class="metric-card"><small>Total Shorts</small><strong>28</strong></div>
-                    <div class="metric-card"><small>Total Views</small><strong>8.4k</strong></div>
+                    <div class="metric-card"><small>Total Views</small><strong>26.2k</strong></div>
                     <div class="metric-card"><small>Avg Views</small><strong>350</strong></div>
                     <div class="metric-card"><small>Average View Retention</small><strong>64.7%</strong></div>
-                    <div class="metric-card"><small>Best Performing Short</small><strong>1.3k Views</strong></div>
+                    <div class="metric-card"><small>Best Performing Short</small><strong>1.5k Views</strong></div>
                   </div>
                   <!-- 受众画像：性别、年龄与国家分布 -->
                   <section class="audience-section" aria-label="Audience demographics">
@@ -1130,6 +1176,6 @@
         </section>
       </article>
     </main>
-    <script src="content-marketing-text.js?v=20260809-2"></script>
+    <script src="content-marketing-text.js?v=20260810-1"></script>
   </body>
 </html>
