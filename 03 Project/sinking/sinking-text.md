@@ -1,4 +1,5 @@
-﻿# Template Content
+﻿# Unspoken Ties Content
+
 ## site-header
 
 id: site-header
@@ -41,7 +42,13 @@ id: hero
 
 type: hero-media
 
-**hero-media link**: https://youtu.be/gcyLLGpRshQ?si=XR1CRwtKWj9pcl0P
+**hero-media cover**: ../project%20content/Unspoken%20Ties/cover.jpg
+
+**hero-media cover alt**: A father and son walking through a dreamlike workshop
+
+**hero-media link**: https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?autoplay=1&rel=0&modestbranding=1&playsinline=1
+
+**hero-media fallback**: https://www.youtube.com/watch?v=gcyLLGpRshQ
 
 ## project-intro
 
@@ -59,21 +66,21 @@ id: project-facts
 
 type: four-column-metadata
 
-fact-1-label:
+**fact-1-label**: Release Date
 
-fact-1-value:
+**fact-1-value**: 2025.12
 
-fact-2-label:
+**fact-2-label**: Role
 
-fact-2-value:
+**fact-2-value**: Project Lead, Level Designer
 
-fact-3-label:
+**fact-3-label**: Team Size
 
-fact-3-value:
+**fact-3-value**: 4
 
-fact-4-label:
+**fact-4-label**: Tools
 
-fact-4-value:
+**fact-4-value**: Unreal Engine 6, Blender
 
 ## narrative-01
 
@@ -81,11 +88,23 @@ id: narrative-01
 
 type: right-column-text
 
-narrative-01-p1:
+**narrative-01-p1**:
 
-narrative-01-p2:
+Project Manager
 
-narrative-01-p3:
+I found that our first plan was too ambitious. The team was still learning Unreal Engine and SVN, so progress was slower than expected. I adjusted the timeline, reduced the project scope, and assigned tasks based on each member鈥檚 strengths and interests. This made the workflow smoother and helped us complete a playable demo.
+
+**narrative-01-p2**:
+
+Level Designer
+
+根据叙事
+
+**narrative-01-p3**:
+
+Programmer
+
+负责关卡的所有
 
 narrative-01-p4:
 
@@ -103,7 +122,7 @@ media-001-image:
 
 media-001-image-alt:
 
-media-001-index:
+media-001-index: Final aerial view of the project level
 
 media-001-caption:
 
@@ -125,7 +144,7 @@ media-002-image:
 
 media-002-image-alt:
 
-media-002-index:
+media-002-index: Aerial view of the project level in progress
 
 media-002-caption:
 

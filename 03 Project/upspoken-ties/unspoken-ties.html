@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>aaaaaa</title>
+    <title>Unspoken Ties</title>
     <style>
       /* 全站颜色变量：背景、文字、媒体占位色与分隔线 */
       :root {
@@ -83,10 +83,54 @@
 
       /* 首屏媒体：高度随视口变化，最低保留 580px */
       .hero {
+        position: relative;
         height: calc(100svh - 140px);
         min-height: 580px;
         background: var(--green);
       }
+      .hero__media {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .hero__cover {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 0;
+        background: #202e2e;
+        cursor: pointer;
+      }
+      .hero__cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .hero__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        width: 62px;
+        height: 62px;
+        place-items: center;
+        border: 1px solid rgb(249 248 246 / 78%);
+        border-radius: 50%;
+        background: rgb(35 34 34 / 40%);
+        color: var(--paper);
+        font-size: 22px;
+        line-height: 1;
+        transform: translate(-50%, -50%);
+        transition: background 160ms ease, transform 160ms ease;
+      }
+      .hero__cover:hover .hero__play,
+      .hero__cover:focus-visible .hero__play { background: rgb(35 34 34 / 65%); transform: translate(-50%, -50%) scale(1.06); }
+      .hero__cover:focus-visible { outline: 2px solid var(--ink); outline-offset: -6px; }
 
       /* 页面主网格：桌面端采用 12 栏布局 */
       .grid {
@@ -184,7 +228,9 @@
         .site-header { grid-template-columns: 1fr auto; gap: 14px; padding: 16px 10px 0; }
         .nav-primary { order: 3; grid-column: 1 / -1; justify-content: flex-start; gap: 13px; overflow-x: auto; scrollbar-width: none; }
         .nav-primary::-webkit-scrollbar { display: none; }
-        .hero { height: calc(100svh - 140px); min-height: 0; }
+        .hero {
+        position: relative;
+        height: calc(100svh - 140px); min-height: 0; }
         .grid { grid-template-columns: repeat(18, minmax(0, 1fr)); column-gap: 10px; padding: 0 10px; }
         .basics { min-height: 397px; }
         .title { grid-column: 1 / -1; margin-bottom: 21px; font-size: 40px; line-height: 40px; letter-spacing: -.045em; }
@@ -212,6 +258,7 @@
         .reveal { opacity: 1; transform: none; transition: none; }
       }
     </style>
+    <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260809-1" />
   </head>
   <body>
     <!-- 顶部导航 -->
@@ -228,48 +275,72 @@
 <!-- 项目页面主体 -->
 <main id="top">
       <!-- 首屏媒体 -->
-      <section class="hero" data-area="hero" aria-label="aaaaaa"></section>
+      <section class="hero project-top-hero" data-area="hero" aria-label="Unspoken Ties hero media">
+        <button class="hero__cover" type="button" data-hero-play aria-label="Play Unspoken Ties video">
+          <img src="../project%20content/Unspoken%20Ties/cover.jpg" alt="A father and son walking through a dreamlike workshop" />
+          <span class="hero__play" aria-hidden="true">&#9654;</span>
+        </button>
+      </section>
 
       <!-- 项目标题、简介与基本信息 -->
-      <section class="grid basics" data-area="project-intro">
-        <h1 class="title" data-slot="project-title" data-count="10">aaaaaa</h1>
-        <p class="lead" data-slot="project-introduction" data-count="274">aaaaaa</p>
+      <section class="grid basics project-top-basics" data-area="project-intro">
+        <h1 class="title project-top-title" data-slot="project-title" data-count="10">Unspoken Ties</h1>
+        <div class="project-top-lead"><p class="lead" data-slot="project-introduction" data-count="274">Unspoken Ties is a 3D cooperative puzzle-adventure game about repairing a father-son relationship. Players work together to collect object fragments, recover shared memories, open up to each other, and gradually rebuild their emotional bond.</p></div>
         <dl class="metadata" data-area="project-facts">
-          <div><dt data-slot="fact-1-label" data-count="12">aaaaaa</dt><dd data-slot="fact-1-value" data-count="4">aaaaaa</dd></div>
-          <div><dt data-slot="fact-2-label" data-count="4">aaaaaa</dt><dd data-slot="fact-2-value" data-count="27">aaaaaa</dd></div>
-          <div><dt data-slot="fact-3-label" data-count="14">aaaaaa</dt><dd data-slot="fact-3-value" data-count="47">aaaaaa</dd></div>
-          <div><dt data-slot="fact-4-label" data-count="12">aaaaaa</dt><dd data-slot="fact-4-value" data-count="25">aaaaaa</dd></div>
+          <div><dt data-slot="fact-1-label" data-count="12">Release Date</dt><dd data-slot="fact-1-value" data-count="4">2025.12</dd></div>
+          <div><dt data-slot="fact-2-label" data-count="4">Role</dt><dd data-slot="fact-2-value" data-count="27">Project Lead, Level Designer</dd></div>
+          <div><dt data-slot="fact-3-label" data-count="14">Team Size</dt><dd data-slot="fact-3-value" data-count="47">4</dd></div>
+          <div><dt data-slot="fact-4-label" data-count="12">Tools</dt><dd data-slot="fact-4-value" data-count="25">Unreal Engine 6, Blender</dd></div>
         </dl>
       </section>
 
       <!-- 正文说明一 -->
-      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="349">aaaaaa</p><p data-slot="narrative-01-p2" data-count="309">aaaaaa</p><p data-slot="narrative-01-p3" data-count="267">aaaaaa</p><p data-slot="narrative-01-p4" data-count="163">aaaaaa</p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37">aaaaaa</a></div></section>
+      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="349">As Project Manager, I found that our first plan was too ambitious. The team was still learning Unreal Engine and SVN, so progress was slower than expected. I adjusted the timeline, reduced the project scope, and assigned tasks based on each member’s strengths and interests. This made the workflow smoother and helped us complete a playable demo.</p><p data-slot="narrative-01-p2" data-count="309">As Level Designer, I turned the father-son story into levels and cooperative puzzles. The story and level design developed together, rather than in separate stages. I also used reference images, notes, and clear scale guidelines when handing work to programmers and artists. Regular communication helped the team understand my ideas and reduced unnecessary revisions.</p><p data-slot="narrative-01-p3" data-count="267"></p><p data-slot="narrative-01-p4" data-count="163"></p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37"></a></div></section>
       <!-- 媒体图一 -->
-      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">media-001</span><span class="media__caption" data-slot="media-001-caption" data-count="31">media-001-caption</span></div></section>
+      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">media-001 — Final aerial view of the project level</span><span class="media__caption" data-slot="media-001-caption" data-count="31"></span></div></section>
       <!-- 正文说明二 -->
-      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="374">aaaaaa</p></div></section>
+      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="374"></p></div></section>
       <!-- 媒体图二 -->
-      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-slot="media-002-index" data-count="14">media-002</span><span class="media__caption" data-slot="media-002-caption" data-count="35">media-002-caption</span></div></section>
+      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-count="14" data-slot="media-002-index">media-002 — Aerial view of the project level in progress</span><span class="media__caption" data-slot="media-002-caption" data-count="35"></span></div></section>
       <!-- 并排媒体图五与六 -->
-      <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-slot="media-005-index" data-count="18">media-005</span></div><div class="media__block"><span class="media__label" data-slot="media-006-index" data-count="18">media-006</span></div></section>
+      <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-count="18" data-slot="media-005-006-index"></span></div><div class="media__block"></div></section>
       <!-- 正文说明四 -->
-      <section class="grid copy copy--after-media reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544">aaaaaa</p></div></section>
+      <section class="grid copy copy--after-media reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544"></p></div></section>
     </main>
 
     <!-- 上一个／下一个项目导航 -->
-    <nav class="project-nav" data-area="project-navigation" aria-label="aaaaaa">
-      <a href="#top"><span data-slot="previous-label" data-count="17">aaaaaa</span><strong data-slot="previous-title" data-count="9">aaaaaa</strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
-      <a href="#top"><span data-slot="next-label" data-count="14">aaaaaa</span><strong data-slot="next-title" data-count="10">aaaaaa</strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
+    <nav class="project-nav" data-area="project-navigation" aria-label="">
+      <a href="#top"><span data-slot="previous-label" data-count="17"></span><strong data-slot="previous-title" data-count="9"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
+      <a href="#top"><span data-slot="next-label" data-count="14"></span><strong data-slot="next-title" data-count="10"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
     </nav>
-    <script src="../01 navigation/navigation.js?v=20260814-1"></script>
-    <script src="./project.js"></script>
+    <script src="../../01 navigation/navigation.js?v=20260814-1"></script>
+    <script src="../project.js"></script>
     <script>
       document.querySelectorAll("[data-slot]").forEach((element) => {
-        element.textContent = `${element.dataset.slot}aaaaaaa`;
+        if (!element.textContent.trim()) {
+          element.textContent = `${element.dataset.slot}aaaaaaa`;
+        }
+      });
+
+      document.querySelector("[data-hero-play]")?.addEventListener("click", function () {
+        const iframe = document.createElement("iframe");
+        iframe.className = "hero__media";
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.src = "https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+        iframe.title = "Unspoken Ties video player";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        this.replaceWith(iframe);
       });
     </script>
   </body>
 </html>
+
+
+
+
 
 
 

@@ -120,11 +120,6 @@
       "labelStyle": { "fontFamily": "inherit", "fontSize": "12px", "fontWeight": 400, "lineHeight": "normal", "paragraphGap": "25px" },
       "titleStyle": { "fontFamily": "inherit", "fontSize": "16px", "fontWeight": 400, "lineHeight": "normal", "paragraphGap": "0" },
       "mobile": { "labelStyle": { "fontSize": "10px", "paragraphGap": "17px" }, "titleStyle": { "fontSize": "12px" } }
-    },
-    "site-footer": {
-      "nameZh": "页脚",
-      "textStyle": { "fontFamily": "inherit", "fontSize": "12px", "fontWeight": 400, "lineHeight": "20px", "paragraphGap": "0" },
-      "mobile": { "fontSize": "10px", "lineHeight": "20px", "paragraphGap": "0" }
     }
   }
 }

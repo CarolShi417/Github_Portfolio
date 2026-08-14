@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unspoken Ties</title>
     <style>
+      /* 全站颜色变量：背景、文字、媒体占位色与分隔线 */
       :root {
         --paper: #f9f8f6;
         --ink: #232222;
@@ -13,6 +14,7 @@
         --line: rgb(35 34 34 / 18%);
       }
 
+      /* 全局基础设置：尺寸计算、滚动、字体、链接与按钮 */
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
@@ -26,6 +28,7 @@
       a { color: inherit; text-decoration: none; }
       button { font: inherit; }
 
+      /* 顶部固定导航：滚动后显示半透明毛玻璃背景 */
       .site-header {
         position: fixed;
         top: 0;
@@ -78,6 +81,7 @@
       .nav-link:focus-visible,
       .nav-link.is-active { color: var(--ink); transform: translateY(-1px); }
 
+      /* 首屏媒体：高度随视口变化，最低保留 580px */
       .hero {
         position: relative;
         height: calc(100svh - 140px);
@@ -128,6 +132,7 @@
       .hero__cover:focus-visible .hero__play { background: rgb(35 34 34 / 65%); transform: translate(-50%, -50%) scale(1.06); }
       .hero__cover:focus-visible { outline: 2px solid var(--ink); outline-offset: -6px; }
 
+      /* 页面主网格：桌面端采用 12 栏布局 */
       .grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -151,8 +156,8 @@
       .metadata dt { display: block; height: 26px; border-bottom: 1px solid var(--ink); font-weight: 400; }
       .metadata dd { margin: 10px 0 0; text-align: left; text-transform: uppercase; }
 
+      /* 正文：单图后接正文时保留 90px 间距 */
       .copy { margin-bottom: 45px; }
-      /* 鍗曞浘鍚庢帴姝ｆ枃鏃讹紝鍘熺珯淇濈暀 90px 鐨勭嫭绔嬪懠鍚哥┖闂淬€?*/
       .copy--after-media { margin-top: 90px; }
       .copy__body { grid-column: 8 / -1; }
       .copy p { margin: 0 0 22px; font-size: 17px; line-height: 22px; }
@@ -166,6 +171,7 @@
         letter-spacing: .025em;
       }
 
+      /* 绿色媒体占位区：单图、短图、长图与并排双图 */
       .media {
         position: relative;
         margin-top: 90px;
@@ -201,13 +207,6 @@
       }
       .media--double .media__block + .media__block { grid-column: 9 / -1; background: var(--green-deep); }
 
-      .statement { margin-top: 88px; margin-bottom: 0; }
-      .statement .copy__body { grid-column: 5 / -1; }
-      .statement h2 { margin: 0 0 34px; font-size: 12px; font-weight: 400; line-height: 22px; letter-spacing: .025em; text-transform: uppercase; }
-      .statement p { max-width: 49rem; }
-      .credits { margin-top: 94px; }
-      .credits .copy__body { grid-column: 5 / -1; }
-      .credits p { margin-bottom: 16px; font-size: 12px; line-height: 17px; }
 
       .project-nav {
         display: grid;
@@ -221,7 +220,6 @@
       .project-nav strong { display: block; margin-top: 25px; font-size: 16px; font-weight: 400; }
       .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; height: 104px; background: var(--green); }
       .project-nav a:last-child .project-nav__thumb { left: 0; right: auto; background: var(--green-deep); }
-      footer { display: flex; justify-content: space-between; gap: 20px; padding: 0 30px 20px; font-size: 12px; line-height: 20px; }
 
       .reveal { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
       .reveal.is-visible { opacity: 1; transform: translateY(0); }
@@ -249,13 +247,10 @@
         .media--double { min-height: 259px; }
         .media--double .media__block { grid-column: 1 / 10; min-height: 259px; }
         .media--double .media__block + .media__block { grid-column: 10 / -1; }
-        .statement { margin-top: 62px; }
-        .statement .copy__body, .credits .copy__body { grid-column: 1 / -1; }
         .project-nav { gap: 10px; margin-top: 100px; padding: 0 10px; }
         .project-nav a { min-height: 112px; padding-top: 10px; font-size: 10px; }
         .project-nav strong { font-size: 12px; }
         .project-nav__thumb { top: 27px; width: 42%; height: 72px; }
-        footer { flex-direction: column; padding: 0 10px 14px; font-size: 10px; }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -266,6 +261,7 @@
     <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260809-1" />
   </head>
   <body>
+    <!-- 顶部导航 -->
     <header class="site-header" id="site-bar" data-area="site-header" aria-label="Primary navigation">
       <a class="nav-link nav-highlight" href="https://carolshi417.github.io/Github_Portfolio/figma-home/" data-slot="highlight" data-count="9">HIGHLIGHT</a>
       <nav class="nav-primary" data-area="site-menu" aria-label="Portfolio sections">
@@ -276,52 +272,56 @@
       </nav>
       <a class="nav-link nav-about" href="https://shiyiqing.com/about" data-slot="about" data-count="5">ABOUT</a>
     </header>
+<!-- 项目页面主体 -->
 <main id="top">
-      <section class="hero project-top-hero" data-area="hero" aria-label="Unspoken Ties hero media">
-        <button class="hero__cover" type="button" data-hero-play aria-label="Play Unspoken Ties video">
-          <img src="../project%20content/Unspoken%20Ties/cover.jpg" alt="A father and son walking through a dreamlike workshop" />
+      <!-- 首屏媒体 -->
+      <section class="hero project-top-hero" data-area="hero" aria-label="Cast Calm hero media">
+        <a class="hero__cover" href="https://my.matterport.com/show/?m=N83d1JRWrog" target="_blank" rel="noopener noreferrer" aria-label="Open The Power of Play 游於藝乎">
+          <img src="../../00%20assets/cast-calm/hero-media-cover.png" alt="" />
           <span class="hero__play" aria-hidden="true">&#9654;</span>
-        </button>
+        </a>
       </section>
 
+      <!-- 项目标题、简介与基本信息 -->
       <section class="grid basics project-top-basics" data-area="project-intro">
-        <h1 class="title project-top-title" data-slot="project-title" data-count="10">Unspoken Ties</h1>
-        <div class="project-top-lead"><p class="lead" data-slot="project-introduction" data-count="274">Unspoken Ties is a 3D cooperative puzzle-adventure game about repairing a father-son relationship. Players work together to collect object fragments, recover shared memories, open up to each other, and gradually rebuild their emotional bond.</p></div>
+        <h1 class="title project-top-title" data-slot="project-title" data-count="9">Cast Calm</h1>
+        <div class="project-top-lead"><p class="lead" data-slot="project-introduction" data-count="162">Calm Cast is a game that combines fishing with the BCI system. The players’ goal in the game is to catch the highest-quality fish possible within the time limit.</p><p class="lead">The game intends to challenge players’ ability to maintain emotional stability under the game’s increasing pressure. To catch the fish, players need to use the rod sensor to keep the cursor within a certain zone. During this process, the BCI system will constantly monitor players’ emotional state, which directly affects the sensitivity of the rod sensor.</p></div>
         <dl class="metadata" data-area="project-facts">
-          <div><dt data-slot="fact-1-label" data-count="12">Release Date</dt><dd data-slot="fact-1-value" data-count="4">2025.12</dd></div>
-          <div><dt data-slot="fact-2-label" data-count="4">Role</dt><dd data-slot="fact-2-value" data-count="27">Project Lead, Level Designer</dd></div>
-          <div><dt data-slot="fact-3-label" data-count="14">Team Size</dt><dd data-slot="fact-3-value" data-count="47">4</dd></div>
-          <div><dt data-slot="fact-4-label" data-count="12">Tools</dt><dd data-slot="fact-4-value" data-count="25">Unreal Engine 6, Blender</dd></div>
+          <div><dt data-slot="fact-1-label" data-count="12">Release Date</dt><dd data-slot="fact-1-value" data-count="7">2026.04</dd></div>
+          <div><dt data-slot="fact-2-label" data-count="4">Role</dt><dd data-slot="fact-2-value" data-count="13">Lead Designer</dd></div>
+          <div><dt data-slot="fact-3-label" data-count="9">Team Size</dt><dd data-slot="fact-3-value" data-count="1">2</dd></div>
+          <div><dt data-slot="fact-4-label" data-count="5">Tools</dt><dd data-slot="fact-4-value" data-count="5">Unity</dd></div>
         </dl>
       </section>
 
+      <!-- 正文说明一 -->
       <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="349">As Project Manager, I found that our first plan was too ambitious. The team was still learning Unreal Engine and SVN, so progress was slower than expected. I adjusted the timeline, reduced the project scope, and assigned tasks based on each member’s strengths and interests. This made the workflow smoother and helped us complete a playable demo.</p><p data-slot="narrative-01-p2" data-count="309">As Level Designer, I turned the father-son story into levels and cooperative puzzles. The story and level design developed together, rather than in separate stages. I also used reference images, notes, and clear scale guidelines when handing work to programmers and artists. Regular communication helped the team understand my ideas and reduced unnecessary revisions.</p><p data-slot="narrative-01-p3" data-count="267"></p><p data-slot="narrative-01-p4" data-count="163"></p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37"></a></div></section>
-      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">Final aerial view of the project level</span><span class="media__caption" data-slot="media-001-caption" data-count="31"></span></div></section>
+      <!-- 媒体图一 -->
+      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">media-001 — Final aerial view of the project level</span><span class="media__caption" data-slot="media-001-caption" data-count="31"></span></div></section>
+      <!-- 正文说明二 -->
       <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="374"></p></div></section>
-      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-count="14" data-slot="media-002-index">Aerial view of the project level in progress</span><span class="media__caption" data-count="35"></span></div></section>
+      <!-- 媒体图二 -->
+      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-count="14" data-slot="media-002-index">media-002 — Aerial view of the project level in progress</span><span class="media__caption" data-slot="media-002-caption" data-count="35"></span></div></section>
+      <!-- 并排媒体图五与六 -->
       <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-count="18" data-slot="media-005-006-index"></span></div><div class="media__block"></div></section>
-      <section class="grid copy reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544"></p><a class="button-link" href="#statement" data-slot="narrative-04-link" data-count="22"></a></div></section>
+      <!-- 正文说明四 -->
+      <section class="grid copy copy--after-media reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544"></p></div></section>
     </main>
 
+    <!-- 上一个／下一个项目导航 -->
     <nav class="project-nav" data-area="project-navigation" aria-label="">
       <a href="#top"><span data-slot="previous-label" data-count="17"></span><strong data-slot="previous-title" data-count="9"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
       <a href="#top"><span data-slot="next-label" data-count="14"></span><strong data-slot="next-title" data-count="10"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
     </nav>
-    <footer data-area="site-footer"><span data-slot="footer-left" data-count="34"></span><span data-slot="footer-right" data-count="40"></span></footer>
-    <script src="./project.js"></script>
+    <script src="../../01 navigation/navigation.js?v=20260814-1"></script>
+    <script src="../project.js"></script>
     <script>
-      document.querySelector("[data-hero-play]")?.addEventListener("click", function () {
-        const iframe = document.createElement("iframe");
-        iframe.className = "hero__media";
-        iframe.width = "560";
-        iframe.height = "315";
-        iframe.src = "https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?autoplay=1&rel=0&modestbranding=1&playsinline=1";
-        iframe.title = "Unspoken Ties video player";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.referrerPolicy = "origin-when-cross-origin";
-        iframe.allowFullscreen = true;
-        this.replaceWith(iframe);
+      document.querySelectorAll("[data-slot]").forEach((element) => {
+        if (!element.textContent.trim()) {
+          element.textContent = `${element.dataset.slot}aaaaaaa`;
+        }
       });
+
     </script>
   </body>
 </html>

@@ -144,13 +144,6 @@
       "type": "previous-next-cards",
       "imageSlots": ["previous-project-image", "next-project-image"],
       "textSlots": ["previous-label", "previous-title", "next-label", "next-title"]
-    },
-    {
-      "id": "site-footer",
-      "nameZh": "页脚",
-      "noteZh": "最底部版权与辅助信息。",
-      "type": "footer",
-      "textSlots": ["footer-left", "footer-right"]
     }
   ],
   "textCharCounts": {
@@ -178,25 +171,6 @@
     "narrative-02-p1": 374,
     "narrative-04-p1": 544,
     "narrative-04-link": 22,
-    "narrative-05-p1": 389,
-    "narrative-05-p2": 134,
-    "narrative-05-p3": 36,
-    "narrative-05-link": 6,
-    "statement-heading": 16,
-    "statement-p1": 43,
-    "statement-p2": 44,
-    "statement-p3": 219,
-    "statement-p4": 404,
-    "statement-p5": 556,
-    "statement-p6": 331,
-    "statement-p7": 501,
-    "statement-credit": 29,
-    "credits-title": 16,
-    "credits-intro": 86,
-    "credits-commission": 43,
-    "credits-list-1": 812,
-    "credits-list-2": 96,
-    "credits-list-3": 238,
     "previous-label": 17,
     "previous-title": 9,
     "next-label": 14,
@@ -205,15 +179,6 @@
   "mediaCaptionCharCounts": {
     "media-001": [14, 31],
     "media-002": [14, 35],
-    "media-005-006": [18],
-    "media-007-008": [18, 31],
-    "media-009": [14, 52],
-    "media-010": [14, 52],
-    "media-011": [14, 52],
-    "media-012": [14, 27],
-    "media-013-014": [18, 27],
-    "media-015": [14, 34],
-    "media-016": [14, 31],
-    "media-017-018": [18, 32]
+    "media-005-006": [18]
   }
 }
