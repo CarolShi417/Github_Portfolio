@@ -46,6 +46,11 @@
   margin-bottom: 0;
 }
 
+/* Preserve manual line breaks in project fact values. */
+.project-top-basics .metadata dd {
+  white-space: pre-line;
+}
+
 @media (max-width: 767px) {
   .project-top-hero {
     height: calc(100svh - 140px);

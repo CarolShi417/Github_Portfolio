@@ -42,7 +42,7 @@ id: hero
 
 type: hero-media
 
-**hero-media cover**: E:\00 Portfolio\Github_portfolio\00 assets\cast-calm\hero-media-cover.jpg
+**hero-media cover**: E:\00 Portfolio\Github_portfolio\00 assets\cast-calm\hero.jpg
 
 **hero-media link**: [The Power of Play 游於藝乎](https://my.matterport.com/show/?m=N83d1JRWrog)
 
@@ -56,8 +56,9 @@ type: title-and-introduction
 
 **project-title**: Cast Calm
 
-**project-introduction**: Calm Cast is a game that combines fishing with the BCI system. The players’ goal in the game is to catch the highest-quality fish possible within the time limit.
-The game intends to challenge players’ ability to maintain emotional stability under the game’s increasing pressure. To catch the fish, players need to use the rod sensor to keep the cursor within a certain zone. During this process, the BCI system will constantly monitor players’ emotional state, which directly affects the sensitivity of the rod sensor. 
+**project-introduction**: 
+
+Calm Cast combines fishing game mechanics with a BCI system. Players aim to catch the highest-quality fish within the time limit while maintaining emotional stability under increasing pressure. To catch fish, players need to use a rod sensor to keep the cursor within a target zone. Meanwhile, the BCI system monitors their emotional state, which directly affects the sensitivity of the rod sensor.
 
 ## project-facts
 
@@ -71,7 +72,7 @@ type: four-column-metadata
 
 **fact-2-label**: Role
 
-**fact-2-value**: Lead Designer
+**fact-2-value**: Lead Designer\nExhibition Planner
 
 **fact-3-label**: Team Size
 
@@ -87,21 +88,33 @@ id: narrative-01
 
 type: right-column-text
 
+
+
 **narrative-01-p1**:
 
-Lead Designer
+As Lead Designer,  I wrote the Game Design Document (GDD) and led the overall game design. I designed the core mechanics and gameplay loop based on the BCI system. I processed the project through three versions: a Unity PC prototype, an exhibition-ready proposal, and the final version.
 
-I found that our first plan was too ambitious. The team was still learning Unreal Engine and SVN, so progress was slower than expected. I adjusted the timeline, reduced the project scope, and assigned tasks based on each member strengths and interests. This made the workflow smoother and helped us complete a playable demo.
+**中**
+
+主导游戏设计流程并撰写游戏设计文档（GDD）。结合 BCI 系统设计核心玩法与游戏循环，使玩家的情绪状态直接影响钓鱼操控与挑战难度。推动项目完成三轮迭代：Unity PC 原型、适用于展览的策划方案，以及最终落地版本。
+
+
 
 **narrative-01-p2**:
 
+As Exhibition Designer，I worked closely with the exhibition coordinator in two weeks. We developed the prototype into a practical exhibition proposal. I designed three setup plans for venues of different sizes. I also expanded the game to include multiplayer interaction.
+
+**中**
+在两周内与展览协调员密切沟通，将游戏原型发展为可执行的展览方案文档。针对不同规模的场地制定三套空间与技术布置方案，并拓展了多人互动玩法。
+
+
+
 **narrative-01-p3**:
 
-narrative-01-p4:
+As Programmer, I independently developed the Unity prototype. I created simulated BCI data, a fishing rod deformation shader, and simple UI. I built the main interaction system to test how emotional data could affect gameplay in real time.
 
-narrative-01-link:
-
-narrative-01-link-url:
+**中**
+独立完成 Unity 原型开发，包括 BCI 数值模拟、随受力变化的鱼竿形变 Shader，以及基础 UI 界面。搭建核心交互系统，以测试情绪数据如何实时影响游戏体验。
 
 ## media-001
 
@@ -109,13 +122,11 @@ id: media-001
 
 type: single-media
 
-media-001-image:
+media-001-image: E:\00 Portfolio\Github_portfolio\00 assets\cast-calm\media-001.jpg
 
-media-001-image-alt:
+media-001-image-alt: 
 
-media-001-index: Final aerial view of the project level
-
-media-001-caption:
+**media-001-index**: On-site Exhibition Gameplay
 
 ## narrative-02
 
@@ -125,19 +136,26 @@ type: right-column-text
 
 narrative-02-p1:
 
+**How does the BCI value influence the sensitivity? 
+
+| BCI value | defined state | How to affect the fishing rod sensitivity     |
+| --------- | ------------- | --------------------------------------------- |
+| 0-20%     | relax         | Players can fully control this sensor.        |
+| 21-60%    | normal        | 1/4 input (pull or loosen the rod) is invalid |
+| 61-80%    | tense         | 1/3 input(pull or loosen rod) is invalid      |
+| 81-100%   | hightense     | 2/3 input(pull or loosen rod) is invalid      |
+
 ## media-002
 
 id: media-002
 
 type: single-media
 
-media-002-image:
+media-002-image: E:\00 Portfolio\Github_portfolio\00 assets\cast-calm\media-001.jpg
 
 media-002-image-alt:
 
-media-002-index: Aerial view of the project level in progress
-
-media-002-caption:
+**media-002-index**: Simulated BCI Fishing Test
 
 ## media-005-006
 

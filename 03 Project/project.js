@@ -16,6 +16,12 @@
     element.dataset.renderedCount = String(placeholder.length);
   });
 
+  document.querySelectorAll('[data-area="project-facts"] dd[data-slot$="-value"]').forEach((value) => {
+    if (value.textContent.includes('\\n')) {
+      value.textContent = value.textContent.replace(/\\n/g, '\n');
+    }
+  });
+
   const body = document.body;
   const bar = document.querySelector('#site-bar');
   const toggle = document.querySelector('#menu-toggle');

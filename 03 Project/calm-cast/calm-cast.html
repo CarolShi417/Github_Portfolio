@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Unspoken Ties</title>
     <style>
-      /* 全站颜色变量：背景、文字、媒体占位色与分隔线 */
+      /* Shared colour variables */
       :root {
         --paper: #f9f8f6;
         --ink: #232222;
@@ -14,7 +14,7 @@
         --line: rgb(35 34 34 / 18%);
       }
 
-      /* 全局基础设置：尺寸计算、滚动、字体、链接与按钮 */
+      /* Global layout and type defaults */
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
@@ -28,7 +28,7 @@
       a { color: inherit; text-decoration: none; }
       button { font: inherit; }
 
-      /* 顶部固定导航：滚动后显示半透明毛玻璃背景 */
+      /* Fixed navigation with a scroll backdrop */
       .site-header {
         position: fixed;
         top: 0;
@@ -81,7 +81,7 @@
       .nav-link:focus-visible,
       .nav-link.is-active { color: var(--ink); transform: translateY(-1px); }
 
-      /* 首屏媒体：高度随视口变化，最低保留 580px */
+      /* Hero media scales with the viewport, with a 580px minimum */
       .hero {
         position: relative;
         height: calc(100svh - 140px);
@@ -132,7 +132,7 @@
       .hero__cover:focus-visible .hero__play { background: rgb(35 34 34 / 65%); transform: translate(-50%, -50%) scale(1.06); }
       .hero__cover:focus-visible { outline: 2px solid var(--ink); outline-offset: -6px; }
 
-      /* 页面主网格：桌面端采用 12 栏布局 */
+      /* Main twelve-column desktop grid */
       .grid {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -156,7 +156,7 @@
       .metadata dt { display: block; height: 26px; border-bottom: 1px solid var(--ink); font-weight: 400; }
       .metadata dd { margin: 10px 0 0; text-align: left; text-transform: uppercase; }
 
-      /* 正文：单图后接正文时保留 90px 间距 */
+      /* Copy following media keeps a 90px gap */
       .copy { margin-bottom: 45px; }
       .copy--after-media { margin-top: 90px; }
       .copy__body { grid-column: 8 / -1; }
@@ -171,7 +171,7 @@
         letter-spacing: .025em;
       }
 
-      /* 绿色媒体占位区：单图、短图、长图与并排双图 */
+      /* Media blocks: single, short, tall, and double layouts */
       .media {
         position: relative;
         margin-top: 90px;
@@ -181,6 +181,13 @@
         grid-column: 5 / -1;
         min-height: 531px;
         background: var(--green);
+        overflow: hidden;
+      }
+      .media__block img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       .media__block--short { min-height: 406px; }
       .media__block--tall { min-height: 797px; }
@@ -218,7 +225,7 @@
       .project-nav a { position: relative; display: block; min-height: 164px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
       .project-nav a:last-child { color: rgb(35 34 34 / 45%); text-align: right; }
       .project-nav strong { display: block; margin-top: 25px; font-size: 16px; font-weight: 400; }
-      .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; height: 104px; background: var(--green); }
+      .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; aspect-ratio: 16 / 9; height: auto; background: var(--green); }
       .project-nav a:last-child .project-nav__thumb { left: 0; right: auto; background: var(--green-deep); }
 
       .reveal { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
@@ -250,18 +257,31 @@
         .project-nav { gap: 10px; margin-top: 100px; padding: 0 10px; }
         .project-nav a { min-height: 112px; padding-top: 10px; font-size: 10px; }
         .project-nav strong { font-size: 12px; }
-        .project-nav__thumb { top: 27px; width: 42%; height: 72px; }
+        .project-nav__thumb { top: 27px; width: 42%; aspect-ratio: 16 / 9; height: auto; }
       }
 
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
         .reveal { opacity: 1; transform: none; transition: none; }
       }
+
+      /* Single media uses the supplied 2000:1200 (5:3) image ratio. */
+      .media:not(.media--double) { min-height: 0; }
+      .media:not(.media--double) .media__block { min-height: 0; aspect-ratio: 5 / 3; }
+      .media:not(.media--double) .media__block img { width: 100%; height: 100%; object-fit: contain; }
     </style>
-    <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260809-1" />
+    <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260817-1" />
+    <style>
+      @media (min-width: 768px) {
+        .project-top-lead p {
+          font-size: 28px;
+          line-height: 40px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- 顶部导航 -->
+    <!-- Fallback navigation -->
     <header class="site-header" id="site-bar" data-area="site-header" aria-label="Primary navigation">
       <a class="nav-link nav-highlight" href="https://carolshi417.github.io/Github_Portfolio/figma-home/" data-slot="highlight" data-count="9">HIGHLIGHT</a>
       <nav class="nav-primary" data-area="site-menu" aria-label="Portfolio sections">
@@ -272,49 +292,49 @@
       </nav>
       <a class="nav-link nav-about" href="https://shiyiqing.com/about" data-slot="about" data-count="5">ABOUT</a>
     </header>
-<!-- 项目页面主体 -->
+<!-- Project page content -->
 <main id="top">
-      <!-- 首屏媒体 -->
+      <!-- Hero media -->
       <section class="hero project-top-hero" data-area="hero" aria-label="Cast Calm hero media">
-        <a class="hero__cover" href="https://my.matterport.com/show/?m=N83d1JRWrog" target="_blank" rel="noopener noreferrer" aria-label="Open The Power of Play 游於藝乎">
-          <img src="../../00%20assets/cast-calm/hero-media-cover.png" alt="" />
+        <a class="hero__cover" href="https://my.matterport.com/show/?m=N83d1JRWrog" target="_blank" rel="noopener noreferrer" aria-label="Open The Power of Play">
+          <img src="../../00%20assets/cast-calm/hero.jpg" alt="Cast Calm interactive installation" />
           <span class="hero__play" aria-hidden="true">&#9654;</span>
         </a>
       </section>
 
-      <!-- 项目标题、简介与基本信息 -->
+      <!-- Project title, introduction, and facts -->
       <section class="grid basics project-top-basics" data-area="project-intro">
         <h1 class="title project-top-title" data-slot="project-title" data-count="9">Cast Calm</h1>
-        <div class="project-top-lead"><p class="lead" data-slot="project-introduction" data-count="162">Calm Cast is a game that combines fishing with the BCI system. The players’ goal in the game is to catch the highest-quality fish possible within the time limit.</p><p class="lead">The game intends to challenge players’ ability to maintain emotional stability under the game’s increasing pressure. To catch the fish, players need to use the rod sensor to keep the cursor within a certain zone. During this process, the BCI system will constantly monitor players’ emotional state, which directly affects the sensitivity of the rod sensor.</p></div>
+        <div class="project-top-lead"><p class="lead" data-slot="project-introduction" data-count="386">Calm Cast combines fishing game mechanics with a BCI system. Players aim to catch the highest-quality fish within the time limit while maintaining emotional stability under increasing pressure. To catch fish, players need to use a rod sensor to keep the cursor within a target zone. Meanwhile, the BCI system monitors their emotional state, which directly affects the sensitivity of the rod sensor.</p></div>
         <dl class="metadata" data-area="project-facts">
           <div><dt data-slot="fact-1-label" data-count="12">Release Date</dt><dd data-slot="fact-1-value" data-count="7">2026.04</dd></div>
-          <div><dt data-slot="fact-2-label" data-count="4">Role</dt><dd data-slot="fact-2-value" data-count="13">Lead Designer</dd></div>
+          <div><dt data-slot="fact-2-label" data-count="4">Role</dt><dd data-slot="fact-2-value" data-count="35">Lead Designer<br />Exhibition Planner</dd></div>
           <div><dt data-slot="fact-3-label" data-count="9">Team Size</dt><dd data-slot="fact-3-value" data-count="1">2</dd></div>
           <div><dt data-slot="fact-4-label" data-count="5">Tools</dt><dd data-slot="fact-4-value" data-count="5">Unity</dd></div>
         </dl>
       </section>
 
-      <!-- 正文说明一 -->
-      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="349">As Project Manager, I found that our first plan was too ambitious. The team was still learning Unreal Engine and SVN, so progress was slower than expected. I adjusted the timeline, reduced the project scope, and assigned tasks based on each member’s strengths and interests. This made the workflow smoother and helped us complete a playable demo.</p><p data-slot="narrative-01-p2" data-count="309">As Level Designer, I turned the father-son story into levels and cooperative puzzles. The story and level design developed together, rather than in separate stages. I also used reference images, notes, and clear scale guidelines when handing work to programmers and artists. Regular communication helped the team understand my ideas and reduced unnecessary revisions.</p><p data-slot="narrative-01-p3" data-count="267"></p><p data-slot="narrative-01-p4" data-count="163"></p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37"></a></div></section>
-      <!-- 媒体图一 -->
-      <section class="grid media reveal" data-area="media-001"><div class="media__block"><span class="media__label" data-slot="media-001-index" data-count="14">media-001 — Final aerial view of the project level</span><span class="media__caption" data-slot="media-001-caption" data-count="31"></span></div></section>
-      <!-- 正文说明二 -->
-      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="374"></p></div></section>
-      <!-- 媒体图二 -->
-      <section class="grid media reveal" data-area="media-002"><div class="media__block"><span class="media__label" data-count="14" data-slot="media-002-index">media-002 — Aerial view of the project level in progress</span><span class="media__caption" data-slot="media-002-caption" data-count="35"></span></div></section>
-      <!-- 并排媒体图五与六 -->
+      <!-- Narrative one -->
+      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="263">As Lead Designer, I wrote the Game Design Document (GDD) and led the overall game design. I designed the core mechanics and gameplay loop based on the BCI system. I processed the project through three versions: a Unity PC prototype, an exhibition-ready proposal, and the final version.</p><p data-slot="narrative-01-p2" data-count="241">As Exhibition Designer, I worked closely with the exhibition coordinator in two weeks. We developed the prototype into a practical exhibition proposal. I designed three setup plans for venues of different sizes. I also expanded the game to include multiplayer interaction.</p><p data-slot="narrative-01-p3" data-count="224">As Programmer, I independently developed the Unity prototype. I created simulated BCI data, a fishing rod deformation shader, and simple UI. I built the main interaction system to test how emotional data could affect gameplay in real time.</p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37"></a></div></section>
+      <!-- Media one -->
+      <section class="grid media reveal" data-area="media-001"><div class="media__block"><img src="../../00%20assets/cast-calm/media-001.jpg" alt="" /><span class="media__label" data-slot="media-001-index" data-count="27">On-site Exhibition Gameplay</span></div></section>
+      <!-- Narrative two -->
+      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="261">How does the BCI value influence the sensitivity?</p><table><thead><tr><th>BCI value</th><th>Defined state</th><th>Effect on fishing rod sensitivity</th></tr></thead><tbody><tr><td>0–20%</td><td>Relax</td><td>Players can fully control the sensor.</td></tr><tr><td>21–60%</td><td>Normal</td><td>One-quarter of input is invalid.</td></tr><tr><td>61–80%</td><td>Tense</td><td>One-third of input is invalid.</td></tr><tr><td>81–100%</td><td>High tense</td><td>Two-thirds of input is invalid.</td></tr></tbody></table></div></section>
+      <!-- Media two -->
+      <section class="grid media reveal" data-area="media-002"><div class="media__block"><img src="../../00%20assets/cast-calm/media-002.jpg" alt="" /><span class="media__label" data-count="26" data-slot="media-002-index">Simulated BCI Fishing Test</span></div></section>
+      <!-- Double media five and six -->
       <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-count="18" data-slot="media-005-006-index"></span></div><div class="media__block"></div></section>
-      <!-- 正文说明四 -->
+      <!-- Narrative four -->
       <section class="grid copy copy--after-media reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544"></p></div></section>
     </main>
 
-    <!-- 上一个／下一个项目导航 -->
+    <!-- Previous and next project navigation -->
     <nav class="project-nav" data-area="project-navigation" aria-label="">
       <a href="#top"><span data-slot="previous-label" data-count="17"></span><strong data-slot="previous-title" data-count="9"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
       <a href="#top"><span data-slot="next-label" data-count="14"></span><strong data-slot="next-title" data-count="10"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
     </nav>
-    <script src="../../01 navigation/navigation.js?v=20260814-1"></script>
-    <script src="../project.js"></script>
+    <script src="../../01 navigation/navigation.js?v=20260817-1"></script>
+    <script src="../project.js?v=20260817-1"></script>
     <script>
       document.querySelectorAll("[data-slot]").forEach((element) => {
         if (!element.textContent.trim()) {
