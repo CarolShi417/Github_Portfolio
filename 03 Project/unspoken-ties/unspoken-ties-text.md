@@ -42,7 +42,7 @@ id: hero
 
 type: hero-media
 
-**hero-media cover**: ../project%20content/Unspoken%20Ties/cover.jpg
+**hero-media cover**: E:\00 Portfolio\Github_portfolio\00 assets\unspoken-ties\cargo-game-cover
 
 **hero-media link**: https://www.youtube-nocookie.com/embed/gcyLLGpRshQ?autoplay=1&rel=0&modestbranding=1&playsinline=1
 
@@ -121,6 +121,8 @@ id: narrative-02
 type: right-column-text
 
 **narrative-02-p1**:
+
+Level Design
 
 The demo focuses on **Tutorial Level and Level 1**, designed as a gradually ascending environment that combines exploration, platforming, puzzle-solving, and cooperation. I first planned the level through simple layouts, defining player routes, key interaction points, elevation changes, and collectible locations.
 

@@ -162,6 +162,9 @@
       .copy__body { grid-column: 8 / -1; }
       .copy p { margin: 0 0 22px; font-size: 17px; line-height: 22px; }
       .copy p:last-child { margin-bottom: 0; }
+      .copy table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 18px; }
+      .copy th, .copy td { padding: 8px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+      .copy th { font-weight: 700; }
       .copy .button-link {
         display: inline-block;
         margin-top: 8px;
@@ -189,6 +192,27 @@
         height: 100%;
         object-fit: cover;
       }
+      .media__link { position: relative; display: block; width: 100%; height: 100%; }
+      .media__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: grid;
+        width: 62px;
+        height: 62px;
+        place-items: center;
+        border: 1px solid rgb(249 248 246 / 78%);
+        border-radius: 50%;
+        background: rgb(35 34 34 / 40%);
+        color: var(--paper);
+        font-size: 22px;
+        line-height: 1;
+        transform: translate(-50%, -50%);
+        transition: background 160ms ease, transform 160ms ease;
+      }
+      .media__link:hover .media__play,
+      .media__link:focus-visible .media__play { background: rgb(35 34 34 / 65%); transform: translate(-50%, -50%) scale(1.06); }
+      .media__link:focus-visible { outline: 2px solid var(--ink); outline-offset: -6px; }
       .media__block--short { min-height: 406px; }
       .media__block--tall { min-height: 797px; }
       .media__label {
@@ -225,7 +249,7 @@
       .project-nav a { position: relative; display: block; min-height: 164px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 12px; }
       .project-nav a:last-child { color: rgb(35 34 34 / 45%); text-align: right; }
       .project-nav strong { display: block; margin-top: 25px; font-size: 16px; font-weight: 400; }
-      .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; aspect-ratio: 16 / 9; height: auto; background: var(--green); }
+      .project-nav__thumb { position: absolute; top: 15px; right: 0; width: 31%; aspect-ratio: 16 / 9; height: auto; background: var(--green); object-fit: cover; }
       .project-nav a:last-child .project-nav__thumb { left: 0; right: auto; background: var(--green-deep); }
 
       .reveal { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
@@ -270,7 +294,7 @@
       .media:not(.media--double) .media__block { min-height: 0; aspect-ratio: 5 / 3; }
       .media:not(.media--double) .media__block img { width: 100%; height: 100%; object-fit: contain; }
     </style>
-    <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260817-1" />
+    <link rel="stylesheet" href="../../00%20assets/project-top-layout.css?v=20260817-2" />
     <style>
       @media (min-width: 768px) {
         .project-top-lead p {
@@ -315,26 +339,26 @@
       </section>
 
       <!-- Narrative one -->
-      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="263">As Lead Designer, I wrote the Game Design Document (GDD) and led the overall game design. I designed the core mechanics and gameplay loop based on the BCI system. I processed the project through three versions: a Unity PC prototype, an exhibition-ready proposal, and the final version.</p><p data-slot="narrative-01-p2" data-count="241">As Exhibition Designer, I worked closely with the exhibition coordinator in two weeks. We developed the prototype into a practical exhibition proposal. I designed three setup plans for venues of different sizes. I also expanded the game to include multiplayer interaction.</p><p data-slot="narrative-01-p3" data-count="224">As Programmer, I independently developed the Unity prototype. I created simulated BCI data, a fishing rod deformation shader, and simple UI. I built the main interaction system to test how emotional data could affect gameplay in real time.</p><a class="button-link" href="#statement" data-slot="narrative-01-link" data-count="37"></a></div></section>
+      <section class="grid copy reveal" data-area="narrative-01"><div class="copy__body"><p data-slot="narrative-01-p1" data-count="263">As <strong>Lead Designer</strong>, I wrote the Game Design Document (GDD) and led the overall game design. I designed the core mechanics and gameplay loop based on the BCI system. I processed the project through three versions: a Unity PC prototype, an exhibition-ready proposal, and the final version.</p><p data-slot="narrative-01-p2" data-count="241">As <strong>Exhibition Designer</strong>, I worked closely with the exhibition coordinator in two weeks. We developed the prototype into a practical exhibition proposal. I designed three setup plans for venues of different sizes. I also expanded the game to include multiplayer interaction.</p><p data-slot="narrative-01-p3" data-count="224">As <strong>Programmer</strong>, I independently developed the Unity prototype. I created simulated BCI data, a fishing rod deformation shader, and simple UI. I built the main interaction system to test how emotional data could affect gameplay in real time.</p></div></section>
       <!-- Media one -->
       <section class="grid media reveal" data-area="media-001"><div class="media__block"><img src="../../00%20assets/cast-calm/media-001.jpg" alt="" /><span class="media__label" data-slot="media-001-index" data-count="27">On-site Exhibition Gameplay</span></div></section>
       <!-- Narrative two -->
-      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="261">How does the BCI value influence the sensitivity?</p><table><thead><tr><th>BCI value</th><th>Defined state</th><th>Effect on fishing rod sensitivity</th></tr></thead><tbody><tr><td>0–20%</td><td>Relax</td><td>Players can fully control the sensor.</td></tr><tr><td>21–60%</td><td>Normal</td><td>One-quarter of input is invalid.</td></tr><tr><td>61–80%</td><td>Tense</td><td>One-third of input is invalid.</td></tr><tr><td>81–100%</td><td>High tense</td><td>Two-thirds of input is invalid.</td></tr></tbody></table></div></section>
+      <section class="grid copy copy--after-media reveal" data-area="narrative-02"><div class="copy__body"><p data-slot="narrative-02-p1" data-count="48"><strong>How does the BCI value influence the sensitivity?</strong></p><table><thead><tr><th>BCI value</th><th>Defined state</th><th>How to affect the fishing rod sensitivity</th></tr></thead><tbody><tr><td>0–20%</td><td>Relax</td><td>Players can fully control this sensor.</td></tr><tr><td>21–60%</td><td>Normal</td><td>1/4 input (pull or loosen the rod) is invalid.</td></tr><tr><td>61–80%</td><td>Tense</td><td>1/3 input (pull or loosen the rod) is invalid.</td></tr><tr><td>81–100%</td><td>High tense</td><td>2/3 input (pull or loosen the rod) is invalid.</td></tr></tbody></table></div></section>
       <!-- Media two -->
-      <section class="grid media reveal" data-area="media-002"><div class="media__block"><img src="../../00%20assets/cast-calm/media-002.jpg" alt="" /><span class="media__label" data-count="26" data-slot="media-002-index">Simulated BCI Fishing Test</span></div></section>
-      <!-- Double media five and six -->
-      <section class="grid media media--double reveal" data-area="media-005-006"><div class="media__block"><span class="media__label" data-count="18" data-slot="media-005-006-index"></span></div><div class="media__block"></div></section>
-      <!-- Narrative four -->
-      <section class="grid copy copy--after-media reveal" data-area="narrative-04"><div class="copy__body"><p data-slot="narrative-04-p1" data-count="544"></p></div></section>
+      <section class="grid media reveal" data-area="media-002"><div class="media__block"><a class="media__link" href="https://youtu.be/_X3uaOnhffY" target="_blank" rel="noopener noreferrer" aria-label="Play Simulated BCI Fishing Test on YouTube"><img src="../../00%20assets/cast-calm/media-002.jpg" alt="" /><span class="media__play" aria-hidden="true">&#9654;</span></a><span class="media__label" data-count="26" data-slot="media-002-index">Simulated BCI Fishing Test</span></div></section>
+      <!-- Media three -->
+      <section class="grid media reveal" data-area="media-003"><div class="media__block"><img src="../../00%20assets/cast-calm/media-003.png" alt="" /><span class="media__label" data-count="25" data-slot="media-003-index">Core Game Loop Iteration</span></div></section>
+      <!-- Media four -->
+      <section class="grid media reveal" data-area="media-004"><div class="media__block"><img src="../../00%20assets/cast-calm/media-004.jpg" alt="" /><span class="media__label" data-count="19" data-slot="media-004-index">Exhibition Sketches</span></div></section>
     </main>
 
     <!-- Previous and next project navigation -->
-    <nav class="project-nav" data-area="project-navigation" aria-label="">
-      <a href="#top"><span data-slot="previous-label" data-count="17"></span><strong data-slot="previous-title" data-count="9"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
-      <a href="#top"><span data-slot="next-label" data-count="14"></span><strong data-slot="next-title" data-count="10"></strong><i class="project-nav__thumb" aria-hidden="true"></i></a>
+    <nav class="project-nav" data-area="project-navigation" aria-label="Project navigation">
+      <a href="https://carolshi417.github.io/Github_Portfolio/03%20Project/unspoken-ties/unspoken-ties.html"><span data-slot="previous-label" data-count="16">previous project</span><strong data-slot="previous-title" data-count="14">Unspoken Ties</strong><img class="project-nav__thumb" src="../../00%20assets/unspoken-ties/cargo-game-cover.png" alt="Unspoken Ties project" /></a>
+      <a href="https://shiyiqing.com/a-snap-venture"><span data-slot="next-label" data-count="12">next project</span><strong data-slot="next-title" data-count="14">A Snap Venture</strong><img class="project-nav__thumb" src="../../00%20assets/a-snap-venture/cargo-game-cover.jpg" alt="A Snap Venture project" /></a>
     </nav>
-    <script src="../../01 navigation/navigation.js?v=20260817-1"></script>
-    <script src="../project.js?v=20260817-1"></script>
+    <script src="../../01 navigation/navigation.js?v=20260817-2"></script>
+    <script src="../project.js?v=20260817-2"></script>
     <script>
       document.querySelectorAll("[data-slot]").forEach((element) => {
         if (!element.textContent.trim()) {
